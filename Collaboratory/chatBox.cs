@@ -9,11 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Collaboratory.CustomControls;
+using Collaboratory.Model;
 
 namespace Collaboratory
 {
     public partial class chatBox : Form
     {
+
+        //Global variables
+        bool mousedown; // this is for the draggable panel behavior
+        int msgCount;
+        tb_userAccounts userConn = new tb_userAccounts();
+        tb_messages msgConn = new tb_messages();
+        Messagedata msgData = new Messagedata();
+        Userdata user = new Userdata();
+        string storagePath = Application.UserAppDataPath + @"\\Images\\";
+
         public chatBox()
         {
             InitializeComponent();
@@ -25,36 +36,87 @@ namespace Collaboratory
             //messageList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             //messageList.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
+
+            retrieveMembers();//This is all the members picture, this will appear at the left side of the screen
+
+            msgData.groupchatId = currentGroupchat.id;//To get the current GC Id
+
+            //This will get all msg from database into datagridview(messageList)
+            getAllMessages();
+
+            msgCount = messageList.Rows.Count;
+            messageList.Refresh();
+            messageList.Update();
+
+            timer1.Start();
+
+
+            //To automatically scroll the message box into the bottom
+            messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+            this.DoubleBuffered = true;
+            enableDoubleBuff(this);
+
         }
 
+        public void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mousedown)
+            {
+                int mousex = MousePosition.X - 400;
+                int mousey = MousePosition.Y - 20;
+                this.SetDesktopLocation(mousex, mousey);
+            }
+        }
 
+        public void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mousedown = true;
+        }
+
+        public void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousedown = false;
+        }
+
+        void getAllMessages() 
+        {
+
+            messageList.Rows.Clear();
+            string senderName = "";
+            //chat max letter is 38
+
+            List<DataRow> messages = msgConn.ReadMessage(msgData);
+
+            //This will get all the msg from the current groupchat
+            foreach (var data in messages)
+            {
+                string msg = data[1].ToString();
+                user.id = Convert.ToInt32(data[3]);
+                List<DataRow> dbData = userConn.ReadUser(user);
+
+                //This will get the information of the sender message
+                foreach (var userinfo in dbData)
+                {
+                    if (UserLoginData.id == Convert.ToInt32(userinfo[0]))
+                    {
+                        senderName = "(Me)\n";
+                        messageList.Rows.Add("", senderName + msg);
+                    }
+                    else
+                    {
+                        senderName = "(" + userinfo[1].ToString() + userinfo[2].ToString() + ")\n";
+                        messageList.Rows.Add(senderName + msg,"");
+                    }
+                }
+            }
+
+            this.DoubleBuffered = true;
+            enableDoubleBuff(messageList);
+        }
         private void chatBox_Load(object sender, EventArgs e)
         {
 
-            messageList.Rows.Add("(Onah Marie)\nHello!kamustaHello!kamustaHello!kamustaHello!kamusa", "");
-            messageList.Rows.Add("   ", "chat test 101 qwerty");
-            messageList.Rows.Add("   ", "(Me)\nemail: admin@gmail.com\npassword:123456789");
-            messageList.Rows.Add("   ", "(Me)\nemail: admin@gmail.com\npassword:123456789");
-            messageList.Rows.Add("hello!!!! test chat\n1010101", "");
-            messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
-            messageList.Rows.Add("GG kids na!!", "");
-            messageList.Rows.Add("   ", "openn");
-            messageList.Rows.Add("test code 123", "");
-            messageList.Rows.Add("   ", "chat mo ulo mo\nchat box credibility test");
-            messageList.Rows.Add("test code 123", "");
-            messageList.Rows.Add("   ", "chat mo ulo mo\nchat box credibility test");
-            messageList.Rows.Add("test code 123", "");
-            messageList.Rows.Add("   ", "chat mo ulo mo\nchat box credibility test");
-            messageList.Rows.Add("   ", "email: admin@gmail.com\npassword:123456789");
-            messageList.Rows.Add("hello!!!! test chat\n1010101", "");
-            messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
-            messageList.Rows.Add("   ", "email: admin@gmail.comdasdsdasdasdasdasd asdadasdadadasdasdasdasdasdad adadadadadadadadadadada dadadapassword:123456789");
-            messageList.Rows.Add("hello!!!! test chat\n1010101", "");
-            messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
-            messageList.Rows.Add("   ", "email: admin@gmail.com\npassword:123456789");
-            messageList.Rows.Add("hello!!!! test chat\n1010101", "");
-            messageList.Rows.Add("asdfasdfasdfasdfasdfas itoffsdfdfsdfsdfsd,\n final testing na thiss", "");
-            //These are the default style for datagridview.updateList
+            //These are the default style for datagridview.messageList
             foreach (DataGridViewRow row in messageList.Rows)
             {
                 if (row.Cells[0].Value.ToString().Trim().Count() >0)
@@ -76,40 +138,114 @@ namespace Collaboratory
 
                 //edit, note, download button part
 
-
+                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+                this.DoubleBuffered = true;
+                enableDoubleBuff(this);
             }
+        }
+
+        //To avoid the screen from stuttering to make the object movement smooth
+        public static void enableDoubleBuff(System.Windows.Forms.Control cont)
+        {
+            System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            DemoProp.SetValue(cont, true, null);
+        }
+        void retrieveMembers() 
+        {
+
+            PictureBox picture = new PictureBox();
+            foreach (var member in SelectedRepoData.members) 
+            {
+                user.id = member;
+                List<DataRow>dbData = userConn.ReadUser(user);
+
+                //This will extract the image name from user data
+                foreach (var data in dbData) 
+                {
+                    if (string.IsNullOrEmpty(data[7].ToString()))
+                    {
+                        picture.Image = Image.FromFile("Asset/user.png");//This is a default user dp if the user don't set it
+                    }
+                    else 
+                    {
+                        picture.Image = Image.FromFile(storagePath + data[7].ToString());
+                    }
+                }
+
+                memberList.Rows.Add(user.id,picture.Image);
+            }
+
         }
 
         private void messageList_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
-            if (e.RowIndex == -1)
-            {
-                var dgv = (DataGridView)sender;
-                var r = e.CellBounds;
-                var w = 0;
-                if (e.ColumnIndex > -1)
-                {
-                    w = dgv.Columns[e.ColumnIndex].DividerWidth;
-                    r.Width = r.Width - w;
-                }
-                e.Graphics.SetClip(r);
-                e.Paint(r, DataGridViewPaintParts.All);
-                e.Graphics.SetClip(e.CellBounds);
-                if (w > 0)
-                {
-                    r = new Rectangle(r.Right - 1, r.Top, w + 1, r.Height);
-                    using (var brush = new SolidBrush(dgv.GridColor))
-                        e.Graphics.FillRectangle(brush, r);
-                }
-                e.Handled = true;
-            }
+            //if (e.RowIndex == -1)
+            //{
+            //    var dgv = (DataGridView)sender;
+            //    var r = e.CellBounds;
+            //    var w = 0;
+            //    if (e.ColumnIndex > -1)
+            //    {
+            //        w = dgv.Columns[e.ColumnIndex].DividerWidth;
+            //        r.Width = r.Width - w;
+            //    }
+            //    e.Graphics.SetClip(r);
+            //    e.Paint(r, DataGridViewPaintParts.All);
+            //    e.Graphics.SetClip(e.CellBounds);
+            //    if (w > 0)
+            //    {
+            //        r = new Rectangle(r.Right - 1, r.Top, w + 1, r.Height);
+            //        using (var brush = new SolidBrush(dgv.GridColor))
+            //            e.Graphics.FillRectangle(brush, r);
+            //    }
+            //    e.Handled = true;
+            //}
         }
 
         //This will be disable the capability to select in datagridview
         private void messageList_SelectionChanged(object sender, EventArgs e)
         {
             messageList.ClearSelection();
+        }
+
+        private void memberList_SelectionChanged(object sender, EventArgs e)
+        {
+            memberList.ClearSelection();
+        }
+
+        private void sendBtn_Click(object sender, EventArgs e)
+        {
+            if (messageTb.Text.Count() >0) 
+            {
+                msgData.message = messageTb.Text;
+                msgData.accountId = UserLoginData.id;
+
+                msgConn.CreateMessage(msgData);
+                getAllMessages();
+                messageTb.Text = "";
+
+                chatBox_Load(sender,null);
+            }
+
+        }
+
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            messageList.Refresh();
+            messageList.Update();
+            getAllMessages();
+            chatBox_Load(sender, null);
+
+
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            timer1.Dispose();
+
+            this.Close();
         }
     }
 }

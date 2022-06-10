@@ -225,7 +225,7 @@ namespace Collaboratory
         private void RepositoryPage_Load(object sender, EventArgs e)
         {
 
-            //This is the empty message in the datagridview
+            //This is the empty message in the datagridview (if there is no post in the thread)
             if (updateList.Rows.Count == 0)
             {
                 emptyImg.Visible = true;
@@ -236,6 +236,7 @@ namespace Collaboratory
                 emptyImg.Visible = false;
                 emptyLb.Visible = false;
             }
+
             //These are the default style for datagridview.updateList
             foreach (DataGridViewRow row in updateList.Rows)
             {
@@ -260,7 +261,7 @@ namespace Collaboratory
         private void chatBtn_Click(object sender, EventArgs e)
         {
             var openChatBox = new chatBox();
-            openChatBox.ShowDialog();
+            openChatBox.Show();
         }
 
         private void backBtn_Click(object sender, EventArgs e)

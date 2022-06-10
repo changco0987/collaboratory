@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Collaboratory.Model;
 using Collaboratory.CustomControls;
+using System.Runtime.InteropServices;
 
 namespace Collaboratory
 {
@@ -32,14 +33,19 @@ namespace Collaboratory
             userList.RowTemplate.Resizable = DataGridViewTriState.True;
             userList.RowTemplate.Height = 20;
             repository.members = new List<int>();
+
+            //this conditional statement is to check whether this page is being used to edit repo or to create repo
             if (SelectedRepoData.id!=0)
             {
+                //To edit repo
+                createBtn.Text = "Save";
                 repository.statModelToModel(repository);//This will transfer all data from static model
 
                 repoNameTb.Text = SelectedRepoData.repositoryName;
             }
             else 
             {
+                //To create repo
                 repository.members.Add(UserLoginData.id);//This will automatically add the owner in member list
             }
 
@@ -49,7 +55,6 @@ namespace Collaboratory
         /*
          * The code below is the form UI functions
          */
-
 
         //This method is for the datagridview design
         public void defaultDatagridviewDesign()
@@ -110,6 +115,7 @@ namespace Collaboratory
              */
             if (!checkEmptyField() && SelectedRepoData.id == 0)
             {
+
                 getUserInput();
                 createRepo();
 
@@ -169,6 +175,7 @@ namespace Collaboratory
 
         }
 
+        //This is the search result
         void searchUser() 
         {
             //The Clear and Refresh will prevent for duplicating the previous fetch data when retype in search
@@ -192,7 +199,6 @@ namespace Collaboratory
                     pictureBox.BackColor = ColorTranslator.FromHtml("#245382");
                     if (string.IsNullOrEmpty(data.profilePicName))
                     {
-
                         pictureBox.Image = Image.FromFile("Asset/user.png");//This is a default user dp if the user don't set it
                     }
                     else
@@ -227,6 +233,7 @@ namespace Collaboratory
                     {
                         userList.Rows[pictureBoxCount - 1].Cells[3].Value = Image.FromFile("Asset/checkIcon.png");
                     }
+                    
 
                 }
 

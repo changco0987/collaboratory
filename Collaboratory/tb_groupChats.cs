@@ -14,7 +14,7 @@ namespace Collaboratory
         //This is the connection path for the app database (collaboratorydb)
         NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=123;");
 
-        public void CreateRepo(Groupchatdata groupchat)
+        public void CreateGC(Groupchatdata groupchat)
         {
 
             conn.Open();
@@ -22,7 +22,7 @@ namespace Collaboratory
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "insert into tb_groupchats(repositoryid) values(" + groupchat.repositoryId + ")";//sql query to insert from the model to database
+            comm.CommandText = "insert into tb_groupchats(repository_id) values(" + groupchat.repositoryId + ")";//sql query to insert from the model to database
             comm.ExecuteNonQuery();
             comm.Dispose();
             conn.Close();
@@ -32,7 +32,7 @@ namespace Collaboratory
          * if used = user it means it will query using the user account id
          * if used = repo it means it will query using the repo id
          */
-        public List<DataRow> ReadRepo(Groupchatdata groupchat)
+        public List<DataRow> ReadGC(Groupchatdata groupchat)
         {
 
             conn.Open();
@@ -61,7 +61,7 @@ namespace Collaboratory
             return groupData;
         }
 
-        public void UpdateRepo(Groupchatdata groupchat)
+        public void UpdateGC(Groupchatdata groupchat)
         {
             conn.Open();
 
@@ -75,7 +75,7 @@ namespace Collaboratory
             conn.Close();
         }
 
-        public void DeleteRepo(Groupchatdata groupchat)
+        public void DeleteGC(Groupchatdata groupchat)
         {
             conn.Open();
 

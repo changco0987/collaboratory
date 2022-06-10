@@ -44,11 +44,11 @@ namespace Collaboratory
 
             if (used.Equals("user"))
             {
-                comm.CommandText = "select * from tb_repositories where " + id + " = any(members)";//sql query to retrieve all data from database
+                comm.CommandText = "select * from tb_repositories where " + id + " = any(members)";//select all repository that has an existense of the user
             }
             else if (used.Equals("repo")) 
             {
-                comm.CommandText = "select * from tb_repositories where repository_id = " + id;//sql query to retrieve all data from database
+                comm.CommandText = "select * from tb_repositories where repository_id = " + id;//select specific repository
             }
 
 

@@ -179,10 +179,11 @@ namespace Collaboratory
 
             foreach (var data in retrieveData)
             {
-                string repoName = data[1].ToString();
                 int repoId = Convert.ToInt32(data[0]);
+                string repoName = data[1].ToString();
                 repoList.Rows.Add(repoId, repoName);
             }
+
 
         }
 
@@ -228,6 +229,26 @@ namespace Collaboratory
                 }
 
                 SelectedRepoData.accountId = Convert.ToInt32(data[3]);
+
+                //To create a groupchat
+                tb_groupChats groupChats = new tb_groupChats();
+                Groupchatdata groupdata = new Groupchatdata();
+
+                groupdata.repositoryId = SelectedRepoData.id;
+
+                //this will check first if the selected repo has already groupchat
+
+                List<DataRow> gcData = groupChats.ReadGC(groupdata);
+                foreach (var gc in gcData)
+                {
+                    currentGroupchat.id = Convert.ToInt32(gc[0]);
+                }
+
+                if (gcData.Count() == 0)
+                {
+                    groupChats.CreateGC(groupdata);//this will create a groupchat
+                }
+
             }
         }
 

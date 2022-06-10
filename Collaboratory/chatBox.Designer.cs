@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chatBox));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,16 +49,24 @@
             this.CloseBtn = new System.Windows.Forms.Button();
             this.MinimizedBtn = new System.Windows.Forms.Button();
             this.messageList = new System.Windows.Forms.DataGridView();
-            this.noteTb = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.messageTb = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sendBtn = new System.Windows.Forms.Button();
             this.chatmateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.myChatCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.memberList = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageList)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberList)).BeginInit();
             this.SuspendLayout();
             // 
             // backBtn
@@ -68,6 +81,7 @@
             this.backBtn.Size = new System.Drawing.Size(23, 23);
             this.backBtn.TabIndex = 50;
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // panel1
             // 
@@ -81,13 +95,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(998, 28);
             this.panel1.TabIndex = 52;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.label2.Location = new System.Drawing.Point(22, 5);
+            this.label2.Location = new System.Drawing.Point(472, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 18;
@@ -97,7 +114,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(459, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(21, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +184,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.messageList.DefaultCellStyle = dataGridViewCellStyle4;
             this.messageList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.messageList.Location = new System.Drawing.Point(19, 45);
+            this.messageList.Location = new System.Drawing.Point(175, 45);
             this.messageList.Margin = new System.Windows.Forms.Padding(4);
             this.messageList.Name = "messageList";
             this.messageList.ReadOnly = true;
@@ -194,26 +211,51 @@
             this.messageList.RowTemplate.ReadOnly = true;
             this.messageList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.messageList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.messageList.Size = new System.Drawing.Size(954, 429);
+            this.messageList.Size = new System.Drawing.Size(786, 429);
             this.messageList.TabIndex = 53;
             this.messageList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.messageList_CellPainting);
             this.messageList.SelectionChanged += new System.EventHandler(this.messageList_SelectionChanged);
             // 
-            // noteTb
+            // dataGridViewTextBoxColumn1
             // 
-            this.noteTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.DividerWidth = 155;
+            this.dataGridViewTextBoxColumn1.FillWeight = 11F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "chatmateCol";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn2.FillWeight = 8F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "myChatCol";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // messageTb
+            // 
+            this.messageTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noteTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.noteTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.noteTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteTb.Location = new System.Drawing.Point(21, 495);
-            this.noteTb.MaxLength = 280;
-            this.noteTb.Multiline = true;
-            this.noteTb.Name = "noteTb";
-            this.noteTb.PlaceholderText = "Write a note........";
-            this.noteTb.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.noteTb.Size = new System.Drawing.Size(954, 94);
-            this.noteTb.TabIndex = 54;
+            this.messageTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.messageTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messageTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.messageTb.Location = new System.Drawing.Point(175, 495);
+            this.messageTb.MaxLength = 99999;
+            this.messageTb.Multiline = true;
+            this.messageTb.Name = "messageTb";
+            this.messageTb.PlaceholderText = "Write a message........";
+            this.messageTb.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.messageTb.Size = new System.Drawing.Size(788, 94);
+            this.messageTb.TabIndex = 54;
             // 
             // textBox1
             // 
@@ -223,28 +265,30 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(21, 588);
+            this.textBox1.Location = new System.Drawing.Point(175, 588);
             this.textBox1.MaxLength = 280;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(954, 29);
+            this.textBox1.Size = new System.Drawing.Size(788, 29);
             this.textBox1.TabIndex = 56;
             // 
             // sendBtn
             // 
+            this.sendBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.sendBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.sendBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sendBtn.FlatAppearance.BorderSize = 0;
             this.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendBtn.ForeColor = System.Drawing.Color.Transparent;
             this.sendBtn.Image = ((System.Drawing.Image)(resources.GetObject("sendBtn.Image")));
-            this.sendBtn.Location = new System.Drawing.Point(943, 588);
+            this.sendBtn.Location = new System.Drawing.Point(931, 588);
             this.sendBtn.Name = "sendBtn";
             this.sendBtn.Size = new System.Drawing.Size(32, 29);
             this.sendBtn.TabIndex = 57;
             this.sendBtn.UseVisualStyleBackColor = false;
+            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
             // 
             // chatmateCol
             // 
@@ -266,32 +310,109 @@
             this.myChatCol.Name = "myChatCol";
             this.myChatCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn1
+            // panel2
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.DividerWidth = 155;
-            this.dataGridViewTextBoxColumn1.FillWeight = 11F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "chatmateCol";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.memberList);
+            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(157, 614);
+            this.panel2.TabIndex = 59;
             // 
-            // dataGridViewTextBoxColumn2
+            // label1
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn2.FillWeight = 8F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "myChatCol";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.label1.Location = new System.Drawing.Point(38, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 18);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Members";
+            // 
+            // memberList
+            // 
+            this.memberList.AllowUserToAddRows = false;
+            this.memberList.AllowUserToDeleteRows = false;
+            this.memberList.AllowUserToResizeColumns = false;
+            this.memberList.AllowUserToResizeRows = false;
+            this.memberList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.memberList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.memberList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.memberList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.memberList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.memberList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.memberList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.memberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.memberList.ColumnHeadersVisible = false;
+            this.memberList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCol,
+            this.dataGridViewImageColumn3});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.memberList.DefaultCellStyle = dataGridViewCellStyle10;
+            this.memberList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.memberList.Location = new System.Drawing.Point(22, 21);
+            this.memberList.Name = "memberList";
+            this.memberList.ReadOnly = true;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.memberList.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.memberList.RowHeadersVisible = false;
+            this.memberList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(4, 7, 0, 7);
+            this.memberList.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.memberList.RowTemplate.Height = 15;
+            this.memberList.RowTemplate.ReadOnly = true;
+            this.memberList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.memberList.Size = new System.Drawing.Size(118, 582);
+            this.memberList.TabIndex = 59;
+            this.memberList.SelectionChanged += new System.EventHandler(this.memberList_SelectionChanged);
+            // 
+            // idCol
+            // 
+            this.idCol.FillWeight = 5F;
+            this.idCol.HeaderText = "idCol";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn3.FillWeight = 110F;
+            this.dataGridViewImageColumn3.HeaderText = "imageCol";
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn3.Width = 112;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // chatBox
             // 
@@ -299,9 +420,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(992, 638);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.noteTb);
+            this.Controls.Add(this.messageTb);
             this.Controls.Add(this.messageList);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
@@ -316,6 +438,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageList)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,12 +454,18 @@
         private Button CloseBtn;
         private Button MinimizedBtn;
         private DataGridView messageList;
-        private TextBox noteTb;
+        private TextBox messageTb;
         private TextBox textBox1;
         private Button sendBtn;
         private DataGridViewTextBoxColumn chatmateCol;
         private DataGridViewTextBoxColumn myChatCol;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Panel panel2;
+        private DataGridView memberList;
+        private Label label1;
+        private DataGridViewTextBoxColumn idCol;
+        private DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.Timer timer1;
     }
 }
