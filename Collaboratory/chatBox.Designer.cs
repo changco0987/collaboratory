@@ -63,7 +63,7 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.ForeColor = System.Drawing.Color.Transparent;
             this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(924, 2);
+            this.backBtn.Location = new System.Drawing.Point(965, 2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(23, 23);
             this.backBtn.TabIndex = 50;
@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.MinimizedBtn);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(956, 28);
+            this.panel1.Size = new System.Drawing.Size(998, 28);
             this.panel1.TabIndex = 52;
             // 
             // label2
@@ -112,7 +112,7 @@
             this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(1432, 3);
+            this.CloseBtn.Location = new System.Drawing.Point(1474, 3);
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.Size = new System.Drawing.Size(21, 22);
             this.CloseBtn.TabIndex = 11;
@@ -126,7 +126,7 @@
             this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(1405, 3);
+            this.MinimizedBtn.Location = new System.Drawing.Point(1447, 3);
             this.MinimizedBtn.Name = "MinimizedBtn";
             this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
             this.MinimizedBtn.TabIndex = 10;
@@ -138,8 +138,8 @@
             this.messageList.AllowUserToDeleteRows = false;
             this.messageList.AllowUserToResizeColumns = false;
             this.messageList.AllowUserToResizeRows = false;
-            this.messageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.messageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.messageList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.messageList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.messageList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
@@ -167,7 +167,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.messageList.DefaultCellStyle = dataGridViewCellStyle4;
             this.messageList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.messageList.Location = new System.Drawing.Point(12, 42);
+            this.messageList.Location = new System.Drawing.Point(19, 45);
             this.messageList.Margin = new System.Windows.Forms.Padding(4);
             this.messageList.Name = "messageList";
             this.messageList.ReadOnly = true;
@@ -194,42 +194,42 @@
             this.messageList.RowTemplate.ReadOnly = true;
             this.messageList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.messageList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.messageList.Size = new System.Drawing.Size(454, 561);
+            this.messageList.Size = new System.Drawing.Size(954, 429);
             this.messageList.TabIndex = 53;
             this.messageList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.messageList_CellPainting);
             this.messageList.SelectionChanged += new System.EventHandler(this.messageList_SelectionChanged);
             // 
             // noteTb
             // 
-            this.noteTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.noteTb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.noteTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.noteTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.noteTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteTb.Location = new System.Drawing.Point(488, 42);
+            this.noteTb.Location = new System.Drawing.Point(21, 495);
             this.noteTb.MaxLength = 280;
             this.noteTb.Multiline = true;
             this.noteTb.Name = "noteTb";
             this.noteTb.PlaceholderText = "Write a note........";
             this.noteTb.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.noteTb.Size = new System.Drawing.Size(450, 533);
+            this.noteTb.Size = new System.Drawing.Size(954, 94);
             this.noteTb.TabIndex = 54;
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(488, 574);
+            this.textBox1.Location = new System.Drawing.Point(21, 588);
             this.textBox1.MaxLength = 280;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(450, 29);
+            this.textBox1.Size = new System.Drawing.Size(954, 29);
             this.textBox1.TabIndex = 56;
             // 
             // sendBtn
@@ -240,7 +240,7 @@
             this.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendBtn.ForeColor = System.Drawing.Color.Transparent;
             this.sendBtn.Image = ((System.Drawing.Image)(resources.GetObject("sendBtn.Image")));
-            this.sendBtn.Location = new System.Drawing.Point(906, 574);
+            this.sendBtn.Location = new System.Drawing.Point(943, 588);
             this.sendBtn.Name = "sendBtn";
             this.sendBtn.Size = new System.Drawing.Size(32, 29);
             this.sendBtn.TabIndex = 57;
@@ -270,11 +270,11 @@
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.DividerWidth = 55;
-            this.dataGridViewTextBoxColumn1.FillWeight = 20F;
+            this.dataGridViewTextBoxColumn1.DividerWidth = 155;
+            this.dataGridViewTextBoxColumn1.FillWeight = 11F;
             this.dataGridViewTextBoxColumn1.HeaderText = "chatmateCol";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -284,10 +284,10 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn2.FillWeight = 15F;
+            this.dataGridViewTextBoxColumn2.FillWeight = 8F;
             this.dataGridViewTextBoxColumn2.HeaderText = "myChatCol";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -298,7 +298,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(950, 615);
+            this.ClientSize = new System.Drawing.Size(992, 638);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.noteTb);

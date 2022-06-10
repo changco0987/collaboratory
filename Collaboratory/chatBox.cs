@@ -31,9 +31,10 @@ namespace Collaboratory
         private void chatBox_Load(object sender, EventArgs e)
         {
 
-            messageList.Rows.Add("Hello! kamusta", "");
+            messageList.Rows.Add("(Onah Marie)\nHello!kamustaHello!kamustaHello!kamustaHello!kamusa", "");
             messageList.Rows.Add("   ", "chat test 101 qwerty");
-            messageList.Rows.Add("   ", "email: admin@gmail.com\npassword:123456789");
+            messageList.Rows.Add("   ", "(Me)\nemail: admin@gmail.com\npassword:123456789");
+            messageList.Rows.Add("   ", "(Me)\nemail: admin@gmail.com\npassword:123456789");
             messageList.Rows.Add("hello!!!! test chat\n1010101", "");
             messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
             messageList.Rows.Add("GG kids na!!", "");
@@ -47,12 +48,12 @@ namespace Collaboratory
             messageList.Rows.Add("   ", "email: admin@gmail.com\npassword:123456789");
             messageList.Rows.Add("hello!!!! test chat\n1010101", "");
             messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
-            messageList.Rows.Add("   ", "email: admin@gmail.com\npassword:123456789");
+            messageList.Rows.Add("   ", "email: admin@gmail.comdasdsdasdasdasdasd asdadasdadadasdasdasdasdasdad adadadadadadadadadadada dadadapassword:123456789");
             messageList.Rows.Add("hello!!!! test chat\n1010101", "");
             messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
             messageList.Rows.Add("   ", "email: admin@gmail.com\npassword:123456789");
             messageList.Rows.Add("hello!!!! test chat\n1010101", "");
-            messageList.Rows.Add("gumagana na kaya ito,\n final testing na thiss", "");
+            messageList.Rows.Add("asdfasdfasdfasdfasdfas itoffsdfdfsdfsdfsd,\n final testing na thiss", "");
             //These are the default style for datagridview.updateList
             foreach (DataGridViewRow row in messageList.Rows)
             {
