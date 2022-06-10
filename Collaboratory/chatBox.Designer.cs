@@ -256,6 +256,7 @@
             this.messageTb.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.messageTb.Size = new System.Drawing.Size(788, 94);
             this.messageTb.TabIndex = 54;
+            this.messageTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatBox_KeyDown);
             // 
             // textBox1
             // 
@@ -434,6 +435,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "chatBox";
             this.Load += new System.EventHandler(this.chatBox_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatBox_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

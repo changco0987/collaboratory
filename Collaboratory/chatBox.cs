@@ -36,7 +36,7 @@ namespace Collaboratory
             //messageList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             //messageList.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-
+            dataContainer.Columns.Add("");//This is just to have our container a column
             retrieveMembers();//This is all the members picture, this will appear at the left side of the screen
 
             msgData.groupchatId = currentGroupchat.id;//To get the current GC Id
@@ -44,9 +44,7 @@ namespace Collaboratory
             //This will get all msg from database into datagridview(messageList)
             getAllMessages();
 
-            msgCount = messageList.Rows.Count;
-            messageList.Refresh();
-            messageList.Update();
+
 
             timer1.Start();
 
@@ -78,13 +76,31 @@ namespace Collaboratory
             mousedown = false;
         }
 
+        void checkNewMsg() 
+        {
+
+            List<DataRow> messages = msgConn.ReadMessage(msgData);
+
+            if (messages.Count != dataContainer.Rows.Count)
+            {
+                dataContainer.Rows.Clear();
+                foreach (var dataMsg in messages)
+                {
+                    dataContainer.Rows.Add(dataMsg[1]);
+                }
+
+            }
+        }
+
         void getAllMessages() 
         {
 
-            messageList.Rows.Clear();
             string senderName = "";
             //chat max letter is 38
 
+            messageList.Rows.Clear();
+            messageList.Refresh();
+            messageList.Update();
             List<DataRow> messages = msgConn.ReadMessage(msgData);
 
             //This will get all the msg from the current groupchat
@@ -109,7 +125,6 @@ namespace Collaboratory
                     }
                 }
             }
-
             this.DoubleBuffered = true;
             enableDoubleBuff(messageList);
         }
@@ -140,7 +155,7 @@ namespace Collaboratory
 
                 messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
                 this.DoubleBuffered = true;
-                enableDoubleBuff(this);
+                enableDoubleBuff(messageList);
             }
         }
 
@@ -230,14 +245,29 @@ namespace Collaboratory
 
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        DataTable dataContainer = new DataTable();
+        BackgroundWorker bw;
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            messageList.Refresh();
-            messageList.Update();
-            getAllMessages();
-            chatBox_Load(sender, null);
+            bw = new BackgroundWorker();
+            bw.DoWork += (obj, ea) => TaskAsync(1);
+            bw.RunWorkerAsync();
+
+            if (dataContainer.Rows.Count != messageList.Rows.Count)
+            {
+                getAllMessages();
+                chatBox_Load(sender, null);
+            }
 
 
+
+
+
+        }
+
+        private async void TaskAsync(int times) 
+        {
+            checkNewMsg();
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -247,5 +277,15 @@ namespace Collaboratory
 
             this.Close();
         }
+
+        private void chatBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sendBtn_Click(sender, null);
+            }
+        }
+
+
     }
 }
