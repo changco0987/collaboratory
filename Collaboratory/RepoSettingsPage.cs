@@ -113,18 +113,21 @@ namespace Collaboratory
              * it means it uses this RepoSettingsPage as a settings to edit a existing repository
              * and not to create a new one
              */
-            if (!checkEmptyField() && SelectedRepoData.id == 0)
+            if (SelectedRepoData.id == 0)
             {
-
-                getUserInput();
-                createRepo();
+                if (!checkEmptyField()) 
+                {
+                    getUserInput();
+                    createRepo();
+                }
 
             }
-            else
+            else if(!checkEmptyField() && SelectedRepoData.id > 0)
             {
                 getUserInput();
                 updateRepo();
             }
+            return;
         }
 
         void updateRepo()

@@ -50,7 +50,11 @@ namespace Collaboratory
 
 
             //To automatically scroll the message box into the bottom
-            messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+            //This will check first if there is chat in the chat box and if none then the scroll function will not be triggered
+            if (messageList.Rows.Count >0 ) 
+            {
+                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+            }
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
 
@@ -76,6 +80,7 @@ namespace Collaboratory
             mousedown = false;
         }
 
+        //This will be used in the backgroundWorker function
         void checkNewMsg() 
         {
 
@@ -84,12 +89,14 @@ namespace Collaboratory
             if (messages.Count != dataContainer.Rows.Count)
             {
                 dataContainer.Rows.Clear();
+                timer1.Stop();
                 foreach (var dataMsg in messages)
                 {
                     dataContainer.Rows.Add(dataMsg[1]);
                 }
-
+                timer1.Start();
             }
+            messages.Clear();
         }
 
         void getAllMessages() 
@@ -120,7 +127,8 @@ namespace Collaboratory
                     }
                     else
                     {
-                        senderName = "(" + userinfo[1].ToString() + userinfo[2].ToString() + ")\n";
+                        //(Firstname + Lastname)
+                        senderName = "(" + userinfo[1].ToString() + " " +userinfo[2].ToString() + ")\n";
                         messageList.Rows.Add(senderName + msg,"");
                     }
                 }
