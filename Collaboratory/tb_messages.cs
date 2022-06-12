@@ -35,31 +35,41 @@ namespace Collaboratory
          */
         public List<DataRow> ReadMessage(Messagedata messageData)
         {
-
-            conn.Open();
-
-            NpgsqlCommand comm = new NpgsqlCommand();
-            comm.Connection = conn;
-            comm.CommandType = CommandType.Text;
-
-            comm.CommandText = "select * from tb_messages where groupchat_id =" + messageData.groupchatId;//sql query to retrieve all data from database
-
-
-
-            NpgsqlDataReader reader = comm.ExecuteReader();
-
-            DataTable dt = new DataTable();
-
-            if (reader.HasRows)
+            try
             {
-                dt.Load(reader);
+                conn.Open();
 
+                NpgsqlCommand comm = new NpgsqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.Text;
+
+                comm.CommandText = "select * from tb_messages where groupchat_id =" + messageData.groupchatId;//sql query to retrieve all data from database
+
+
+
+                NpgsqlDataReader reader = comm.ExecuteReader();
+
+                DataTable dt = new DataTable();
+
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+
+                }
+                List<DataRow> messagesData = dt.AsEnumerable().ToList();//This will transfer all data from DataTable into List
+                comm.Dispose();
+                conn.Close();
+
+                return messagesData;
             }
-            List<DataRow> messagesData = dt.AsEnumerable().ToList();//This will transfer all data from DataTable into List
-            comm.Dispose();
-            conn.Close();
+            catch 
+            {
+                EmergencyCleaner();
+                return ReadMessage(messageData);
+            }
 
-            return messagesData;
+
+           
         }
 
         public void UpdateMessage(Messagedata messageData)
@@ -87,6 +97,19 @@ namespace Collaboratory
             comm.ExecuteNonQuery();
             comm.Dispose();
             conn.Close();
+        }
+
+        public void EmergencyCleaner() 
+        {
+            try
+            {
+                conn.Close();
+            }
+            catch
+            {
+                //This will occur incase the conn.Close() fail
+                conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=123;");
+            }
         }
     }
 }

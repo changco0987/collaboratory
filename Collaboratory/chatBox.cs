@@ -44,6 +44,7 @@ namespace Collaboratory
             //This will get all msg from database into datagridview(messageList)
             getAllMessages();
 
+            messageList.VirtualMode = true;
 
 
             timer1.Start();
@@ -80,25 +81,8 @@ namespace Collaboratory
             mousedown = false;
         }
 
-        //This will be used in the backgroundWorker function
-        void checkNewMsg() 
-        {
 
-            List<DataRow> messages = msgConn.ReadMessage(msgData);
-
-            if (messages.Count != dataContainer.Rows.Count)
-            {
-                dataContainer.Rows.Clear();
-                timer1.Stop();
-                foreach (var dataMsg in messages)
-                {
-                    dataContainer.Rows.Add(dataMsg[1]);
-                }
-                timer1.Start();
-            }
-            messages.Clear();
-        }
-
+        //This method will get/retrieve all messages from database 
         void getAllMessages() 
         {
 
@@ -138,11 +122,11 @@ namespace Collaboratory
         }
         private void chatBox_Load(object sender, EventArgs e)
         {
-
+            messageList.VirtualMode = false;
             //These are the default style for datagridview.messageList
             foreach (DataGridViewRow row in messageList.Rows)
             {
-                if (row.Cells[0].Value.ToString().Trim().Count() >0)
+                if (row.Cells[0].Value.ToString().Trim().Count() > 0)
                 {
 
                     row.Cells[0].Value = row.Cells[0].Value.ToString().Trim();
@@ -150,21 +134,23 @@ namespace Collaboratory
                     row.Cells[0].Style.BackColor = ColorTranslator.FromHtml("#245382");
                 }
 
-                if (row.Cells[1].Value.ToString().Trim().Count() >0) 
+                if (row.Cells[1].Value.ToString().Trim().Count() > 0)
                 {
                     row.Cells[1].Value = row.Cells[1].Value.ToString().Trim();
                     row.Cells[1].Style.Font = new Font("Bahnschrift", 11, FontStyle.Regular);
                     row.Cells[1].Style.ForeColor = Color.Black;
                     row.Cells[1].Style.BackColor = ColorTranslator.FromHtml("#90EE90");
                 }
+
                 //post title, poser name, date posted
 
                 //edit, note, download button part
 
-                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
-                this.DoubleBuffered = true;
-                enableDoubleBuff(messageList);
             }
+            messageList.VirtualMode = false;
+            messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+            this.DoubleBuffered = true;
+            enableDoubleBuff(messageList);
         }
 
         //To avoid the screen from stuttering to make the object movement smooth
@@ -244,6 +230,17 @@ namespace Collaboratory
                 msgData.message = messageTb.Text;
                 msgData.accountId = UserLoginData.id;
 
+                //this will check if the data that required to send a message is meet and already stored
+                if (msgData.groupchatId == 0 && currentGroupchat.id != 0)
+                {
+                    msgData.groupchatId = currentGroupchat.id;
+                }
+                else if(msgData.groupchatId == 0 && currentGroupchat.id == 0)
+                {
+                    MessageBox.Show("Message sending failed!");
+                    return;
+                }
+
                 msgConn.CreateMessage(msgData);
                 getAllMessages();
                 messageTb.Text = "";
@@ -253,18 +250,53 @@ namespace Collaboratory
 
         }
 
+
+        //This will be used in the backgroundWorker function
+        void checkNewMsg()
+        {
+            try
+            {
+                List<DataRow> messages = msgConn.ReadMessage(msgData);
+
+                if (messages.Count != dataContainer.Rows.Count)
+                {
+                    dataContainer.Rows.Clear();
+                    //timer1.Stop();
+                    foreach (var dataMsg in messages)
+                    {
+                        dataContainer.Rows.Add(dataMsg[1]);
+                    }
+                }
+                messages.Clear();
+            }
+            catch
+            {
+                //This will occur incase the conn.open() fails 
+                msgConn.EmergencyCleaner();
+                List<DataRow> messages = msgConn.ReadMessage(msgData);
+            }
+
+        }
+
+
+
         DataTable dataContainer = new DataTable();
         BackgroundWorker bw;
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             bw = new BackgroundWorker();
             bw.DoWork += (obj, ea) => TaskAsync(1);
             bw.RunWorkerAsync();
 
             if (dataContainer.Rows.Count != messageList.Rows.Count)
             {
+                timer1.Stop();
+
                 getAllMessages();
                 chatBox_Load(sender, null);
+
+                timer1.Start();
             }
 
 

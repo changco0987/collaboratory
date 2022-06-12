@@ -49,6 +49,9 @@ namespace Collaboratory
                 repository.members.Add(UserLoginData.id);//This will automatically add the owner in member list
             }
 
+            this.DoubleBuffered = true;
+            enableDoubleBuff(this);
+
         }
 
 
@@ -65,6 +68,18 @@ namespace Collaboratory
             userList.Columns[0].Width = 1;
             userList.Columns[1].Width = 1;
         }
+
+
+
+        //To avoid the screen from stuttering to make the object movement smooth
+        public static void enableDoubleBuff(System.Windows.Forms.Control cont)
+        {
+            System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            DemoProp.SetValue(cont, true, null);
+        }
+
+
+
 
         /*
         *panel1_MouseMove(), panel1_MouseDown(), and panel1_MouseUp()
@@ -239,9 +254,11 @@ namespace Collaboratory
                     
 
                 }
-
-
             }
+
+
+            this.DoubleBuffered = true;
+            enableDoubleBuff(userList);
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -254,12 +271,18 @@ namespace Collaboratory
             //if the user press enter this code block will trigger
             if (e.KeyCode == Keys.Enter)
             {
-                    SendKeys.Send("{TAB}");
+                SendKeys.Send("{TAB}");
                 e.SuppressKeyPress = true;
 
-                searchUser();
             }
         }
+
+        ////This event is for the search box to automatically throw a result without the need to press ENTER key
+        private void searchTb_KeyUp(object sender, KeyEventArgs e)
+        {
+            searchUser();
+        }
+
 
 
         //This is the method for search
@@ -373,6 +396,7 @@ namespace Collaboratory
             userList.Update();
             
         }
+
 
     }
 }

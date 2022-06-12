@@ -163,7 +163,6 @@
             this.messageList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.messageList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -198,7 +197,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.messageList.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.messageList.RowHeadersVisible = false;
-            this.messageList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.messageList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
@@ -213,7 +212,6 @@
             this.messageList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.messageList.Size = new System.Drawing.Size(786, 429);
             this.messageList.TabIndex = 53;
-            this.messageList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.messageList_CellPainting);
             this.messageList.SelectionChanged += new System.EventHandler(this.messageList_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
@@ -232,7 +230,7 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGreen;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn2.FillWeight = 8F;
@@ -461,13 +459,13 @@
         private Button sendBtn;
         private DataGridViewTextBoxColumn chatmateCol;
         private DataGridViewTextBoxColumn myChatCol;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private Panel panel2;
         private DataGridView memberList;
         private Label label1;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.Timer timer1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

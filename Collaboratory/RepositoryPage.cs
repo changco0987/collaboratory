@@ -261,7 +261,7 @@ namespace Collaboratory
         private void chatBtn_Click(object sender, EventArgs e)
         {
             var openChatBox = new chatBox();
-            openChatBox.Show();
+            openChatBox.ShowDialog();
         }
 
         private void backBtn_Click(object sender, EventArgs e)

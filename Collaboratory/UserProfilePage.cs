@@ -76,15 +76,7 @@ namespace Collaboratory
         }
 
 
-        private void MinimizedBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         /*
          *panel1_MouseMove(), panel1_MouseDown(), and panel1_MouseUp()
@@ -110,6 +102,16 @@ namespace Collaboratory
             mousedown = false;
         }
 
+
+        private void MinimizedBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
         /*
@@ -244,6 +246,7 @@ namespace Collaboratory
                     currentGroupchat.id = Convert.ToInt32(gc[0]);
                 }
 
+                //This will trigger only if the currently selected repo doesn't have groupchat yet created by the algorithm
                 if (gcData.Count() == 0)
                 {
                     groupChats.CreateGC(groupdata);//this will create a groupchat
@@ -251,6 +254,7 @@ namespace Collaboratory
 
             }
         }
+
 
     }
 
