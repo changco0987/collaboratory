@@ -10,7 +10,7 @@ namespace Collaboratory.Model
     {
         public int id { get; set; }
         public string repositoryName { get; set; }
-        public List<int> members { get;set; }
+        public List<int> members { get; set; }
         public int accountId { get; set; }
 
 
@@ -41,7 +41,13 @@ namespace Collaboratory.Model
             accountId = 0;
         }
 
+    }
 
+    public class MemberContribution
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public int contriCount { get; set; }
     }
 }
 

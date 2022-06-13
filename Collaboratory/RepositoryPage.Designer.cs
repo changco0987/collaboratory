@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepositoryPage));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -49,14 +48,10 @@
             this.userDP = new Collaboratory.CustomControls.OvalPictureBox();
             this.chatBtn = new System.Windows.Forms.Button();
             this.editRepoBtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.uploadBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.reponameLb = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.emptyLb = new System.Windows.Forms.Label();
+            this.emptyImg = new System.Windows.Forms.PictureBox();
             this.updateList = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,16 +62,30 @@
             this.editCol = new System.Windows.Forms.DataGridViewImageColumn();
             this.noteCol = new System.Windows.Forms.DataGridViewImageColumn();
             this.downloadCol = new System.Windows.Forms.DataGridViewImageColumn();
-            this.emptyImg = new System.Windows.Forms.PictureBox();
-            this.emptyLb = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.threadBtn = new System.Windows.Forms.Button();
+            this.uploadBtn = new System.Windows.Forms.Button();
+            this.contributionBtn = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.reponameLb = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userDP)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateList)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updateList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -278,122 +287,58 @@
             this.editRepoBtn.UseVisualStyleBackColor = false;
             this.editRepoBtn.Click += new System.EventHandler(this.editRepoBtn_Click);
             // 
-            // panel3
+            // tabControl1
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.panel3.Controls.Add(this.uploadBtn);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.reponameLb);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(12, 276);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1403, 55);
-            this.panel3.TabIndex = 35;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 309);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1403, 504);
+            this.tabControl1.TabIndex = 36;
             // 
-            // uploadBtn
+            // tabPage1
             // 
-            this.uploadBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.uploadBtn.BackColor = System.Drawing.Color.Transparent;
-            this.uploadBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uploadBtn.BackgroundImage")));
-            this.uploadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uploadBtn.FlatAppearance.BorderSize = 0;
-            this.uploadBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.uploadBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uploadBtn.Location = new System.Drawing.Point(1347, 10);
-            this.uploadBtn.Name = "uploadBtn";
-            this.uploadBtn.Size = new System.Drawing.Size(34, 35);
-            this.uploadBtn.TabIndex = 41;
-            this.uploadBtn.UseVisualStyleBackColor = false;
-            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
+            this.tabPage1.Controls.Add(this.emptyLb);
+            this.tabPage1.Controls.Add(this.emptyImg);
+            this.tabPage1.Controls.Add(this.updateList);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1395, 476);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
             // 
-            // pictureBox1
+            // emptyLb
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
+            this.emptyLb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.emptyLb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
+            this.emptyLb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emptyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.emptyLb.Location = new System.Drawing.Point(597, 196);
+            this.emptyLb.Name = "emptyLb";
+            this.emptyLb.Size = new System.Drawing.Size(343, 37);
+            this.emptyLb.TabIndex = 42;
+            this.emptyLb.Text = "There is nothing here";
+            this.emptyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.emptyLb.Visible = false;
             // 
-            // button1
+            // emptyImg
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(2257, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 35);
-            this.button1.TabIndex = 39;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // reponameLb
-            // 
-            this.reponameLb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.reponameLb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.reponameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.reponameLb.Location = new System.Drawing.Point(64, 14);
-            this.reponameLb.Name = "reponameLb";
-            this.reponameLb.Size = new System.Drawing.Size(343, 31);
-            this.reponameLb.TabIndex = 37;
-            this.reponameLb.Text = "Repository Collab";
-            this.reponameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(2310, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 35);
-            this.button2.TabIndex = 36;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.button3.Location = new System.Drawing.Point(2012, 131);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 55);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Chat";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.button4.Location = new System.Drawing.Point(2180, 131);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 55);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Edit Repository";
-            this.button4.UseVisualStyleBackColor = false;
+            this.emptyImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.emptyImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
+            this.emptyImg.Image = ((System.Drawing.Image)(resources.GetObject("emptyImg.Image")));
+            this.emptyImg.Location = new System.Drawing.Point(520, 185);
+            this.emptyImg.Name = "emptyImg";
+            this.emptyImg.Size = new System.Drawing.Size(63, 57);
+            this.emptyImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.emptyImg.TabIndex = 41;
+            this.emptyImg.TabStop = false;
+            this.emptyImg.Visible = false;
             // 
             // updateList
             // 
@@ -401,8 +346,6 @@
             this.updateList.AllowUserToDeleteRows = false;
             this.updateList.AllowUserToResizeColumns = false;
             this.updateList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.updateList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.updateList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -411,13 +354,12 @@
             this.updateList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.updateList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.updateList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.updateList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.updateList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.updateList.ColumnHeadersHeight = 20;
             this.updateList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.updateList.ColumnHeadersVisible = false;
@@ -431,49 +373,48 @@
             this.editCol,
             this.noteCol,
             this.downloadCol});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.updateList.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.updateList.DefaultCellStyle = dataGridViewCellStyle3;
             this.updateList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.updateList.Location = new System.Drawing.Point(12, 332);
+            this.updateList.Location = new System.Drawing.Point(-4, -1);
+            this.updateList.MultiSelect = false;
             this.updateList.Name = "updateList";
             this.updateList.ReadOnly = true;
             this.updateList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.updateList.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.updateList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.updateList.RowHeadersVisible = false;
             this.updateList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(4, 7, 0, 7);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.updateList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(4, 7, 0, 7);
+            this.updateList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.updateList.RowTemplate.DefaultCellStyle.NullValue = null;
-            this.updateList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.updateList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
             this.updateList.RowTemplate.DividerHeight = 1;
             this.updateList.RowTemplate.Height = 80;
             this.updateList.RowTemplate.ReadOnly = true;
             this.updateList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.updateList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.updateList.Size = new System.Drawing.Size(1403, 481);
-            this.updateList.TabIndex = 36;
+            this.updateList.TabIndex = 40;
             this.updateList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.updateList_CellClick);
             // 
             // idCol
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            this.idCol.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            this.idCol.DefaultCellStyle = dataGridViewCellStyle2;
             this.idCol.FillWeight = 5F;
             this.idCol.HeaderText = "idCol";
             this.idCol.Name = "idCol";
@@ -553,32 +494,191 @@
             this.downloadCol.Name = "downloadCol";
             this.downloadCol.ReadOnly = true;
             // 
-            // emptyImg
+            // tabPage2
             // 
-            this.emptyImg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emptyImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.emptyImg.Image = ((System.Drawing.Image)(resources.GetObject("emptyImg.Image")));
-            this.emptyImg.Location = new System.Drawing.Point(536, 528);
-            this.emptyImg.Name = "emptyImg";
-            this.emptyImg.Size = new System.Drawing.Size(63, 57);
-            this.emptyImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.emptyImg.TabIndex = 37;
-            this.emptyImg.TabStop = false;
-            this.emptyImg.Visible = false;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(82)))), ((int)(((byte)(129)))));
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.pieChart1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1395, 476);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
             // 
-            // emptyLb
+            // label1
             // 
-            this.emptyLb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emptyLb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.emptyLb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emptyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.emptyLb.Location = new System.Drawing.Point(613, 539);
-            this.emptyLb.Name = "emptyLb";
-            this.emptyLb.Size = new System.Drawing.Size(343, 37);
-            this.emptyLb.TabIndex = 39;
-            this.emptyLb.Text = "There is nothing here";
-            this.emptyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.emptyLb.Visible = false;
+            this.label1.Font = new System.Drawing.Font("Ebrima", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.label1.Location = new System.Drawing.Point(215, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(343, 31);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Project Contributor Chart";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pieChart1
+            // 
+            this.pieChart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pieChart1.Location = new System.Drawing.Point(34, 51);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(678, 408);
+            this.pieChart1.TabIndex = 0;
+            this.pieChart1.Text = "pieChart1";
+            // 
+            // threadBtn
+            // 
+            this.threadBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.threadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.threadBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
+            this.threadBtn.FlatAppearance.BorderSize = 2;
+            this.threadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.threadBtn.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.threadBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.threadBtn.Location = new System.Drawing.Point(987, 17);
+            this.threadBtn.Name = "threadBtn";
+            this.threadBtn.Size = new System.Drawing.Size(168, 37);
+            this.threadBtn.TabIndex = 44;
+            this.threadBtn.Text = "Thread";
+            this.threadBtn.UseVisualStyleBackColor = false;
+            this.threadBtn.Click += new System.EventHandler(this.threadBtn_Click);
+            // 
+            // uploadBtn
+            // 
+            this.uploadBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.uploadBtn.BackColor = System.Drawing.Color.Transparent;
+            this.uploadBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uploadBtn.BackgroundImage")));
+            this.uploadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uploadBtn.FlatAppearance.BorderSize = 0;
+            this.uploadBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.uploadBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uploadBtn.Location = new System.Drawing.Point(1350, 10);
+            this.uploadBtn.Name = "uploadBtn";
+            this.uploadBtn.Size = new System.Drawing.Size(34, 35);
+            this.uploadBtn.TabIndex = 43;
+            this.uploadBtn.UseVisualStyleBackColor = false;
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            // 
+            // contributionBtn
+            // 
+            this.contributionBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.contributionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.contributionBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
+            this.contributionBtn.FlatAppearance.BorderSize = 2;
+            this.contributionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.contributionBtn.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.contributionBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.contributionBtn.Location = new System.Drawing.Point(1156, 17);
+            this.contributionBtn.Name = "contributionBtn";
+            this.contributionBtn.Size = new System.Drawing.Size(168, 37);
+            this.contributionBtn.TabIndex = 42;
+            this.contributionBtn.Text = "Contribution";
+            this.contributionBtn.UseVisualStyleBackColor = false;
+            this.contributionBtn.Click += new System.EventHandler(this.contributionBtn_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
+            this.panel3.Controls.Add(this.threadBtn);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.uploadBtn);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.contributionBtn);
+            this.panel3.Controls.Add(this.reponameLb);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Location = new System.Drawing.Point(12, 276);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1403, 55);
+            this.panel3.TabIndex = 37;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(21, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(3460, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 35);
+            this.button1.TabIndex = 39;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // reponameLb
+            // 
+            this.reponameLb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.reponameLb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.reponameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.reponameLb.Location = new System.Drawing.Point(68, 15);
+            this.reponameLb.Name = "reponameLb";
+            this.reponameLb.Size = new System.Drawing.Size(343, 31);
+            this.reponameLb.TabIndex = 37;
+            this.reponameLb.Text = "Repository Collab";
+            this.reponameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(3513, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 35);
+            this.button2.TabIndex = 36;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
+            this.button3.FlatAppearance.BorderSize = 2;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.button3.Location = new System.Drawing.Point(3215, 86);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 55);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Chat";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
+            this.button4.FlatAppearance.BorderSize = 2;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.button4.Location = new System.Drawing.Point(3383, 86);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(168, 55);
+            this.button4.TabIndex = 33;
+            this.button4.Text = "Edit Repository";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // RepositoryPage
             // 
@@ -586,10 +686,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1427, 825);
-            this.Controls.Add(this.emptyLb);
-            this.Controls.Add(this.emptyImg);
-            this.Controls.Add(this.updateList);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
@@ -605,10 +703,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userDP)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.emptyImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateList)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updateList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,15 +726,13 @@
         private Button chatBtn;
         private Button editRepoBtn;
         private Button settingsBtn;
-        private Panel panel3;
-        private PictureBox pictureBox1;
-        private Button button1;
-        private Label reponameLb;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button uploadBtn;
         private Button maximizeBtn;
+        private Label label4;
+        private PictureBox pictureBox2;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private Label emptyLb;
+        private PictureBox emptyImg;
         private DataGridView updateList;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn dataGridViewImageColumn3;
@@ -644,9 +743,18 @@
         private DataGridViewImageColumn editCol;
         private DataGridViewImageColumn noteCol;
         private DataGridViewImageColumn downloadCol;
-        private PictureBox emptyImg;
-        private Label emptyLb;
-        private Label label4;
-        private PictureBox pictureBox2;
+        private TabPage tabPage2;
+        private LiveCharts.WinForms.PieChart pieChart1;
+        private Label label1;
+        private Button threadBtn;
+        private Button uploadBtn;
+        private Button contributionBtn;
+        private Panel panel3;
+        private PictureBox pictureBox1;
+        private Button button1;
+        private Label reponameLb;
+        private Button button2;
+        private Button button3;
+        private Button button4;
     }
 }

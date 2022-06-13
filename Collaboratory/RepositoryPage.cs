@@ -11,6 +11,8 @@ using System.Drawing.Drawing2D;
 using Collaboratory.CustomControls;
 using Collaboratory.Model;
 using System.Security.Cryptography;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Collaboratory
 {
@@ -20,8 +22,8 @@ namespace Collaboratory
 
         //This is the model used to store to user input
         Userdata user = new Userdata();
-        Updatedata update = new Updatedata();
 
+        List<MemberContribution> memberContri = new List<MemberContribution>();
         bool mousedown; // this is for the draggable panel behavior
         string storagePath = Application.UserAppDataPath + @"\\Images\\";
         public RepositoryPage()
@@ -58,6 +60,8 @@ namespace Collaboratory
                 editRepoBtn.BackColor = Color.LightGray;
             }
 
+
+            threadBtn_Click(threadBtn,null);//This will click the thread button as a default tab page
             retrieveUpdates();
         }
 
@@ -144,6 +148,7 @@ namespace Collaboratory
             updateList.Rows.Clear();
             updateList.Refresh();
 
+            Updatedata update = new Updatedata();
             update.repositoryId = SelectedRepoData.id;//This will assign the repository id into update model
             tb_updates conn = new tb_updates();
             tb_userAccounts connUser = new tb_userAccounts();
@@ -216,11 +221,57 @@ namespace Collaboratory
 
             }
 
-
+            getContribution();
             updateList.Refresh();
             updateList.Update();
 
         }
+
+        void getContribution() 
+        {
+            int indexCount = 0;//This will be used in the loop as index count
+
+            memberContri = new List<MemberContribution>();
+
+
+            Updatedata update = new Updatedata();
+            tb_updates conn = new tb_updates();
+            tb_userAccounts connUser = new tb_userAccounts();
+
+            //This will get the name of the user/contributor
+            foreach (var getUserInfo in SelectedRepoData.members) 
+            {
+                user.id = Convert.ToInt32(getUserInfo);//This is the id of the uploader
+                List<DataRow> userData = connUser.ReadUser(user);//This will retrieve the uploader info using their id
+
+                foreach (var user in userData) 
+                {
+                    string fullname = user[1] + " " + user[2];
+                    update.repositoryId = SelectedRepoData.id;//This is the id of currently selected repo
+                    update.accountId = Convert.ToInt32(user[0]);//This is the posser id
+
+                    List<DataRow> dbData = conn.ReadPost(update);
+
+                    
+                    memberContri.Add(new MemberContribution() 
+                    {
+                        id= Convert.ToInt32(user[0]),//To insert to user id
+                        name =fullname,//To insert the name of the user
+                        contriCount = dbData.Count//This will get the post count of the user
+                    });
+                }
+
+
+
+                indexCount++;
+            }
+
+        }
+
+
+
+
+
 
         private void RepositoryPage_Load(object sender, EventArgs e)
         {
@@ -240,6 +291,7 @@ namespace Collaboratory
             //These are the default style for datagridview.updateList
             foreach (DataGridViewRow row in updateList.Rows)
             {
+
                 //post title, poser name, date posted
                 row.Cells[1].Style.Font = new Font("Verdana", 13, FontStyle.Bold);
                 row.Cells[3].Style.Font = new Font("Verdana", 11, FontStyle.Regular);
@@ -252,7 +304,9 @@ namespace Collaboratory
 
             }
             this.DoubleBuffered = true;
-            enableDoubleBuff(this);
+            enableDoubleBuff(updateList);
+
+            pieChart1.LegendLocation = LegendLocation.Bottom;
 
 
 
@@ -395,5 +449,43 @@ namespace Collaboratory
             openRepoSettings.ShowDialog();
             reponameLb.Text = SelectedRepoData.repositoryName;
         }
+
+        private void threadBtn_Click(object sender, EventArgs e)
+        {
+
+            tabControl1.SelectedIndex = 0;
+
+            threadBtn.Top = 10;
+            contributionBtn.Top = 17;
+
+            threadBtn.Size = new Size(168, 44);
+            contributionBtn.Size = new Size(168, 37);
+        }
+
+        Func<ChartPoint, string> labelPoint = chartpoint => String.Format("{0} ({1:P})", chartpoint.Y, chartpoint.Participation);
+        private void contributionBtn_Click(object sender, EventArgs e)
+        {
+            SeriesCollection series = new SeriesCollection();
+            foreach (var row in memberContri) 
+            {
+                series.Add(new PieSeries() { Title = row.name, Values = new ChartValues<int> { row.contriCount}, DataLabels = true, LabelPoint= labelPoint });
+            }
+            pieChart1.Series = series;
+
+
+            tabControl1.SelectedIndex = 1;
+
+            contributionBtn.Top = 10;
+            threadBtn.Top = 17;
+
+            contributionBtn.Size = new Size(168, 44);
+            threadBtn.Size = new Size(168, 37);
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

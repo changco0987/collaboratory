@@ -47,14 +47,20 @@ namespace Collaboratory
             comm.CommandType = CommandType.Text;
 
 
-            if (updates.id == 0)
+            if (updates.repositoryId != 0 && updates.accountId != 0)
+            {
+                //This will trigger to retrieved all user post/updates from specific repository
+                comm.CommandText = "select * from tb_updates where account_id = " + updates.accountId +
+                    "and repository_id = " + updates.repositoryId;
+            }
+            else if (updates.id == 0)
             {
                 /*
                  * This usually used to retrieved all post/updates from a current repository
                  */
                 comm.CommandText = "select * from tb_updates where repository_id = " + updates.repositoryId;
             }
-            else 
+            else
             {
                 /*
                  * This usually used to retrieved a specific post/update from a current repository

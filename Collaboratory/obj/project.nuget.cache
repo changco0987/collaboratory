@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xhLJ9DUISL3VyBBS/GHI/tSTZl7FBaGEe2MDCaxcRTrIPAU4kxwPZU5pNdfkr2KzIyUzSvt90orwfvm/Q0jjQQ==",
+  "dgSpecHash": "PpAP/XbD8253GYbIJDlm07pGO0GUIDBVRHs4lDtvujp7RKYKfLRVuyqmSN2w1H4gAVnFlS7VI/1swdzClkjWYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\willi\\source\\repos\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
   "expectedPackageFiles": [
@@ -10,8 +10,12 @@
     "C:\\Users\\willi\\.nuget\\packages\\google.apis.core\\1.57.0\\google.apis.core.1.57.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\google.apis.gmail.v1\\1.57.0.2650\\google.apis.gmail.v1.1.57.0.2650.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\livecharts.winforms.netcore3\\0.9.7\\livecharts.winforms.netcore3.0.9.7.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\livecharts.wpf.fixtooltip\\0.9.8\\livecharts.wpf.fixtooltip.0.9.8.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\willi\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": [
@@ -31,6 +35,26 @@
       "warningLevel": 1,
       "message": "Package 'iTextSharp 5.5.13.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'LiveCharts.Wpf.FixTooltip 0.9.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "LiveCharts.Wpf.FixTooltip",
       "targetGraphs": [
         "net6.0-windows7.0"
       ]

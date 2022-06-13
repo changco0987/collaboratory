@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\willi\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgLiveCharts_Wpf_FixTooltip Condition=" '$(PkgLiveCharts_Wpf_FixTooltip)' == '' ">C:\Users\willi\.nuget\packages\livecharts.wpf.fixtooltip\0.9.8</PkgLiveCharts_Wpf_FixTooltip>
+  </PropertyGroup>
 </Project>
