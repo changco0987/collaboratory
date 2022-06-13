@@ -364,7 +364,7 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.memberList.DefaultCellStyle = dataGridViewCellStyle10;
             this.memberList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.memberList.Location = new System.Drawing.Point(22, 21);
+            this.memberList.Location = new System.Drawing.Point(12, 21);
             this.memberList.Name = "memberList";
             this.memberList.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -385,7 +385,8 @@
             this.memberList.RowTemplate.Height = 15;
             this.memberList.RowTemplate.ReadOnly = true;
             this.memberList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.memberList.Size = new System.Drawing.Size(118, 582);
+            this.memberList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.memberList.Size = new System.Drawing.Size(132, 582);
             this.memberList.TabIndex = 59;
             this.memberList.SelectionChanged += new System.EventHandler(this.memberList_SelectionChanged);
             // 

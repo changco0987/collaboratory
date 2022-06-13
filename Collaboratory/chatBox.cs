@@ -50,12 +50,7 @@ namespace Collaboratory
             timer1.Start();
 
 
-            //To automatically scroll the message box into the bottom
-            //This will check first if there is chat in the chat box and if none then the scroll function will not be triggered
-            if (messageList.Rows.Count >0 ) 
-            {
-                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
-            }
+
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
 
@@ -148,7 +143,14 @@ namespace Collaboratory
 
             }
             messageList.VirtualMode = false;
-            messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+
+            //To automatically scroll the message box into the bottom
+            //This will check first if there is chat in the chat box and if none then the scroll function will not be triggered
+            if (messageList.Rows.Count > 0)
+            {
+                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+            }
+
             this.DoubleBuffered = true;
             enableDoubleBuff(messageList);
         }

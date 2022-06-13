@@ -127,7 +127,6 @@ namespace Collaboratory
         }
 
 
-
         private void uploadBtn_Click(object sender, EventArgs e)
         {
             //this.Hide();
@@ -148,12 +147,14 @@ namespace Collaboratory
             updateList.Rows.Clear();
             updateList.Refresh();
 
-            Updatedata update = new Updatedata();
-            update.repositoryId = SelectedRepoData.id;//This will assign the repository id into update model
             tb_updates conn = new tb_updates();
             tb_userAccounts connUser = new tb_userAccounts();
+            Updatedata update = new Updatedata();
 
-            List<DataRow> dbData = conn.ReadPost(update);
+            update.repositoryId = SelectedRepoData.id;//This will assign the repository id into update model
+
+
+            List<DataRow> dbData = conn.ReadPost(update);//To retrieve all post that belongs to the current repository
 
             foreach (var data in dbData)
             {
@@ -162,11 +163,9 @@ namespace Collaboratory
                 PictureBox noteBtn = new PictureBox();
                 PictureBox downloadBtn = new PictureBox();
 
-
-
-
-
                 user.id = Convert.ToInt32(data[5]);//This is the id of the uploader
+
+
                 List<DataRow> userData = connUser.ReadUser(user);//This will retrieve the uploader info using their id
                 foreach (var userInfo in userData)
                 {
@@ -216,9 +215,6 @@ namespace Collaboratory
                     }
                 }
 
-
-
-
             }
 
             getContribution();
@@ -227,10 +223,28 @@ namespace Collaboratory
 
         }
 
+        //This method will collect all contribution of the current viewer/user
+        void getMyContribution(Updatedata update) 
+        {
+            myContriList.Rows.Clear();
+            myContriList.Refresh();
+            tb_updates connPost = new tb_updates();
+
+            List<DataRow> dbData = connPost.ReadPost(update);
+
+            foreach (var data in dbData) 
+            {
+                //myContriList(id, update title)
+                myContriList.Rows.Add(data[0], data[1]);
+            }
+
+            this.DoubleBuffered = true;
+            enableDoubleBuff(myContriList);
+        }
+
+
         void getContribution() 
         {
-            int indexCount = 0;//This will be used in the loop as index count
-
             memberContri = new List<MemberContribution>();
 
 
@@ -238,16 +252,25 @@ namespace Collaboratory
             tb_updates conn = new tb_updates();
             tb_userAccounts connUser = new tb_userAccounts();
 
+            update.repositoryId = SelectedRepoData.id;//This is the id of currently selected repo
+
             //This will get the name of the user/contributor
             foreach (var getUserInfo in SelectedRepoData.members) 
             {
                 user.id = Convert.ToInt32(getUserInfo);//This is the id of the uploader
                 List<DataRow> userData = connUser.ReadUser(user);//This will retrieve the uploader info using their id
 
+                //This will get trigger if the fetch user.id data is equal to current user/viewer id
+                if (user.id == UserLoginData.id) 
+                {
+                    update.accountId = user.id;
+                    getMyContribution(update);
+                }
+
+
                 foreach (var user in userData) 
                 {
                     string fullname = user[1] + " " + user[2];
-                    update.repositoryId = SelectedRepoData.id;//This is the id of currently selected repo
                     update.accountId = Convert.ToInt32(user[0]);//This is the posser id
 
                     List<DataRow> dbData = conn.ReadPost(update);
@@ -260,10 +283,6 @@ namespace Collaboratory
                         contriCount = dbData.Count//This will get the post count of the user
                     });
                 }
-
-
-
-                indexCount++;
             }
 
         }
@@ -455,8 +474,8 @@ namespace Collaboratory
 
             tabControl1.SelectedIndex = 0;
 
-            threadBtn.Top = 10;
-            contributionBtn.Top = 17;
+            threadBtn.Top = 11;
+            contributionBtn.Top = 19;
 
             threadBtn.Size = new Size(168, 44);
             contributionBtn.Size = new Size(168, 37);
@@ -475,16 +494,11 @@ namespace Collaboratory
 
             tabControl1.SelectedIndex = 1;
 
-            contributionBtn.Top = 10;
-            threadBtn.Top = 17;
+            contributionBtn.Top = 11;
+            threadBtn.Top = 19;
 
             contributionBtn.Size = new Size(168, 44);
             threadBtn.Size = new Size(168, 37);
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
 
     }
