@@ -30,6 +30,7 @@ namespace Collaboratory
             InitializeComponent();
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
+
             //This will be the default dp if the user profile doesn't have
             if (!string.IsNullOrEmpty(UserLoginData.profilePicName))
             {

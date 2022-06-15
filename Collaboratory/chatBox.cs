@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Collaboratory.CustomControls;
 using Collaboratory.Model;
+using System.Media;
 
 namespace Collaboratory
 {
@@ -25,24 +26,21 @@ namespace Collaboratory
         Userdata user = new Userdata();
         string storagePath = Application.UserAppDataPath + @"\\Images\\";
 
+
         public chatBox()
         {
             InitializeComponent();
             messageList.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             messageList.GridColor = ColorTranslator.FromHtml("#E0EBED");
-            //messageList.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            //messageList.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            //messageList.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            //messageList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            //messageList.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+
 
             dataContainer.Columns.Add("");//This is just to have our container a column
             retrieveMembers();//This is all the members picture, this will appear at the left side of the screen
 
             msgData.groupchatId = currentGroupchat.id;//To get the current GC Id
 
-            //This will get all msg from database into datagridview(messageList)
-            getAllMessages();
+
 
             messageList.VirtualMode = true;
 
@@ -54,6 +52,14 @@ namespace Collaboratory
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
 
+        }
+
+
+        //To avoid the screen from stuttering to make the object movement smooth
+        public static void enableDoubleBuff(System.Windows.Forms.Control cont)
+        {
+            System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            DemoProp.SetValue(cont, true, null);
         }
 
         public void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -84,6 +90,10 @@ namespace Collaboratory
             string senderName = "";
             //chat max letter is 38
 
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add("chatmateCol");
+            //dt.Columns.Add("myChatCol");
+
             messageList.Rows.Clear();
             messageList.Refresh();
             messageList.Update();
@@ -112,59 +122,38 @@ namespace Collaboratory
                     }
                 }
             }
+
+            //To automatically scroll the message box into the bottom
+            //This will check first if there is chat in the chat box and if none then the scroll function will not be triggered
+            if (messageList.Rows.Count > 0)
+            {
+
+
+                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
+            }
+            //messageList.DataSource = dt;
             this.DoubleBuffered = true;
             enableDoubleBuff(messageList);
         }
         private void chatBox_Load(object sender, EventArgs e)
         {
             messageList.VirtualMode = false;
+            messageList.AutoGenerateColumns = false;
+            //This will get all msg from database into datagridview(messageList)
+            getAllMessages();
             //These are the default style for datagridview.messageList
-            foreach (DataGridViewRow row in messageList.Rows)
-            {
-                if (row.Cells[0].Value.ToString().Trim().Count() > 0)
-                {
 
-                    row.Cells[0].Value = row.Cells[0].Value.ToString().Trim();
-                    row.Cells[0].Style.Font = new Font("Bahnschrift", 11, FontStyle.Regular);
-                    row.Cells[0].Style.BackColor = ColorTranslator.FromHtml("#245382");
-                }
-
-                if (row.Cells[1].Value.ToString().Trim().Count() > 0)
-                {
-                    row.Cells[1].Value = row.Cells[1].Value.ToString().Trim();
-                    row.Cells[1].Style.Font = new Font("Bahnschrift", 11, FontStyle.Regular);
-                    row.Cells[1].Style.ForeColor = Color.Black;
-                    row.Cells[1].Style.BackColor = ColorTranslator.FromHtml("#90EE90");
-                }
-
-                //post title, poser name, date posted
-
-                //edit, note, download button part
-
-            }
-            messageList.VirtualMode = false;
-
-            //To automatically scroll the message box into the bottom
-            //This will check first if there is chat in the chat box and if none then the scroll function will not be triggered
-            if (messageList.Rows.Count > 0)
-            {
-                messageList.FirstDisplayedScrollingRowIndex = messageList.RowCount - 1;
-            }
 
             this.DoubleBuffered = true;
             enableDoubleBuff(messageList);
         }
 
-        //To avoid the screen from stuttering to make the object movement smooth
-        public static void enableDoubleBuff(System.Windows.Forms.Control cont)
-        {
-            System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            DemoProp.SetValue(cont, true, null);
-        }
+
         void retrieveMembers() 
         {
 
-            PictureBox picture = new PictureBox();
+
+                PictureBox picture = new PictureBox();
             foreach (var member in SelectedRepoData.members) 
             {
                 user.id = member;
@@ -177,41 +166,19 @@ namespace Collaboratory
                     {
                         picture.Image = Image.FromFile("Asset/user.png");//This is a default user dp if the user don't set it
                     }
-                    else 
+                    else
                     {
-                        picture.Image = Image.FromFile(storagePath + data[7].ToString());
+                        using (FileStream stream = new FileStream(storagePath + data[7].ToString(), FileMode.Open,FileAccess.Read))
+                        {
+                            picture.Image = Image.FromStream(stream);
+                            stream.Close();
+                        }
                     }
                 }
 
                 memberList.Rows.Add(user.id,picture.Image);
             }
 
-        }
-
-        private void messageList_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
-            //if (e.RowIndex == -1)
-            //{
-            //    var dgv = (DataGridView)sender;
-            //    var r = e.CellBounds;
-            //    var w = 0;
-            //    if (e.ColumnIndex > -1)
-            //    {
-            //        w = dgv.Columns[e.ColumnIndex].DividerWidth;
-            //        r.Width = r.Width - w;
-            //    }
-            //    e.Graphics.SetClip(r);
-            //    e.Paint(r, DataGridViewPaintParts.All);
-            //    e.Graphics.SetClip(e.CellBounds);
-            //    if (w > 0)
-            //    {
-            //        r = new Rectangle(r.Right - 1, r.Top, w + 1, r.Height);
-            //        using (var brush = new SolidBrush(dgv.GridColor))
-            //            e.Graphics.FillRectangle(brush, r);
-            //    }
-            //    e.Handled = true;
-            //}
         }
 
         //This will be disable the capability to select in datagridview
@@ -247,7 +214,7 @@ namespace Collaboratory
                 getAllMessages();
                 messageTb.Text = "";
 
-                chatBox_Load(sender,null);
+                //chatBox_Load(sender,null);
             }
 
         }
@@ -295,8 +262,11 @@ namespace Collaboratory
             {
                 timer1.Stop();
 
+                SoundPlayer sound = new SoundPlayer(@"Asset\Sound\chatSound.wav");
+                sound.Play();
+
                 getAllMessages();
-                chatBox_Load(sender, null);
+                //chatBox_Load(sender, null);
 
                 timer1.Start();
             }
@@ -328,6 +298,44 @@ namespace Collaboratory
             }
         }
 
+        private void messageList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
 
+        }
+
+        private void messageList_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+
+        }
+
+        private void messageList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in messageList.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Trim().Count() > 0)
+                {
+
+                    //row.Cells[0].Value = row.Cells[0].Value.ToString().Trim();
+                    row.Cells[0].Style.Font = new Font("Bahnschrift", 11, FontStyle.Regular);
+                    row.Cells[0].Style.BackColor = ColorTranslator.FromHtml("#245382");
+                }
+
+                if (row.Cells[1].Value.ToString().Trim().Count() > 0)
+                {
+                    //row.Cells[1].Value = row.Cells[1].Value.ToString().Trim();
+                    row.Cells[1].Style.Font = new Font("Bahnschrift", 11, FontStyle.Regular);
+                    row.Cells[1].Style.ForeColor = Color.Black;
+                    row.Cells[1].Style.BackColor = ColorTranslator.FromHtml("#90EE90");
+                }
+
+                //post title, poser name, date posted
+
+                //edit, note, download button part
+            }
+
+
+            this.DoubleBuffered = true;
+            enableDoubleBuff(messageList);
+        }
     }
 }

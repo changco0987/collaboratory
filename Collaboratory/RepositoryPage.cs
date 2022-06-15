@@ -46,6 +46,7 @@ namespace Collaboratory
                     {
                         userDP.Image = Image.FromStream(stream);
                         stream.Close();
+                        stream.Dispose();
                     }
                 }
             }

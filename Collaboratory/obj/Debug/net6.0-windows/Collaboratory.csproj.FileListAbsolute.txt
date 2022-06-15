@@ -53,3 +53,4 @@ C:\Users\willi\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\ref\Collaboratory.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\LiveCharts.WinForms.dll
+C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Asset\Sound\chatSound.wav
