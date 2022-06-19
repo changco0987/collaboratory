@@ -83,6 +83,33 @@ namespace Collaboratory
         }
 
 
+        string msgFormatter(string message) 
+        {
+            double letterCount = message.Length / 32;
+            if (message.Length % 32 > 0) 
+            {
+                letterCount++;
+            }
+
+            for (int count = 1; count <=letterCount; count++) 
+            {
+                if ((message.Length - (32 * count)) >= 32)
+                {
+                    message = message.Insert(32 * count, "\n");
+                }
+                else 
+                {
+                    message = message.Insert((message.Length - message.Length % 32), "\n");
+                }
+            }
+
+            //This last insert will make sure that the message box doesn't overlap to chatbox height
+            return message = message.Insert(message.Length-1, "\n\n");
+        }
+
+
+
+
         //This method will get/retrieve all messages from database 
         void getAllMessages() 
         {
@@ -112,13 +139,13 @@ namespace Collaboratory
                     if (UserLoginData.id == Convert.ToInt32(userinfo[0]))
                     {
                         senderName = "(Me)\n";
-                        messageList.Rows.Add("", senderName + msg);
+                        messageList.Rows.Add("", senderName + msgFormatter(msg));
                     }
                     else
                     {
                         //(Firstname + Lastname)
                         senderName = "(" + userinfo[1].ToString() + " " +userinfo[2].ToString() + ")\n";
-                        messageList.Rows.Add(senderName + msg,"");
+                        messageList.Rows.Add(senderName + msgFormatter(msg), "");
                     }
                 }
             }
