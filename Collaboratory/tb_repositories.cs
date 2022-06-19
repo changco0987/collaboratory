@@ -91,7 +91,7 @@ namespace Collaboratory
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "delete from tb_useraccounts where account_id = " + repository.id + "";//sql query to delete specific data from database
+            comm.CommandText = "delete from tb_repositories where repository_id = " + repository.id + "";//sql query to delete specific data from database
             comm.ExecuteNonQuery();
             comm.Dispose();
             conn.Close();

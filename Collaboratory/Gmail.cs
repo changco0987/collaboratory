@@ -33,6 +33,19 @@ namespace Collaboratory
 
         }
 
+        public string[] accountCreatedMsg(string userid)
+        {
+            string[] msg = new string[2];
+
+            //The message subject
+            msg[0] = "Your Collaboratory Account has been created";
+            //The message body
+            msg[1] = "Welcome to Collaboratory\n" + userid + "\nYour Collaboratory ID will be used by other users to find you through collaboratory user finder\n" +
+                "this will also be used to add you as a participant to repositories.\n\nBest regards,\nCollaboratory Team";
+
+            return msg;
+        }
+
         public string[] resetCodeMsg(int uak) 
         {
             string[] msg = new string[2];
@@ -40,20 +53,8 @@ namespace Collaboratory
             //The message subject
             msg[0] = "Request to Reset Password";
             //The message body
-            msg[1] = "Hi, this is your unique authentication key to reset your security password. \nTo reset your password please use the 8-digit code below:\n"+uak;
-
-            return msg;
-        }
-
-        public string[] accountCreatedMsg(string userid) 
-        {
-            string[] msg = new string[2];
-
-            //The message subject
-            msg[0] = "Your Collaboratory Account has been created";
-            //The message body
-            msg[1] = "Welcome to Collaboratory App\n"+ userid +"\nYour Collaboratory ID will be used by other users to find you through collaboratory user finder\n" +
-                "this will also be used to add you as a participant to repositories";
+            msg[1] = "Hi, this is your unique authentication key to reset your security password. \nTo reset your password please use the 8-digit code below:\n"+uak
+                + "\n\nBest regards,\nCollaboratory Team";
 
             return msg;
         }
@@ -65,7 +66,8 @@ namespace Collaboratory
             //The message subject
             msg[0] = "Your password has been updated!";
             //The message body
-            msg[1] = "Hi, "+userid+"\nYou have successfully reset your collaboratory account password. \nThank you for using Collaboratory";
+            msg[1] = "Hi, "+userid+"\nYou have successfully reset your collaboratory account password. \nThank you for using Collaboratory"
+                + "\n\nBest regards,\nCollaboratory Team";
 
             return msg;
         }
@@ -77,7 +79,8 @@ namespace Collaboratory
             //The message subject
             msg[0] = "Your account has been deleted!";
             //The message body
-            msg[1] = "Hi, " + userid + "\nYou have successfully deleted your account in our server. \nThank you for using Collaboratory hoping to see you soon";
+            msg[1] = "Hi, " + userid + "\nYou have successfully deleted your account in our server. \nThank you for using Collaboratory hoping to see you soon"
+                + "\n\nBest regards,\nCollaboratory Team";
 
             return msg;
         }
@@ -89,7 +92,8 @@ namespace Collaboratory
             //The message subject
             msg[0] = "Your account information has been updated!";
             //The message body
-            msg[1] = "Hi, " + userid + "\nYou have successfully updated your account information in our server. \nThank you for using Collaboratory";
+            msg[1] = "Hi, " + userid + "\nYou have successfully updated your account information in our server. \nThank you for using Collaboratory"
+                + "\n\nBest regards,\nCollaboratory Team";
 
             return msg;
         }
