@@ -82,29 +82,37 @@ namespace Collaboratory
             mousedown = false;
         }
 
-
         string msgFormatter(string message) 
         {
             double letterCount = message.Length / 32;
-            if (message.Length % 32 > 0) 
+            if (message.Length>32)
             {
-                letterCount++;
-            }
-
-            for (int count = 1; count <=letterCount; count++) 
-            {
-                if ((message.Length - (32 * count)) >= 32)
+                if (message.Length % 32 > 0)
                 {
-                    message = message.Insert(32 * count, "\n");
+                    letterCount++;
                 }
-                else 
+
+                for (int count = 1; count <= letterCount; count++)
                 {
-                    message = message.Insert((message.Length - message.Length % 32), "\n");
+                    if ((message.Length - (32 * count)) >= 32)
+                    {
+                        message = message.Insert(32 * count, "\n");
+                    }
+                    else
+                    {
+                        message = message.Insert((message.Length - message.Length % 32), "\n");
+                    }
+                }
+
+                //This last insert will make sure that the message box doesn't overlap to chatbox height
+                if (message.Length>=100)
+                {
+                    message = message.Insert(message.Length, "\n");
                 }
             }
+            
 
-            //This last insert will make sure that the message box doesn't overlap to chatbox height
-            return message = message.Insert(message.Length-1, "\n\n");
+            return message;
         }
 
 

@@ -482,6 +482,8 @@ namespace Collaboratory
             contributionBtn.Size = new Size(168, 37);
         }
 
+
+        //Method for pie chart
         Func<ChartPoint, string> labelPoint = chartpoint => String.Format("{0} ({1:P})", chartpoint.Y, chartpoint.Participation);
         private void contributionBtn_Click(object sender, EventArgs e)
         {

@@ -147,7 +147,7 @@ namespace Collaboratory
          * if the id is equal to 0 it means the user is not updating their account
          * and this page also function as sign-up page
          */
-        void saveAccountInfo(int id) 
+        async void saveAccountInfo(int id) 
         {
 
 
@@ -159,9 +159,20 @@ namespace Collaboratory
                 conn.CreateUser(user);
                 MessageBox.Show("Account Created Successfully!");
 
-                //This will be the email notification to a user to be informed that they linked their email to an collaboratory account
-                string[] msg = gmail.accountCreatedMsg(user.userId);
-                gmail.sendMail(user.email, msg[0], msg[1]);
+
+                //Loading screen
+                var splashScreen = new LoadingScreen();
+                splashScreen.Show();
+
+                await Task.Factory.StartNew(() =>
+                {
+                    //This will be the email notification to a user to be informed that they linked their email to an collaboratory account
+                    string[] msg = gmail.accountCreatedMsg(user.userId);
+                    gmail.sendMail(user.email, msg[0], msg[1]);
+
+                });
+
+
             }
             else 
             {
@@ -175,9 +186,17 @@ namespace Collaboratory
 
                 MessageBox.Show("Account Info Updated Successfully!");
 
-                //This will be the email notification to a user to be informed that they linked their email to an collaboratory account
-                string[] msg = gmail.accountUpdateMsg(user.userId);
-                gmail.sendMail(user.email, msg[0], msg[1]);
+                //Loading screen
+                var splashScreen = new LoadingScreen();
+                splashScreen.Show();
+
+                await Task.Factory.StartNew(() => 
+                {
+                    //This will be the email notification to a user to be informed that they linked their email to an collaboratory account
+                    string[] msg = gmail.accountUpdateMsg(user.userId);
+                    gmail.sendMail(user.email, msg[0], msg[1]);
+                });
+                
 
             }
 

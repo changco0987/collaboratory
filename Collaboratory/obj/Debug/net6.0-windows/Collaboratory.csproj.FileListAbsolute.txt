@@ -54,3 +54,4 @@ C:\Users\willi\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\LiveCharts.WinForms.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Asset\Sound\chatSound.wav
+C:\Users\willi\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\Collaboratory.LoadingScreen.resources

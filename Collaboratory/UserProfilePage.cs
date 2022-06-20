@@ -45,7 +45,6 @@ namespace Collaboratory
                 }
             }
 
-
             getUserRepo();
             this.repoList.GridColor = ColorTranslator.FromHtml("#171433");//To change the grid of repoList element color
 
@@ -122,10 +121,13 @@ namespace Collaboratory
 
         public void UserProfilePage_Load(object sender, EventArgs e)
         {
+
             repoList.Refresh();
             repoList.Update();
             usernameLb.Text = UserLoginData.firstName + " " + UserLoginData.lastName;
             useridLb.Text = UserLoginData.userId;
+
+
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -173,12 +175,13 @@ namespace Collaboratory
         void getUserRepo()
         {
 
-            repoList.Rows.Clear();
-            repoList.Refresh();
 
+            repoList.Rows.Clear();
+
+   
             tb_repositories conn = new tb_repositories();
 
-            List<DataRow> retrieveData = conn.ReadRepo("user",UserLoginData.id);
+            List<DataRow> retrieveData = conn.ReadRepo("user", UserLoginData.id);
 
             foreach (var data in retrieveData)
             {
@@ -186,7 +189,10 @@ namespace Collaboratory
                 string repoName = data[1].ToString();
                 repoList.Rows.Add(repoId, repoName);
             }
+     
 
+            repoList.Refresh();
+            repoList.Update();
 
         }
 
@@ -204,6 +210,7 @@ namespace Collaboratory
             this.Close();
         }
 
+        //This will trigger if the user click the repository
         void openRepoPage(int selectedRow) 
         {
             DataGridViewRow row = repoList.Rows[selectedRow];
@@ -239,18 +246,24 @@ namespace Collaboratory
 
                 groupdata.repositoryId = SelectedRepoData.id;
 
-                //this will check first if the selected repo has already groupchat
+
 
                 List<DataRow> gcData = groupChats.ReadGC(groupdata);
-                foreach (var gc in gcData)
-                {
-                    currentGroupchat.id = Convert.ToInt32(gc[0]);
-                }
+
 
                 //This will trigger only if the currently selected repo doesn't have groupchat yet created by the algorithm
                 if (gcData.Count() == 0)
                 {
                     groupChats.CreateGC(groupdata);//this will create a groupchat
+
+                    gcData = groupChats.ReadGC(groupdata);//This will re-read the group chat after creation to ensure to get the updated data
+                }
+
+                //this will check if the selected repo has already groupchat
+                foreach (var gc in gcData)
+                {
+                    //This will assign the groupchat id
+                    currentGroupchat.id = Convert.ToInt32(gc[0]);
                 }
 
             }

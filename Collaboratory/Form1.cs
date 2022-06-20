@@ -177,7 +177,6 @@ namespace Collaboratory
                         var userPage = new UserProfilePage();
                         userPage.ShowDialog();
                         return;
-                        this.Close();
                     }
                 }
 
