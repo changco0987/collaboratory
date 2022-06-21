@@ -200,18 +200,15 @@ namespace Collaboratory
         private void repoList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;//This is the selected row in the datagridview/list of repository
+            
 
             openRepoPage(selectedRow);//Then it will pass the id to this method
 
-            this.Hide();
 
-            var openRepo = new RepositoryPage();
-            openRepo.ShowDialog();
-            this.Close();
         }
 
         //This will trigger if the user click the repository
-        void openRepoPage(int selectedRow) 
+        async void openRepoPage(int selectedRow) 
         {
             DataGridViewRow row = repoList.Rows[selectedRow];
 
@@ -220,53 +217,74 @@ namespace Collaboratory
             tb_repositories repo = new tb_repositories();
 
 
-            List<DataRow> retrieveData = repo.ReadRepo("repo",repoId);
+            //Loading screen
+            var splashScreen = new LoadingScreen();
+            splashScreen.Show();
 
-            //data{id, repositoryName, members[], accountId}
-            foreach (var data in retrieveData)
+    
+
+            await Task.Factory.StartNew(() =>
             {
-                SelectedRepoData.id = Convert.ToInt32(data[0]);
 
-                SelectedRepoData.repositoryName = data[1].ToString();
+                List<DataRow> retrieveData = repo.ReadRepo("repo", repoId);
 
-                IEnumerable<int> memberList = (IEnumerable<int>)data[2];//this is were the member located in index data[2]
-
-                //This will transfer the all member from selected repository into the static model
-                SelectedRepoData.members = new List<int>();
-                foreach (int member in memberList) 
+                //data{id, repositoryName, members[], accountId}
+                foreach (var data in retrieveData)
                 {
-                    SelectedRepoData.members.Add(member);
+                    SelectedRepoData.id = Convert.ToInt32(data[0]);
+
+                    SelectedRepoData.repositoryName = data[1].ToString();
+
+                    IEnumerable<int> memberList = (IEnumerable<int>)data[2];//this is were the member located in index data[2]
+
+                    //This will transfer the all member from selected repository into the static model
+                    SelectedRepoData.members = new List<int>();
+                    foreach (int member in memberList)
+                    {
+                        SelectedRepoData.members.Add(member);
+                    }
+
+                    SelectedRepoData.accountId = Convert.ToInt32(data[3]);
+
+                    //To create a groupchat
+                    tb_groupChats groupChats = new tb_groupChats();
+                    Groupchatdata groupdata = new Groupchatdata();
+
+                    groupdata.repositoryId = SelectedRepoData.id;
+
+
+
+                    List<DataRow> gcData = groupChats.ReadGC(groupdata);
+
+
+                    //This will trigger only if the currently selected repo doesn't have groupchat yet created by the algorithm
+                    if (gcData.Count() == 0)
+                    {
+                        groupChats.CreateGC(groupdata);//this will create a groupchat
+
+                        gcData = groupChats.ReadGC(groupdata);//This will re-read the group chat after creation to ensure to get the updated data
+                    }
+
+                    //this will check if the selected repo has already groupchat
+                    foreach (var gc in gcData)
+                    {
+                        //This will assign the groupchat id
+                        currentGroupchat.id = Convert.ToInt32(gc[0]);
+                    }
+
                 }
 
-                SelectedRepoData.accountId = Convert.ToInt32(data[3]);
-
-                //To create a groupchat
-                tb_groupChats groupChats = new tb_groupChats();
-                Groupchatdata groupdata = new Groupchatdata();
-
-                groupdata.repositoryId = SelectedRepoData.id;
+                Task.Delay(5000);
+            });
+            splashScreen.Close();
 
 
+            this.Hide();
 
-                List<DataRow> gcData = groupChats.ReadGC(groupdata);
+            var openRepo = new RepositoryPage();
+            openRepo.ShowDialog();
+            this.Close();
 
-
-                //This will trigger only if the currently selected repo doesn't have groupchat yet created by the algorithm
-                if (gcData.Count() == 0)
-                {
-                    groupChats.CreateGC(groupdata);//this will create a groupchat
-
-                    gcData = groupChats.ReadGC(groupdata);//This will re-read the group chat after creation to ensure to get the updated data
-                }
-
-                //this will check if the selected repo has already groupchat
-                foreach (var gc in gcData)
-                {
-                    //This will assign the groupchat id
-                    currentGroupchat.id = Convert.ToInt32(gc[0]);
-                }
-
-            }
         }
 
 

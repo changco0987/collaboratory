@@ -86,16 +86,25 @@ namespace Collaboratory
             update.fileName = fileName;
         }
 
-        void saveUpdate() 
+        async void saveUpdate() 
         {
             tb_updates conn = new tb_updates();
 
+            //loading screen
+            var splashScreen = new LoadingScreen();
+            splashScreen.Show();
 
-            //This will check if the user attach a file and if not it will not move the file to the path
-            if (fileName.Trim() != String.Empty) 
+            await Task.Factory.StartNew(()=> 
             {
-                File.Copy(fileOrigin, storagePath + fileName, false);
-            }
+                //This will check if the user attach a file and if not it will not move the file to the path
+                if (fileName.Trim() != String.Empty)
+                {
+                    File.Copy(fileOrigin, storagePath + fileName, false);
+                }
+            });
+
+            splashScreen.Close();
+
 
             conn.CreatePost(update);
 

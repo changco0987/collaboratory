@@ -172,6 +172,8 @@ namespace Collaboratory
 
                 });
 
+                splashScreen.Close();
+
 
             }
             else 
@@ -196,8 +198,8 @@ namespace Collaboratory
                     string[] msg = gmail.accountUpdateMsg(user.userId);
                     gmail.sendMail(user.email, msg[0], msg[1]);
                 });
-                
 
+                splashScreen.Close();
             }
 
 

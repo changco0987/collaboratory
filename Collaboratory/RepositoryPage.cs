@@ -357,7 +357,7 @@ namespace Collaboratory
         }
 
         //this event will trigger when the user hit the editBtn, noteBtn, and downloadBtn
-        private void updateList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void updateList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var updateId  = updateList.Rows[e.RowIndex].Cells[0].Value;//This will get the row/update ID
             var title  = updateList.Rows[e.RowIndex].Cells[1].Value;//This will get the row/update title
@@ -407,32 +407,41 @@ namespace Collaboratory
             else if (clickedCell == 8) 
             {
                 //download
-                if (!string.IsNullOrEmpty(SelectedUpdateData.fileName)) 
+
+                //loading screen
+                var splashScreen = new LoadingScreen();
+                splashScreen.Show();
+
+                await Task.Factory.StartNew(() => 
                 {
-                    string fileOrigin = Application.UserAppDataPath + @"\repoFile_id" + SelectedRepoData.id + "\\";
-                    string downloadLocation = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\";
-
-                    string fileName = SelectedUpdateData.fileName;//This is were the final file name inputted
-                    string tempFileName = fileName;//This is just a container for renaming and checking if file exist
-                    string fileExtension = Path.GetExtension(fileName);
-                    int fileCount = 1;
-
-                    while (File.Exists(downloadLocation + tempFileName))
+                    if (!string.IsNullOrEmpty(SelectedUpdateData.fileName))
                     {
-                        /*
-                        * This will reassemble the file name and insert the (n) count, 
-                        * depends on the file count in the same file directory
-                        */
-                        tempFileName = fileName.Substring(0, fileName.IndexOf('.')) + "(" + fileCount + ")" + fileExtension;
-                        fileCount++;
-                    }
-                    fileName = tempFileName;//This is to finalize the fileName
-                    File.Copy(fileOrigin + SelectedUpdateData.fileName, downloadLocation + fileName, false);
+                        string fileOrigin = Application.UserAppDataPath + @"\repoFile_id" + SelectedRepoData.id + "\\";
+                        string downloadLocation = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\";
 
-                    MessageBox.Show("Download Successfully\nDownload Location on\n" + downloadLocation);
-                    return;
-                }
-               
+                        string fileName = SelectedUpdateData.fileName;//This is were the final file name inputted
+                        string tempFileName = fileName;//This is just a container for renaming and checking if file exist
+                        string fileExtension = Path.GetExtension(fileName);
+                        int fileCount = 1;
+
+                        while (File.Exists(downloadLocation + tempFileName))
+                        {
+                            /*
+                            * This will reassemble the file name and insert the (n) count, 
+                            * depends on the file count in the same file directory
+                            */
+                            tempFileName = fileName.Substring(0, fileName.IndexOf('.')) + "(" + fileCount + ")" + fileExtension;
+                            fileCount++;
+                        }
+                        fileName = tempFileName;//This is to finalize the fileName
+                        File.Copy(fileOrigin + SelectedUpdateData.fileName, downloadLocation + fileName, false);
+
+                        MessageBox.Show("Download Successfully\nDownload Location on\n" + downloadLocation);
+                        return;
+                    }
+                });
+
+                splashScreen.Close();
             }
         }
 

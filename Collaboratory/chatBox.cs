@@ -266,10 +266,11 @@ namespace Collaboratory
                 {
                     dataContainer.Rows.Clear();
                     //timer1.Stop();
+       
                     foreach (var dataMsg in messages)
                     {
                         dataContainer.Rows.Add(dataMsg[1]);
-                    }
+                    }              
                 }
                 messages.Clear();
             }
