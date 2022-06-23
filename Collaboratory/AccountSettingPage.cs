@@ -24,8 +24,10 @@ namespace Collaboratory
         private OpenFileDialog open;
         private string imgName;
         private string storagePath;
+        private string webStoragePath = @"C:\xampp\htdocs\server\Image\";
         private string imgExtension;
         private string renamedImgName;
+
 
         public AccountSettingPage()
         {
@@ -148,6 +150,12 @@ namespace Collaboratory
 
                 }
 
+                //This is the parellel directory for img storage this also be used in the web app version
+                if (!Directory.Exists(webStoragePath)) 
+                {
+                    Directory.CreateDirectory(webStoragePath);
+                }
+
 
                 //The using will use to dispose the code afterwards
                 using (open = new OpenFileDialog()) 
@@ -173,6 +181,7 @@ namespace Collaboratory
                         {
                             System.Threading.Thread.Sleep(100);//This will use to at least give time  to close other process before using again
                             System.IO.File.Delete(storagePath + oldImg);//This will delete previous user image in the local copy
+                            System.IO.File.Delete(webStoragePath + oldImg);//This will delete previous user image in the local copy
 
                         }
 
@@ -193,12 +202,12 @@ namespace Collaboratory
                             userDP.Image = Image.FromStream(stream);//This will refresh the picturebox to display the new selected image
                             stream.Close();
                         }
-
+                        File.Copy(imgName, webStoragePath + renamedImgName, true);
 
                         user = user.statModelToModel(user);//This will transfer all static model data into model to update it in database
                         conn.UpdateUser(user);//This will save the user picture name into database
 
-
+                        //GC.Collect();
                         MessageBox.Show("Profile Picture Changed!");
                     }
                     else 

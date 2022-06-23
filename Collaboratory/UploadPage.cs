@@ -18,14 +18,16 @@ namespace Collaboratory
         bool mousedown; // this is for the draggable panel behavior
 
         //All variable for file upload
-        string storagePath;
-        string fileName;
-        string fileOrigin;
-        string fileExtension;
+        private string storagePath;
+        private string webStoragePath = @"C:\xampp\htdocs\server\repoFile_id" + SelectedRepoData.id + "\\";
+        private string fileName;
+        private string fileOrigin;
+        private string fileExtension;
         public UploadPage()
         {
             InitializeComponent();
             fileName = "";
+            storagePath = Application.UserAppDataPath + @"\repoFile_id" + SelectedRepoData.id + "\\";
         }
 
         /*
@@ -99,7 +101,9 @@ namespace Collaboratory
                 //This will check if the user attach a file and if not it will not move the file to the path
                 if (fileName.Trim() != String.Empty)
                 {
-                    File.Copy(fileOrigin, storagePath + fileName, false);
+                    File.Copy(fileOrigin, storagePath + fileName, false);//this is the windows app version storage
+                    Thread.Sleep(500);
+                    File.Copy(fileOrigin, webStoragePath + fileName, false);//this is the web app version storage
                 }
             });
 
@@ -132,13 +136,20 @@ namespace Collaboratory
         {
             try
             {
-                storagePath = Application.UserAppDataPath + @"\repoFile_id" + SelectedRepoData.id + "\\";
+
                 using (OpenFileDialog open = new OpenFileDialog())
                 {
                     //This will check and create a path for img storage
                     if (!Directory.Exists(storagePath))
                     {
                         Directory.CreateDirectory(storagePath);
+
+                    }  
+                    
+                    //this is the web app version storage path
+                    if (!Directory.Exists(webStoragePath))
+                    {
+                        Directory.CreateDirectory(webStoragePath);
 
                     }
 
@@ -175,7 +186,7 @@ namespace Collaboratory
                         }
 
                         fileName = tempFileName;//This is to finalize the fileName
-                        filenameLb.Text = fileName;
+                        filenameLb.Text = fileName;//This is to show the filename to UI
 
 
                         open.Dispose();
