@@ -75,16 +75,7 @@ namespace Collaboratory
         }
 
 
-        //To avoid the windows form from flickering
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParams = base.CreateParams;
-                handleParams.ExStyle |= 0x02000000;
-                return handleParams;
-            }
-        }
+
 
         //To avoid the screen from stuttering to make the object movement smooth
         public static void enableDoubleBuff(System.Windows.Forms.Control cont)
@@ -225,7 +216,6 @@ namespace Collaboratory
                 return hash;
             }
         }
-
 
     }
 }

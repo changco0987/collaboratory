@@ -181,6 +181,7 @@
             this.showPassBtn2.Size = new System.Drawing.Size(29, 29);
             this.showPassBtn2.TabIndex = 46;
             this.showPassBtn2.UseVisualStyleBackColor = false;
+            this.showPassBtn2.Click += new System.EventHandler(this.showPassBtn2_Click);
             // 
             // showPassBtn
             // 
@@ -195,6 +196,7 @@
             this.showPassBtn.Size = new System.Drawing.Size(29, 29);
             this.showPassBtn.TabIndex = 45;
             this.showPassBtn.UseVisualStyleBackColor = false;
+            this.showPassBtn.Click += new System.EventHandler(this.showPassBtn_Click);
             // 
             // confirmpassTb
             // 
@@ -274,6 +276,7 @@
             this.resetBtn.TabIndex = 6;
             this.resetBtn.Text = "Submit";
             this.resetBtn.UseVisualStyleBackColor = false;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // ResetPassPage
             // 
