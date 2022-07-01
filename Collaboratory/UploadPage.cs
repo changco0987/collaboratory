@@ -56,9 +56,8 @@ namespace Collaboratory
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (!checkEmptyField())
+            if (!checkEmptyField() && getUserInput())
             {
-                getUserInput();
                 saveUpdate();
             }
         }
@@ -75,10 +74,21 @@ namespace Collaboratory
             return false;//This means that there is no empty field
 
         }
+        //This will check if the userinput has symbol 
+        bool checkSymbol()
+        {
+            Sanitize sanitize = new Sanitize();
 
+            if (sanitize.sanitizeInput(update.title) ||
+                sanitize.sanitizeInput(update.note))
+            {
+                return false;
+            }
+            return true;
+        }
 
         //This will get all user input
-        void getUserInput() 
+        bool getUserInput() 
         {
             update.title = titleTb.Text;
             update.note = noteTb.Text;
@@ -86,6 +96,12 @@ namespace Collaboratory
             update.accountId = UserLoginData.id;
             update.repositoryId = SelectedRepoData.id;
             update.fileName = fileName;
+            if (!checkSymbol())
+            {
+                MessageBox.Show("Please avoid using symbols in your repository name");
+                return false;
+            }
+            return true;
         }
 
         async void saveUpdate() 

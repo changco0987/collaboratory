@@ -26,6 +26,8 @@ namespace Collaboratory
         public LoginForm()
         {
             InitializeComponent();
+            UserLoginData logindata = new UserLoginData();
+            logindata.reset();//to clear the saved userdata
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
         }
@@ -192,11 +194,28 @@ namespace Collaboratory
 
         }
 
+        //This will check if the userinput has symbol 
+        bool checkSymbol()
+        {
+            Sanitize sanitize = new Sanitize();
+
+            if (sanitize.sanitizeInput(user.userId))
+            {
+                return false;
+            }
+            return true;
+        }
+
         //This will get all user input
         void getUserInput()
         {
             user.userId = useridTb.Text;
-
+            //This will sanitized the user input
+            if (!checkSymbol())
+            {
+                MessageBox.Show("Userid contains symbol, please check it carefully");
+                return;
+            }
             user.password = hashAlgo(passwordTb.Text);
             
         }

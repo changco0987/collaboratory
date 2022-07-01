@@ -95,11 +95,16 @@ namespace Collaboratory
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
+
             //if this method returns true it means that user input all fields correctly
-            if (!checkEmptyField()) 
+
+            
+            if (!checkEmptyField())
             {
                 getUserInput();
             }
+            
+
 
         }
 
@@ -110,36 +115,44 @@ namespace Collaboratory
         void checkAccAvailability() 
         {
 
-
-            List<DataRow> dbData = conn.ReadUser(user);//This will transfer the ReadUser() returned value into dbData
-
-            foreach (var data in dbData) 
+            try
             {
-                /*
-                 * The data index 3 is the location of userid
-                 * This will check if the userid is already obtained or available
-                 */
-                if (data[3].ToString() == user.userId.ToLower())
+                List<DataRow> dbData = conn.ReadUser(user);//This will transfer the ReadUser() returned value into dbData
+
+                foreach (var data in dbData)
                 {
-                    MessageBox.Show("Your userid is already used");
-                    return;
+                    /*
+                     * The data index 3 is the location of userid
+                     * This will check if the userid is already obtained or available
+                     */
+                    if (data[3].ToString() == user.userId.ToLower())
+                    {
+                        MessageBox.Show("Your userid is already used");
+                        return;
+                    }
+
+
+                    /*
+                    * The data index 9 is the location of email
+                    * This will check if the email address is already linked to a user or not
+                    */
+                    if (data[9].ToString() == user.email)
+                    {
+                        MessageBox.Show("Your email address is already linked to a user");
+                        return;
+                    }
+
+
                 }
 
-
-                /*
-                * The data index 9 is the location of email
-                * This will check if the email address is already linked to a user or not
-                */
-                if (data[9].ToString() == user.email)
-                {
-                    MessageBox.Show("Your email address is already linked to a user");
-                    return;
-                }
-                
-
+                saveAccountInfo(UserLoginData.id);
             }
-
-            saveAccountInfo(UserLoginData.id);
+            catch 
+            {
+                //This will trigger incase theres an unexpected error then suddenly the connection did not close correctly
+                conn.closeConn();
+            }
+            
         }
 
         /*
@@ -209,7 +222,20 @@ namespace Collaboratory
             this.Close();
         }
 
-
+        //This will check if the userinput has symbol 
+        bool checkSymbol()
+        {
+            Sanitize sanitize = new Sanitize();
+            
+            if (sanitize.sanitizeInput(user.firstName) ||
+                sanitize.sanitizeInput(user.lastName) ||
+                sanitize.sanitizeInput(user.email) ||
+                sanitize.sanitizeInput(user.userId))
+            {
+                return false;
+            }
+            return true;
+        }
 
         //This will get all user input
         void getUserInput() 
@@ -235,7 +261,12 @@ namespace Collaboratory
             {
                 if (passwordTb.Text.Count() >= 8)
                 {
-
+                    //This will sanitized the user input
+                    if(!checkSymbol())
+                    {
+                        MessageBox.Show("Please avoid using symbols in your information");
+                        return;
+                    }
                     user.password = hashAlgo(passwordTb.Text);
                     /*
                      * This will check first the static model userid if it has data stored or not nullindicating that

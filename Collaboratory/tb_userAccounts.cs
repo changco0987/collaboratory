@@ -124,6 +124,12 @@ namespace Collaboratory
         }
 
 
+        public void closeConn()
+        {
+            conn.Dispose();
+            conn.Close();
+        } 
+
         //public List<DataRow> getUsername() 
         //{
         //    conn.Open();

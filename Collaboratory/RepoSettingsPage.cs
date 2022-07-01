@@ -130,16 +130,14 @@ namespace Collaboratory
              */
             if (SelectedRepoData.id == 0)
             {
-                if (!checkEmptyField()) 
+                if (!checkEmptyField() && getUserInput()) 
                 {
-                    getUserInput();
                     createRepo();
                 }
 
             }
-            else if(!checkEmptyField() && SelectedRepoData.id > 0)
+            else if(!checkEmptyField() && getUserInput() && SelectedRepoData.id > 0)
             {
-                getUserInput();
                 updateRepo();
             }
             return;
@@ -168,13 +166,31 @@ namespace Collaboratory
 
         }
 
+        //This will check if the userinput has symbol 
+        bool checkSymbol()
+        {
+            Sanitize sanitize = new Sanitize();
 
+            if (sanitize.sanitizeInput(repository.repositoryName))
+            {
+                return false;
+            }
+            return true;
+        }
 
         //This will get all user input
-        void getUserInput()
+        bool getUserInput()
         {
             repository.repositoryName = repoNameTb.Text;//The repository name
+                                                        //This will sanitized the user input
+            if (!checkSymbol())
+            {
+                MessageBox.Show("Please avoid using symbols in your repository name");
+                return false;
+            }
+
             repository.accountId = UserLoginData.id;//will save the user id as a owner
+            return true;
 
         }
 
@@ -223,21 +239,6 @@ namespace Collaboratory
                     {
                         pictureBox.Image = Image.FromFile(storagePath + data.profilePicName);
                     }
-
-
-
-
-                    //pictureBox.Name = "pictureBox";
-
-                    //pictureBox[pictureBoxCount].Size = new Size(10,13);
-                    //pictureBox[pictureBoxCount].Height = 13;
-                    //pictureBox[pictureBoxCount].Width = 1;
-                    //pictureBox[pictureBoxCount].Bounds = this.ClientRectangle;
-                    //pictureBox[pictureBoxCount].Dock  = DockStyle.None;
-                    //pictureBox[pictureBoxCount].SizeMode = PictureBoxSizeMode.StretchImage;
-                    //pictureBox[pictureBoxCount].TabIndex = 35;
-                    //pictureBox[pictureBoxCount].TabStop = false;
-
 
 
 
