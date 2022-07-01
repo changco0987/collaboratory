@@ -147,6 +147,7 @@ namespace Collaboratory
                         var backToLogin = new LoginForm();
                         backToLogin.ShowDialog();
                         this.Close();
+                        return;
                     }
                     else
                     {

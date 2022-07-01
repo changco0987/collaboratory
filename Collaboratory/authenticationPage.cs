@@ -132,6 +132,8 @@ namespace Collaboratory
                     this.Hide();
                     var openResetPage = new ResetPassPage();
                     openResetPage.ShowDialog();
+                    this.Close();
+                    return;
                 }
             }
             MessageBox.Show("There's no userid linked in your email address");
