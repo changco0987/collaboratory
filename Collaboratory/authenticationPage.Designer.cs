@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(authenticationPage));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
+            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MinimizedBtn = new System.Windows.Forms.Button();
             this.emailTb = new System.Windows.Forms.TextBox();
             this.reqcodeBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
@@ -45,10 +45,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.CloseBtn);
             this.panel1.Controls.Add(this.MinimizedBtn);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(-27, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(525, 28);
@@ -56,6 +56,36 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.Location = new System.Drawing.Point(494, 4);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
+            this.CloseBtn.TabIndex = 16;
+            this.CloseBtn.Text = "roundButton2";
+            this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // MinimizedBtn
+            // 
+            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.Location = new System.Drawing.Point(467, 4);
+            this.MinimizedBtn.Name = "MinimizedBtn";
+            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
+            this.MinimizedBtn.TabIndex = 15;
+            this.MinimizedBtn.Text = "roundButton1";
+            this.MinimizedBtn.UseVisualStyleBackColor = false;
+            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // label4
             // 
@@ -79,42 +109,12 @@
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(495, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 11;
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // MinimizedBtn
-            // 
-            this.MinimizedBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(468, 3);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 10;
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
-            // 
             // emailTb
             // 
             this.emailTb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.emailTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emailTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.emailTb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.emailTb.Location = new System.Drawing.Point(105, 110);
             this.emailTb.MaxLength = 80;
@@ -124,6 +124,7 @@
             this.emailTb.Size = new System.Drawing.Size(286, 29);
             this.emailTb.TabIndex = 2;
             this.emailTb.WordWrap = false;
+            this.emailTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTb_KeyDown);
             // 
             // reqcodeBtn
             // 
@@ -180,12 +181,12 @@
 
         #endregion
         private Panel panel1;
-        private Button CloseBtn;
-        private Button MinimizedBtn;
         private TextBox emailTb;
         private Button reqcodeBtn;
         private Button backBtn;
         private Label label4;
         private PictureBox pictureBox2;
+        private CustomControls.RoundButton CloseBtn;
+        private CustomControls.RoundButton MinimizedBtn;
     }
 }

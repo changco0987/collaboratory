@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 using Collaboratory.Model;
 using Collaboratory.CustomControls;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 
 namespace Collaboratory
 {
@@ -28,21 +29,24 @@ namespace Collaboratory
             InitializeComponent();
             UserLoginData logindata = new UserLoginData();
             logindata.reset();//to clear the saved userdata
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
         }
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
-        //To avoid the windows form from flickering
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParams = base.CreateParams;
-                handleParams.ExStyle |= 0x02000000;
-                return handleParams;
-            }
-        }
+
 
         //To avoid the screen from stuttering to make the object movement smooth
         public static void enableDoubleBuff(System.Windows.Forms.Control cont)
@@ -250,17 +254,7 @@ namespace Collaboratory
             }
         }
 
-        //This event is used to create a enter key press function to act as a login button when being pressed
-        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                SendKeys.Send("{TAB}");
-                e.SuppressKeyPress = true;
 
-                loginBtn_Click(sender,null);
-            }
-        }
 
         //This is the function for show and hide password
         private void showPassBtn_Click(object sender, EventArgs e)
@@ -276,10 +270,30 @@ namespace Collaboratory
                 passwordTb.PasswordChar = '*';
                 showPassBtn.BackgroundImage = Image.FromFile("Asset/show.png");
             }
-   
 
         }
 
+        //This event is used to create a enter key press function to act as a login button when being pressed
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+                e.SuppressKeyPress = true;
 
+                loginBtn_Click(sender, null);
+            }
+        }
+
+        private void useridTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+                e.SuppressKeyPress = true;
+
+       
+            }
+        }
     }
 }

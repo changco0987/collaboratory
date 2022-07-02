@@ -11,7 +11,7 @@ using System.Drawing.Drawing2D;
 using Collaboratory.CustomControls;
 using Collaboratory.Model;
 using System.Security.Cryptography;
-
+using System.Runtime.InteropServices;
 
 
 namespace Collaboratory
@@ -28,6 +28,8 @@ namespace Collaboratory
         public UserProfilePage()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
 
@@ -48,25 +50,24 @@ namespace Collaboratory
             getUserRepo();
             this.repoList.GridColor = ColorTranslator.FromHtml("#171433");//To change the grid of repoList element color
 
-
-
-
         }
 
         /*
          * The code below is the form UI functions
          */
 
-        //To avoid the windows form from flickering
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParams = base.CreateParams;
-                handleParams.ExStyle |= 0x02000000;
-                return handleParams;
-            }
-        }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
 
         //To avoid the screen from stuttering to make the object movement smooth
         public static void enableDoubleBuff(System.Windows.Forms.Control cont)

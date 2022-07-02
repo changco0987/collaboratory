@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Collaboratory.Model;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices;
+
 
 namespace Collaboratory
 {
@@ -21,6 +23,9 @@ namespace Collaboratory
         public ResetPassPage()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
 
@@ -31,6 +36,17 @@ namespace Collaboratory
         /*
          * The code below is the form UI functions
          */
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
 
         //for Confirm password button
@@ -121,7 +137,7 @@ namespace Collaboratory
         /*
         * The code below is the app functionality like data, accounts algo etc
         */
-        private void resetBtn_Click(object sender, EventArgs e)
+        private async void resetBtn_Click(object sender, EventArgs e)
         {
             if (!checkEmptyField()) 
             {
@@ -133,13 +149,33 @@ namespace Collaboratory
                 {
                     if (passwordTb.Text.Count() >= 8)
                     {
+
+                        //Loading screen
+                        var splashScreen = new LoadingScreen();
+                        splashScreen.Show();
                         user = user.statModelToModel(user);
                         user.password = hashAlgo(passwordTb.Text);//Assign new password to the model
-                        checkUAK(user.uak);
-                        Gmail mail = new Gmail();
+                        if (!checkUAK(uakTb.Text))
+                        {
+                            splashScreen.Close();
+                            MessageBox.Show("Incorrect UAK, please check your UAK in your email carefully");
 
-                        //This will send the account notification to the user
-                        mail.sendMail(user.email, mail.passwordUpdateNotif(user.userId)[0], mail.passwordUpdateNotif(user.userId)[1]);
+                            //This will jus remove the unexpected spaces incase the user failed to input a their password
+                            passwordTb.Text = passwordTb.Text.Trim();
+                            confirmpassTb.Text = confirmpassTb.Text.Trim();
+                            return;
+                        }
+
+                        await Task.Factory.StartNew(() =>
+                        {
+
+                            Gmail mail = new Gmail();
+
+                            //This will send the account notification to the user
+                            mail.sendMail(user.email, mail.passwordUpdateNotif(user.userId)[0], mail.passwordUpdateNotif(user.userId)[1]);
+                        });
+                        
+                        splashScreen.Close();
 
                         MessageBox.Show("Password updated successfully!");
 
@@ -148,11 +184,12 @@ namespace Collaboratory
                         backToLogin.ShowDialog();
                         this.Close();
                         return;
+                        
                     }
                     else
                     {
                         MessageBox.Show("Password must at least 8 characters or numbers");
-                        return;
+                        
                     }
 
 
@@ -160,14 +197,17 @@ namespace Collaboratory
                 else 
                 {
                     MessageBox.Show("Your password doesn't match, please check carefully!");
-                    return;
+                    
                 }
             }
+            //This will jus remove the unexpected spaces incase the user failed to input a their password
+            passwordTb.Text = passwordTb.Text.Trim();
+            confirmpassTb.Text = confirmpassTb.Text.Trim();
             
         }
 
         //It will check your inputted UAK if its correct, then update your information to the database
-        void checkUAK(string uak) 
+        bool checkUAK(string uak) 
         {
             tb_userAccounts tb_User = new tb_userAccounts();
             List<DataRow> dbData = tb_User.ReadUser(user);
@@ -179,11 +219,11 @@ namespace Collaboratory
                 {
                     user.uak = "";//this will remove the assigned UAK to avoid reusing it
                     tb_User.UpdateUser(user);
-                    return;
+                    return true;
                 }
             }
 
-            MessageBox.Show("Incorrect UAK, please check your UAK in your email carefully");
+            return false;
         }
 
         bool checkEmptyField()
@@ -218,5 +258,26 @@ namespace Collaboratory
             }
         }
 
+        private void confirmpassTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+                e.SuppressKeyPress = true;
+
+                resetBtn_Click(sender, null);
+            }
+        }
+
+        private void passwordTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+                e.SuppressKeyPress = true;
+
+
+            }
+        }
     }
 }

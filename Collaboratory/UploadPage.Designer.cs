@@ -129,6 +129,7 @@
             this.letterCountLb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.letterCountLb.AutoSize = true;
             this.letterCountLb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.letterCountLb.ForeColor = System.Drawing.Color.Black;
             this.letterCountLb.Location = new System.Drawing.Point(506, 414);
             this.letterCountLb.Name = "letterCountLb";
             this.letterCountLb.Size = new System.Drawing.Size(43, 15);
@@ -140,7 +141,8 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(249, 16);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(265, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 22);
             this.label1.TabIndex = 46;
@@ -161,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(171)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(624, 515);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);

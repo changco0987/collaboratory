@@ -40,11 +40,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
+            this.maximizeBtn = new Collaboratory.CustomControls.RoundButton();
+            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.maximizeBtn = new System.Windows.Forms.Button();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MinimizedBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.useridLb = new System.Windows.Forms.Label();
@@ -103,11 +103,11 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
+            this.panel1.Controls.Add(this.CloseBtn);
+            this.panel1.Controls.Add(this.maximizeBtn);
+            this.panel1.Controls.Add(this.MinimizedBtn);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.maximizeBtn);
-            this.panel1.Controls.Add(this.CloseBtn);
-            this.panel1.Controls.Add(this.MinimizedBtn);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1429, 28);
@@ -115,6 +115,51 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.Location = new System.Drawing.Point(1397, 4);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
+            this.CloseBtn.TabIndex = 39;
+            this.CloseBtn.Text = "roundButton2";
+            this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // maximizeBtn
+            // 
+            this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeBtn.BackColor = System.Drawing.Color.Gold;
+            this.maximizeBtn.FlatAppearance.BorderSize = 0;
+            this.maximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maximizeBtn.ForeColor = System.Drawing.Color.Gold;
+            this.maximizeBtn.Location = new System.Drawing.Point(1370, 4);
+            this.maximizeBtn.Name = "maximizeBtn";
+            this.maximizeBtn.Size = new System.Drawing.Size(21, 22);
+            this.maximizeBtn.TabIndex = 43;
+            this.maximizeBtn.Text = "roundButton1";
+            this.maximizeBtn.UseVisualStyleBackColor = false;
+            this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
+            // 
+            // MinimizedBtn
+            // 
+            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.Location = new System.Drawing.Point(1343, 4);
+            this.MinimizedBtn.Name = "MinimizedBtn";
+            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
+            this.MinimizedBtn.TabIndex = 38;
+            this.MinimizedBtn.Text = "roundButton1";
+            this.MinimizedBtn.UseVisualStyleBackColor = false;
+            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // label4
             // 
@@ -137,51 +182,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
-            // 
-            // maximizeBtn
-            // 
-            this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeBtn.BackColor = System.Drawing.Color.Gold;
-            this.maximizeBtn.FlatAppearance.BorderSize = 0;
-            this.maximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximizeBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maximizeBtn.ForeColor = System.Drawing.Color.Gold;
-            this.maximizeBtn.Location = new System.Drawing.Point(1373, 3);
-            this.maximizeBtn.Name = "maximizeBtn";
-            this.maximizeBtn.Size = new System.Drawing.Size(21, 22);
-            this.maximizeBtn.TabIndex = 13;
-            this.maximizeBtn.UseVisualStyleBackColor = false;
-            this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(1400, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 11;
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // MinimizedBtn
-            // 
-            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(1346, 3);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 10;
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // panel2
             // 
@@ -789,6 +789,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.RepositoryPage_Load);
+            this.Resize += new System.EventHandler(this.RepositoryPage_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -808,8 +809,6 @@
 
         #endregion
         private Panel panel1;
-        private Button CloseBtn;
-        private Button MinimizedBtn;
         private Panel panel2;
         private Label useridLb;
         private Label usernameLb;
@@ -818,7 +817,6 @@
         private Button chatBtn;
         private Button editRepoBtn;
         private Button settingsBtn;
-        private Button maximizeBtn;
         private Label label4;
         private PictureBox pictureBox2;
         private TabControl tabControl1;
@@ -852,5 +850,8 @@
         private Label label2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn myPost;
+        private CustomControls.RoundButton CloseBtn;
+        private CustomControls.RoundButton maximizeBtn;
+        private CustomControls.RoundButton MinimizedBtn;
     }
 }

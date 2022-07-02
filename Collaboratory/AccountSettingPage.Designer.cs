@@ -32,14 +32,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MinimizedBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.backBtn = new System.Windows.Forms.Button();
             this.changepicBtn = new System.Windows.Forms.Button();
             this.editprofileBtn = new System.Windows.Forms.Button();
             this.deleteaccBtn = new System.Windows.Forms.Button();
             this.userDP = new Collaboratory.CustomControls.OvalPictureBox();
+            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
+            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -49,10 +49,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.CloseBtn);
             this.panel1.Controls.Add(this.MinimizedBtn);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 28);
@@ -82,36 +82,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(676, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 11;
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // MinimizedBtn
-            // 
-            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(649, 3);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 10;
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // panel2
             // 
@@ -202,6 +172,36 @@
             this.userDP.TabStop = false;
             this.userDP.Click += new System.EventHandler(this.userDP_Click);
             // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.Location = new System.Drawing.Point(680, 4);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
+            this.CloseBtn.TabIndex = 49;
+            this.CloseBtn.Text = "roundButton2";
+            this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // MinimizedBtn
+            // 
+            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.Location = new System.Drawing.Point(653, 4);
+            this.MinimizedBtn.Name = "MinimizedBtn";
+            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
+            this.MinimizedBtn.TabIndex = 48;
+            this.MinimizedBtn.Text = "roundButton1";
+            this.MinimizedBtn.UseVisualStyleBackColor = false;
+            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
+            // 
             // AccountSettingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -226,8 +226,6 @@
 
         #endregion
         private Panel panel1;
-        private Button CloseBtn;
-        private Button MinimizedBtn;
         private Panel panel2;
         private CustomControls.OvalPictureBox userDP;
         private Button changepicBtn;
@@ -236,5 +234,7 @@
         private Button backBtn;
         private Label label1;
         private PictureBox pictureBox2;
+        private CustomControls.RoundButton CloseBtn;
+        private CustomControls.RoundButton MinimizedBtn;
     }
 }

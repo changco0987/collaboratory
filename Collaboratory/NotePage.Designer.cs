@@ -38,8 +38,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.label1.Location = new System.Drawing.Point(339, 23);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(296, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 22);
             this.label1.TabIndex = 52;
@@ -47,11 +47,9 @@
             // 
             // noteTb
             // 
-            this.noteTb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.noteTb.BackColor = System.Drawing.Color.LightGray;
-            this.noteTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.noteTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteTb.Location = new System.Drawing.Point(53, 73);
+            this.noteTb.BackColor = System.Drawing.SystemColors.Window;
+            this.noteTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.noteTb.Location = new System.Drawing.Point(12, 59);
             this.noteTb.MaxLength = 280;
             this.noteTb.Multiline = true;
             this.noteTb.Name = "noteTb";
@@ -62,12 +60,13 @@
             // 
             // backBtn
             // 
+            this.backBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.backBtn.FlatAppearance.BorderSize = 0;
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.ForeColor = System.Drawing.Color.Transparent;
             this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(696, 6);
+            this.backBtn.Location = new System.Drawing.Point(609, 6);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(28, 26);
             this.backBtn.TabIndex = 50;
@@ -78,8 +77,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(730, 442);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(171)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(643, 426);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noteTb);
             this.Controls.Add(this.backBtn);

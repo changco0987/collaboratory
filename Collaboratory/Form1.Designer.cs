@@ -37,13 +37,12 @@
             this.resetBtn = new System.Windows.Forms.Button();
             this.signupBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MinimizedBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.title = new System.Windows.Forms.Label();
             this.showPassBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
+            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +58,7 @@
             this.useridTb.Size = new System.Drawing.Size(221, 25);
             this.useridTb.TabIndex = 0;
             this.useridTb.WordWrap = false;
-            this.useridTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
+            this.useridTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.useridTb_KeyDown);
             // 
             // passwordTb
             // 
@@ -140,8 +139,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.CloseBtn);
-            this.panel1.Controls.Add(this.MinimizedBtn);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(585, 28);
@@ -149,34 +146,6 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(556, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 11;
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // MinimizedBtn
-            // 
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(529, 3);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 10;
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // pictureBox1
             // 
@@ -226,12 +195,44 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "_____________________________________";
             // 
+            // MinimizedBtn
+            // 
+            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.Location = new System.Drawing.Point(529, 3);
+            this.MinimizedBtn.Name = "MinimizedBtn";
+            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
+            this.MinimizedBtn.TabIndex = 13;
+            this.MinimizedBtn.Text = "roundButton1";
+            this.MinimizedBtn.UseVisualStyleBackColor = false;
+            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.Location = new System.Drawing.Point(556, 3);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
+            this.CloseBtn.TabIndex = 14;
+            this.CloseBtn.Text = "roundButton2";
+            this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(583, 472);
+            this.Controls.Add(this.CloseBtn);
+            this.Controls.Add(this.MinimizedBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.showPassBtn);
             this.Controls.Add(this.title);
@@ -252,7 +253,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,11 +269,11 @@
         private Button resetBtn;
         private Button signupBtn;
         private Panel panel1;
-        private Button CloseBtn;
-        private Button MinimizedBtn;
         private PictureBox pictureBox1;
         private Label title;
         private Button showPassBtn;
         private Label label3;
+        private CustomControls.RoundButton MinimizedBtn;
+        private CustomControls.RoundButton CloseBtn;
     }
 }

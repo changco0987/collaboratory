@@ -13,6 +13,8 @@ using Collaboratory.Model;
 using System.Security.Cryptography;
 using LiveCharts;
 using LiveCharts.Wpf;
+using System.Runtime.InteropServices;
+
 
 namespace Collaboratory
 {
@@ -29,6 +31,9 @@ namespace Collaboratory
         public RepositoryPage()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
             //This is the user informatio to be shown in the panel
@@ -70,6 +75,20 @@ namespace Collaboratory
         /*
          * The code below is the form UI functions
          */
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
+
+
+
         //To avoid the screen from stuttering to make the object movement smooth
         public static void enableDoubleBuff(System.Windows.Forms.Control cont)
         {
@@ -513,5 +532,12 @@ namespace Collaboratory
             threadBtn.Size = new Size(168, 37);
         }
 
+        private void RepositoryPage_Resize(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            this.DoubleBuffered = true;
+            enableDoubleBuff(this);
+        }
     }
 }

@@ -464,11 +464,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\willi\\source\\repos\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
+      "projectUniqueName": "C:\\Users\\willi\\source\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
       "projectName": "Collaboratory",
-      "projectPath": "C:\\Users\\willi\\source\\repos\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
+      "projectPath": "C:\\Users\\willi\\source\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
       "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\willi\\source\\repos\\Collaboratory\\Collaboratory\\obj\\",
+      "outputPath": "C:\\Users\\willi\\source\\Collaboratory\\Collaboratory\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

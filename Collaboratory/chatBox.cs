@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Collaboratory.CustomControls;
 using Collaboratory.Model;
 using System.Media;
+using System.Runtime.InteropServices;
 
 namespace Collaboratory
 {
@@ -33,6 +34,8 @@ namespace Collaboratory
             messageList.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             messageList.GridColor = ColorTranslator.FromHtml("#E0EBED");
 
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
 
             dataContainer.Columns.Add("");//This is just to have our container a column
@@ -61,6 +64,17 @@ namespace Collaboratory
             System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             DemoProp.SetValue(cont, true, null);
         }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
         public void panel1_MouseMove(object sender, MouseEventArgs e)
         {

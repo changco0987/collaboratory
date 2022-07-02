@@ -38,9 +38,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
             this.pageTitle = new System.Windows.Forms.Label();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MinimizedBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
+            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.emailTb = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             this.passwordTb.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.passwordTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.passwordTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordTb.Location = new System.Drawing.Point(17, 125);
             this.passwordTb.MaxLength = 15;
             this.passwordTb.Multiline = true;
@@ -79,7 +79,7 @@
             this.confirmpassTb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmpassTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.confirmpassTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirmpassTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirmpassTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.confirmpassTb.Location = new System.Drawing.Point(302, 125);
             this.confirmpassTb.MaxLength = 15;
             this.confirmpassTb.Multiline = true;
@@ -167,45 +167,15 @@
             this.pageTitle.TabIndex = 1;
             this.pageTitle.Text = "SIGN UP";
             // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(586, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 11;
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // MinimizedBtn
-            // 
-            this.MinimizedBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(559, 3);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 10;
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.CloseBtn);
             this.panel1.Controls.Add(this.MinimizedBtn);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(616, 28);
@@ -213,6 +183,36 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.Location = new System.Drawing.Point(589, 3);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
+            this.CloseBtn.TabIndex = 47;
+            this.CloseBtn.Text = "roundButton2";
+            this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // MinimizedBtn
+            // 
+            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.Location = new System.Drawing.Point(562, 3);
+            this.MinimizedBtn.Name = "MinimizedBtn";
+            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
+            this.MinimizedBtn.TabIndex = 46;
+            this.MinimizedBtn.Text = "roundButton1";
+            this.MinimizedBtn.UseVisualStyleBackColor = false;
+            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // label8
             // 
@@ -240,7 +240,7 @@
             this.emailTb.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.emailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.emailTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emailTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.emailTb.Location = new System.Drawing.Point(17, 49);
             this.emailTb.MaxLength = 80;
             this.emailTb.Multiline = true;
@@ -297,7 +297,7 @@
             // 
             this.useridTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.useridTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.useridTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.useridTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.useridTb.Location = new System.Drawing.Point(302, 49);
             this.useridTb.MaxLength = 20;
             this.useridTb.Multiline = true;
@@ -323,7 +323,7 @@
             // 
             this.lastnameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.lastnameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lastnameTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastnameTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lastnameTb.Location = new System.Drawing.Point(324, 166);
             this.lastnameTb.MaxLength = 50;
             this.lastnameTb.Multiline = true;
@@ -352,7 +352,7 @@
             this.firstnameTb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstnameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.firstnameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.firstnameTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstnameTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.firstnameTb.Location = new System.Drawing.Point(39, 166);
             this.firstnameTb.MaxLength = 50;
             this.firstnameTb.Multiline = true;
@@ -420,8 +420,6 @@
         private Label label7;
         private Button submitBtn;
         private Label pageTitle;
-        private Button CloseBtn;
-        private Button MinimizedBtn;
         private Panel panel1;
         private TextBox emailTb;
         private Panel panel2;
@@ -436,5 +434,7 @@
         private PictureBox pictureBox2;
         private TextBox firstnameTb;
         private Label label5;
+        private CustomControls.RoundButton CloseBtn;
+        private CustomControls.RoundButton MinimizedBtn;
     }
 }

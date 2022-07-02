@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gMxHY2KTy+Qv3Wp0hV0TxbElF07qnHhR27JXx0uTeBzBo9ZZEaGgpFYZxa5tBnKEf497l0fQUt15S2K+92rVWg==",
+  "dgSpecHash": "aEUV7GM0ncrE+KlaH06O1Cm8ljvLL842H5EMmDDpEQrLTI6KgZDbDB+MSqLtKo4u0gKJ1z3MfwwqB6896LLsPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\willi\\source\\repos\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
+  "projectFilePath": "C:\\Users\\willi\\source\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\willi\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",

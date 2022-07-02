@@ -11,6 +11,8 @@ using Collaboratory.Model;
 using Collaboratory.CustomControls;
 using System.Runtime.InteropServices;
 
+
+
 namespace Collaboratory
 {
     public partial class RepoSettingsPage : Form
@@ -28,6 +30,9 @@ namespace Collaboratory
         public RepoSettingsPage()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
             userList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             userList.RowTemplate.MinimumHeight = 5;
             userList.RowTemplate.Resizable = DataGridViewTriState.True;
@@ -58,6 +63,18 @@ namespace Collaboratory
         /*
          * The code below is the form UI functions
          */
+
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
         //This method is for the datagridview design
         public void defaultDatagridviewDesign()

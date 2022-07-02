@@ -32,8 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MinimizedBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@
             this.useridTb = new System.Windows.Forms.TextBox();
             this.uakTb = new System.Windows.Forms.TextBox();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
+            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -54,10 +54,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.CloseBtn);
             this.panel1.Controls.Add(this.MinimizedBtn);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(-50, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 28);
@@ -87,36 +87,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.CloseBtn.Location = new System.Drawing.Point(680, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 11;
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // MinimizedBtn
-            // 
-            this.MinimizedBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(653, 3);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 10;
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // label8
             // 
@@ -203,7 +173,7 @@
             this.confirmpassTb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmpassTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.confirmpassTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirmpassTb.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirmpassTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.confirmpassTb.Location = new System.Drawing.Point(88, 241);
             this.confirmpassTb.MaxLength = 15;
             this.confirmpassTb.Multiline = true;
@@ -213,13 +183,14 @@
             this.confirmpassTb.Size = new System.Drawing.Size(286, 29);
             this.confirmpassTb.TabIndex = 5;
             this.confirmpassTb.WordWrap = false;
+            this.confirmpassTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.confirmpassTb_KeyDown);
             // 
             // passwordTb
             // 
             this.passwordTb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.passwordTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTb.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordTb.Location = new System.Drawing.Point(88, 170);
             this.passwordTb.MaxLength = 15;
             this.passwordTb.Multiline = true;
@@ -229,6 +200,7 @@
             this.passwordTb.Size = new System.Drawing.Size(286, 29);
             this.passwordTb.TabIndex = 4;
             this.passwordTb.WordWrap = false;
+            this.passwordTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTb_KeyDown);
             // 
             // useridTb
             // 
@@ -252,7 +224,7 @@
             this.uakTb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.uakTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
             this.uakTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.uakTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uakTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uakTb.Location = new System.Drawing.Point(88, 104);
             this.uakTb.MaxLength = 8;
             this.uakTb.Multiline = true;
@@ -277,6 +249,34 @@
             this.resetBtn.Text = "Submit";
             this.resetBtn.UseVisualStyleBackColor = false;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
+            this.CloseBtn.Location = new System.Drawing.Point(677, 3);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
+            this.CloseBtn.TabIndex = 47;
+            this.CloseBtn.Text = "roundButton2";
+            this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // MinimizedBtn
+            // 
+            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
+            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
+            this.MinimizedBtn.Location = new System.Drawing.Point(650, 3);
+            this.MinimizedBtn.Name = "MinimizedBtn";
+            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
+            this.MinimizedBtn.TabIndex = 46;
+            this.MinimizedBtn.Text = "roundButton1";
+            this.MinimizedBtn.UseVisualStyleBackColor = false;
+            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
             // 
             // ResetPassPage
             // 
@@ -309,8 +309,6 @@
         #endregion
 
         private Panel panel1;
-        private Button CloseBtn;
-        private Button MinimizedBtn;
         private Label label8;
         private Button backBtn;
         private Label label5;
@@ -324,5 +322,7 @@
         private Button resetBtn;
         private Label label4;
         private PictureBox pictureBox2;
+        private CustomControls.RoundButton CloseBtn;
+        private CustomControls.RoundButton MinimizedBtn;
     }
 }
