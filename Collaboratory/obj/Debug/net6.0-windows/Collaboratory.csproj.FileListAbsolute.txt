@@ -16,13 +16,11 @@ C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Collaboratory.runtimeconfig.json
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Collaboratory.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Collaboratory.pdb
-C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Google.Apis.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Google.Apis.Auth.PlatformServices.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Google.Apis.Auth.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Google.Apis.Core.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Google.Apis.Gmail.v1.dll
-C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\itextsharp.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\LiveCharts.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\willi\source\repos\Collaboratory\Collaboratory\bin\Debug\net6.0-windows\Npgsql.dll

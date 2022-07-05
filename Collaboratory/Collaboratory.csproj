@@ -78,7 +78,6 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Apis.Gmail.v1" Version="1.57.0.2650" />
-    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="LiveCharts.WinForms.NetCore3" Version="0.9.7" />
     <PackageReference Include="LiveCharts.Wpf.FixTooltip" Version="0.9.8" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
