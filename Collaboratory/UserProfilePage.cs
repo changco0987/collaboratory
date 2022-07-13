@@ -46,7 +46,6 @@ namespace Collaboratory
                     }
                 }
             }
-
             getUserRepo();
             this.repoList.GridColor = ColorTranslator.FromHtml("#171433");//To change the grid of repoList element color
 

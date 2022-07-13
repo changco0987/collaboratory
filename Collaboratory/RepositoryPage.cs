@@ -539,5 +539,7 @@ namespace Collaboratory
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
         }
+
+
     }
 }

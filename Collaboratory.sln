@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collaboratory", "Collaboratory\Collaboratory.csproj", "{6D20A113-D54C-42D1-911A-86C6901167B2}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Collaboratory v2.6", "Collaboratory v2.6\Collaboratory v2.6.vdproj", "{14B177D5-A4AE-4013-8478-568B4E3B2150}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{6D20A113-D54C-42D1-911A-86C6901167B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D20A113-D54C-42D1-911A-86C6901167B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D20A113-D54C-42D1-911A-86C6901167B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14B177D5-A4AE-4013-8478-568B4E3B2150}.Debug|Any CPU.ActiveCfg = Debug
-		{14B177D5-A4AE-4013-8478-568B4E3B2150}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
