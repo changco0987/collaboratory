@@ -47,7 +47,6 @@ namespace Collaboratory
         );
 
 
-
         //To avoid the screen from stuttering to make the object movement smooth
         public static void enableDoubleBuff(System.Windows.Forms.Control cont)
         {

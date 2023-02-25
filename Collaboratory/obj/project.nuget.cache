@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSyi9zYTGXueBLkT5dXbUM9ULhfbR2H1j82ttbtEHo46xwUzdJfcKEU88XPObN4MDHLKTvKJJOC+nBbUc5E+rQ==",
+  "dgSpecHash": "ycQqZZ0ZVA/FyQXVuZOXQi8NdPw8harvqrronKZbY4/2YWGpo2oSERsUwRxf0IpvQGSbY+ykk5WwJBAXY1F64w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\willi\\source\\repos\\repos\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
+  "projectFilePath": "E:\\source\\repos\\Collaboratory\\Collaboratory\\Collaboratory.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\willi\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\google.apis.auth\\1.57.0\\google.apis.auth.1.57.0.nupkg.sha512",
@@ -21,7 +21,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -31,7 +31,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts.Wpf.FixTooltip 0.9.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts.Wpf.FixTooltip 0.9.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts.Wpf.FixTooltip",
       "targetGraphs": [
         "net6.0-windows7.0"
