@@ -52,6 +52,7 @@
             dbPasswordInput.MaxLength = 20;
             dbPasswordInput.Multiline = true;
             dbPasswordInput.Name = "dbPasswordInput";
+            dbPasswordInput.PasswordChar = '*';
             dbPasswordInput.Size = new Size(225, 25);
             dbPasswordInput.TabIndex = 5;
             dbPasswordInput.WordWrap = false;

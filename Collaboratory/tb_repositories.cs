@@ -12,7 +12,7 @@ namespace Collaboratory
     public class tb_repositories
     {
         //This is the connection path for the app database (collaboratorydb)
-        NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=123;");
+        NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=" + appSettings.dbPassword + ";");
 
         public void CreateRepo(Repodata repository)
         {

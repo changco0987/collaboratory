@@ -33,6 +33,8 @@ namespace Collaboratory
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.DoubleBuffered = true;
             enableDoubleBuff(this);
+
+            checkPoint();
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -299,5 +301,18 @@ namespace Collaboratory
             var appSettingsPage = new AppSettingsPage();
             appSettingsPage.ShowDialog();
         }
+
+
+        private void checkPoint()
+        {
+
+            if (String.IsNullOrEmpty(appSettings.dbPassword))
+            {
+                MessageBox.Show("Please put the db password first!");
+                var AppSettingsPage = new AppSettingsPage();
+                AppSettingsPage.ShowDialog();
+            }
+        }
+
     }
 }
