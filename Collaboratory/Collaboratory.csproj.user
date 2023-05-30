@@ -4,6 +4,9 @@
     <Compile Update="AccountSettingPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AppSettingsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="authenticationPage.cs">
       <SubType>Form</SubType>
     </Compile>

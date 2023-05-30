@@ -220,3 +220,4 @@ E:\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\refint\Coll
 E:\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\Collaboratory.pdb
 E:\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\Collaboratory.genruntimeconfig.cache
 E:\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\ref\Collaboratory.dll
+E:\source\repos\Collaboratory\Collaboratory\obj\Debug\net6.0-windows\Collaboratory.AppSettingsPage.resources

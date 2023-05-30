@@ -144,7 +144,7 @@ namespace Collaboratory
             List<DataRow> dbData = conn.ReadUser(user);
 
             //This will save all user login data from database to static variables
-            foreach (var data in dbData) 
+            foreach (var data in dbData)
             {
                 UserLoginData.id = Convert.ToInt32(data[0]);
                 UserLoginData.firstName = data[1].ToString();
@@ -187,7 +187,7 @@ namespace Collaboratory
 
                 MessageBox.Show("Log in error, please check your userid or password carefully!");
             }
-            catch 
+            catch
             {
 
                 MessageBox.Show("Error has encountered in checkAccount()");
@@ -220,7 +220,7 @@ namespace Collaboratory
                 return;
             }
             user.password = hashAlgo(passwordTb.Text);
-            
+
         }
 
 
@@ -258,13 +258,13 @@ namespace Collaboratory
         //This is the function for show and hide password
         private void showPassBtn_Click(object sender, EventArgs e)
         {
-            
+
             if (passwordTb.PasswordChar == '*')
             {
                 passwordTb.PasswordChar = '\0';
                 showPassBtn.BackgroundImage = Image.FromFile("Asset/hide.png");
             }
-            else 
+            else
             {
                 passwordTb.PasswordChar = '*';
                 showPassBtn.BackgroundImage = Image.FromFile("Asset/show.png");
@@ -291,8 +291,13 @@ namespace Collaboratory
                 SendKeys.Send("{TAB}");
                 e.SuppressKeyPress = true;
 
-       
             }
+        }
+
+        private void appSettingsBtn_Click(object sender, EventArgs e)
+        {
+            var appSettingsPage = new AppSettingsPage();
+            appSettingsPage.ShowDialog();
         }
     }
 }

@@ -41,6 +41,8 @@ namespace Collaboratory.Model
         }
 
     }
+
+
     public class UserLoginData
     {
         public static int id { get; set; }
@@ -67,7 +69,6 @@ namespace Collaboratory.Model
             uak = "";
             email = "";
         }
-
 
     }
     public class UserdataList 

@@ -183,7 +183,7 @@ namespace Collaboratory
                         userDP.Image = Image.FromFile("Asset/user.png");//To assign the picturebox a new image
 
 
-                        oldImg = UserLoginData.profilePicName;//This will get to set as the olad
+                        oldImg = UserLoginData.profilePicName;//This will get to set as the old
                         imgName = open.FileName;//This is the dialog
                         imgExtension = Path.GetExtension(open.FileName);
                         renamedImgName = "Picture_id-" + UserLoginData.id + imgExtension;
