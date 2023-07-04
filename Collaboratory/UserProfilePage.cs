@@ -25,6 +25,8 @@ namespace Collaboratory
 
         bool mousedown; // this is for the draggable panel behavior
         string storagePath = Application.UserAppDataPath + @"\\Images\\";
+
+        private string dataFile = @"\user.txt";//This is were the user data being saved in local
         public UserProfilePage()
         {
             InitializeComponent();
@@ -138,7 +140,13 @@ namespace Collaboratory
             UserLoginData resetData = new UserLoginData();
             resetData.reset();
 
-            this.Hide();
+            //This will erase even the local data saved in the computer
+            if (File.Exists(Application.UserAppDataPath + dataFile)) 
+            {
+                File.Delete(Application.UserAppDataPath + dataFile);
+            }
+
+            this.Close();
             var loginPage = new LoginForm();
             loginPage.ShowDialog();
             this.Close();
