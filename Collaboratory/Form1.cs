@@ -24,6 +24,9 @@ namespace Collaboratory
 
         bool mousedown; // this is for the draggable panel behavior
 
+        private string dataFile = @"\user.txt";//This is were the user data being saved in local
+        private int savedID;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -158,6 +161,9 @@ namespace Collaboratory
                 UserLoginData.profilePicName = (string)data[7];
                 UserLoginData.uak = (string)data[8];
                 UserLoginData.email = (string)data[9];
+
+                //To saved the login in local file
+                System.IO.File.WriteAllText(Application.UserAppDataPath + dataFile, UserLoginData.id.ToString());//this will write or overwrite txt file data
             }
         }
 
@@ -169,13 +175,26 @@ namespace Collaboratory
                 tb_userAccounts conn = new tb_userAccounts();
                 List<DataRow> dbData = conn.ReadUser(user);//This will transfer the ReadUser() returned value into dbData
 
+
+
                 foreach (var data in dbData)
                 {
+                    //The if condition is being used login via saved user account in local
+                    if (user.id != 0)
+                    {
+                        saveLoginData(Convert.ToInt32(data[0]));
+
+                        this.Hide();
+                        var userPage = new UserProfilePage();
+                        userPage.ShowDialog();
+                        return;
+                    }
+                    
                     /*
                      * The data index 3 is the location of userid and data index 4 is the location of password
                      * This will check if the userid is already obtained or available
                      */
-                    if (data[3].ToString() == user.userId.ToLower() && data[4].ToString() == user.password)
+                    else if (data[3].ToString() == user.userId.ToLower() && data[4].ToString() == user.password)
                     {
                         saveLoginData(Convert.ToInt32(data[0]));
 
@@ -301,7 +320,7 @@ namespace Collaboratory
             appSettingsPage.ShowDialog();
         }
 
-
+        //To check if there is a db password inputted
         private void checkPoint()
         {
             appSettings settings = new appSettings();
@@ -310,6 +329,31 @@ namespace Collaboratory
                 MessageBox.Show("Please put the db password first!");
                 var AppSettingsPage = new AppSettingsPage();
                 AppSettingsPage.ShowDialog();
+            }
+            checkLoginAccount();
+        }
+
+        private void checkLoginAccount() 
+        {
+            if (File.Exists(Application.UserAppDataPath + dataFile))
+            {
+                //check if there is existing file and it have a data inside
+                using (FileStream scanToRead = new FileStream(Application.UserAppDataPath + dataFile, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                {
+                    StreamReader readFile = new StreamReader(scanToRead);
+
+                    string saveData = readFile.ReadLine();
+
+
+                    if (String.IsNullOrEmpty(saveData) == false)
+                    {
+                        savedID = Convert.ToInt32(saveData);
+                        user.id = savedID;
+                    }
+                    readFile.Close();
+                    scanToRead.Close();
+                    checkAccount();
+                }
             }
         }
 
