@@ -72,7 +72,7 @@ namespace Collaboratory
                 MessageBox.Show("Delete successfully!");
                 this.Close();
             }
-            else 
+            else
             {
                 return;
             }

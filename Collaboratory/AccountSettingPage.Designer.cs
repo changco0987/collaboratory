@@ -29,199 +29,198 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountSettingPage));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.backBtn = new System.Windows.Forms.Button();
-            this.changepicBtn = new System.Windows.Forms.Button();
-            this.editprofileBtn = new System.Windows.Forms.Button();
-            this.deleteaccBtn = new System.Windows.Forms.Button();
-            this.userDP = new Collaboratory.CustomControls.OvalPictureBox();
-            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
-            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userDP)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            CloseBtn = new CustomControls.RoundButton();
+            MinimizedBtn = new CustomControls.RoundButton();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
+            backBtn = new Button();
+            changepicBtn = new Button();
+            editprofileBtn = new Button();
+            deleteaccBtn = new Button();
+            userDP = new CustomControls.OvalPictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userDP).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.CloseBtn);
-            this.panel1.Controls.Add(this.MinimizedBtn);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(706, 28);
-            this.panel1.TabIndex = 10;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.label1.Location = new System.Drawing.Point(22, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 18);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "ollaboratory";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel2.Controls.Add(this.backBtn);
-            this.panel2.Controls.Add(this.changepicBtn);
-            this.panel2.Controls.Add(this.editprofileBtn);
-            this.panel2.Controls.Add(this.deleteaccBtn);
-            this.panel2.Controls.Add(this.userDP);
-            this.panel2.Location = new System.Drawing.Point(146, 71);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(409, 419);
-            this.panel2.TabIndex = 11;
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(11, 13);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(28, 26);
-            this.backBtn.TabIndex = 40;
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
-            // 
-            // changepicBtn
-            // 
-            this.changepicBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.changepicBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.changepicBtn.FlatAppearance.BorderSize = 0;
-            this.changepicBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.changepicBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.changepicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changepicBtn.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.changepicBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.changepicBtn.Location = new System.Drawing.Point(104, 191);
-            this.changepicBtn.Name = "changepicBtn";
-            this.changepicBtn.Size = new System.Drawing.Size(208, 44);
-            this.changepicBtn.TabIndex = 39;
-            this.changepicBtn.Text = "Change Photo";
-            this.changepicBtn.UseVisualStyleBackColor = false;
-            this.changepicBtn.Click += new System.EventHandler(this.changepicBtn_Click);
-            // 
-            // editprofileBtn
-            // 
-            this.editprofileBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.editprofileBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.editprofileBtn.FlatAppearance.BorderSize = 2;
-            this.editprofileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editprofileBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.editprofileBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.editprofileBtn.Location = new System.Drawing.Point(57, 273);
-            this.editprofileBtn.Name = "editprofileBtn";
-            this.editprofileBtn.Size = new System.Drawing.Size(295, 44);
-            this.editprofileBtn.TabIndex = 38;
-            this.editprofileBtn.Text = "Edit Profile";
-            this.editprofileBtn.UseVisualStyleBackColor = false;
-            this.editprofileBtn.Click += new System.EventHandler(this.editprofileBtn_Click);
-            // 
-            // deleteaccBtn
-            // 
-            this.deleteaccBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(97)))));
-            this.deleteaccBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.deleteaccBtn.FlatAppearance.BorderSize = 2;
-            this.deleteaccBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteaccBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteaccBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.deleteaccBtn.Location = new System.Drawing.Point(57, 356);
-            this.deleteaccBtn.Name = "deleteaccBtn";
-            this.deleteaccBtn.Size = new System.Drawing.Size(295, 44);
-            this.deleteaccBtn.TabIndex = 37;
-            this.deleteaccBtn.Text = "Delete My Account";
-            this.deleteaccBtn.UseVisualStyleBackColor = false;
-            this.deleteaccBtn.Click += new System.EventHandler(this.deleteaccBtn_Click);
-            // 
-            // userDP
-            // 
-            this.userDP.BackColor = System.Drawing.Color.DarkGray;
-            this.userDP.Image = ((System.Drawing.Image)(resources.GetObject("userDP.Image")));
-            this.userDP.Location = new System.Drawing.Point(118, 11);
-            this.userDP.Name = "userDP";
-            this.userDP.Size = new System.Drawing.Size(175, 174);
-            this.userDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userDP.TabIndex = 36;
-            this.userDP.TabStop = false;
-            this.userDP.Click += new System.EventHandler(this.userDP_Click);
+            panel1.BackColor = Color.FromArgb(36, 83, 130);
+            panel1.Controls.Add(CloseBtn);
+            panel1.Controls.Add(MinimizedBtn);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Location = new Point(-1, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(706, 28);
+            panel1.TabIndex = 10;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
+            panel1.MouseUp += panel1_MouseUp;
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.Location = new System.Drawing.Point(680, 4);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 49;
-            this.CloseBtn.Text = "roundButton2";
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            CloseBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CloseBtn.BackColor = Color.LightCoral;
+            CloseBtn.FlatAppearance.BorderSize = 0;
+            CloseBtn.FlatStyle = FlatStyle.Flat;
+            CloseBtn.ForeColor = Color.LightCoral;
+            CloseBtn.Location = new Point(680, 4);
+            CloseBtn.Name = "CloseBtn";
+            CloseBtn.Size = new Size(21, 22);
+            CloseBtn.TabIndex = 49;
+            CloseBtn.Text = "roundButton2";
+            CloseBtn.UseVisualStyleBackColor = false;
+            CloseBtn.Click += CloseBtn_Click;
             // 
             // MinimizedBtn
             // 
-            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(653, 4);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 48;
-            this.MinimizedBtn.Text = "roundButton1";
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
+            MinimizedBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            MinimizedBtn.BackColor = Color.LightGreen;
+            MinimizedBtn.FlatAppearance.BorderSize = 0;
+            MinimizedBtn.FlatStyle = FlatStyle.Flat;
+            MinimizedBtn.ForeColor = Color.LightGreen;
+            MinimizedBtn.Location = new Point(653, 4);
+            MinimizedBtn.Name = "MinimizedBtn";
+            MinimizedBtn.Size = new Size(21, 22);
+            MinimizedBtn.TabIndex = 48;
+            MinimizedBtn.Text = "roundButton1";
+            MinimizedBtn.UseVisualStyleBackColor = false;
+            MinimizedBtn.Click += MinimizedBtn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(224, 235, 237);
+            label1.Location = new Point(22, 5);
+            label1.Name = "label1";
+            label1.Size = new Size(105, 18);
+            label1.TabIndex = 18;
+            label1.Text = "ollaboratory";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(9, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(21, 22);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 17;
+            pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(36, 83, 130);
+            panel2.Controls.Add(backBtn);
+            panel2.Controls.Add(changepicBtn);
+            panel2.Controls.Add(editprofileBtn);
+            panel2.Controls.Add(deleteaccBtn);
+            panel2.Controls.Add(userDP);
+            panel2.Location = new Point(146, 71);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(409, 419);
+            panel2.TabIndex = 11;
+            // 
+            // backBtn
+            // 
+            backBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.FlatStyle = FlatStyle.Flat;
+            backBtn.ForeColor = Color.Transparent;
+            backBtn.Image = (Image)resources.GetObject("backBtn.Image");
+            backBtn.Location = new Point(11, 13);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(28, 26);
+            backBtn.TabIndex = 40;
+            backBtn.UseVisualStyleBackColor = true;
+            backBtn.Click += backBtn_Click;
+            // 
+            // changepicBtn
+            // 
+            changepicBtn.BackColor = Color.FromArgb(36, 83, 130);
+            changepicBtn.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            changepicBtn.FlatAppearance.BorderSize = 0;
+            changepicBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            changepicBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            changepicBtn.FlatStyle = FlatStyle.Flat;
+            changepicBtn.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            changepicBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            changepicBtn.Location = new Point(104, 191);
+            changepicBtn.Name = "changepicBtn";
+            changepicBtn.Size = new Size(208, 44);
+            changepicBtn.TabIndex = 39;
+            changepicBtn.Text = "Change Photo";
+            changepicBtn.UseVisualStyleBackColor = false;
+            changepicBtn.Click += changepicBtn_Click;
+            // 
+            // editprofileBtn
+            // 
+            editprofileBtn.BackColor = Color.FromArgb(36, 83, 130);
+            editprofileBtn.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            editprofileBtn.FlatAppearance.BorderSize = 2;
+            editprofileBtn.FlatStyle = FlatStyle.Flat;
+            editprofileBtn.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            editprofileBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            editprofileBtn.Location = new Point(99, 280);
+            editprofileBtn.Name = "editprofileBtn";
+            editprofileBtn.Size = new Size(213, 31);
+            editprofileBtn.TabIndex = 38;
+            editprofileBtn.Text = "Edit Profile";
+            editprofileBtn.UseVisualStyleBackColor = false;
+            editprofileBtn.Click += editprofileBtn_Click;
+            // 
+            // deleteaccBtn
+            // 
+            deleteaccBtn.BackColor = Color.FromArgb(255, 105, 97);
+            deleteaccBtn.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            deleteaccBtn.FlatAppearance.BorderSize = 2;
+            deleteaccBtn.FlatStyle = FlatStyle.Flat;
+            deleteaccBtn.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteaccBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            deleteaccBtn.Location = new Point(99, 355);
+            deleteaccBtn.Name = "deleteaccBtn";
+            deleteaccBtn.Size = new Size(213, 31);
+            deleteaccBtn.TabIndex = 37;
+            deleteaccBtn.Text = "Delete My Account";
+            deleteaccBtn.UseVisualStyleBackColor = false;
+            deleteaccBtn.Click += deleteaccBtn_Click;
+            // 
+            // userDP
+            // 
+            userDP.BackColor = Color.DarkGray;
+            userDP.Image = (Image)resources.GetObject("userDP.Image");
+            userDP.Location = new Point(118, 11);
+            userDP.Name = "userDP";
+            userDP.Size = new Size(175, 174);
+            userDP.SizeMode = PictureBoxSizeMode.StretchImage;
+            userDP.TabIndex = 36;
+            userDP.TabStop = false;
+            userDP.Click += userDP_Click;
             // 
             // AccountSettingPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(704, 541);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AccountSettingPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AccountSettingPage";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userDP)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(23, 20, 51);
+            ClientSize = new Size(704, 541);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "AccountSettingPage";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AccountSettingPage";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)userDP).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

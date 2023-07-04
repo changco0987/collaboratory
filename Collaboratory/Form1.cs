@@ -167,7 +167,6 @@ namespace Collaboratory
             try
             {
                 tb_userAccounts conn = new tb_userAccounts();
-
                 List<DataRow> dbData = conn.ReadUser(user);//This will transfer the ReadUser() returned value into dbData
 
                 foreach (var data in dbData)
@@ -189,9 +188,9 @@ namespace Collaboratory
 
                 MessageBox.Show("Log in error, please check your userid or password carefully!");
             }
-            catch
+            catch(Exception e)
             {
-
+                // + e.ToString() in message box to show the actual error
                 MessageBox.Show("Error has encountered in checkAccount()");
             }
 
@@ -305,8 +304,8 @@ namespace Collaboratory
 
         private void checkPoint()
         {
-
-            if (String.IsNullOrEmpty(appSettings.dbPassword))
+            appSettings settings = new appSettings();
+            if (String.IsNullOrEmpty(settings.getPassword()))
             {
                 MessageBox.Show("Please put the db password first!");
                 var AppSettingsPage = new AppSettingsPage();
@@ -314,5 +313,9 @@ namespace Collaboratory
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

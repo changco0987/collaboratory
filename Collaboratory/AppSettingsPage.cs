@@ -32,7 +32,8 @@ namespace Collaboratory
         {
             if (dbPasswordInput.Text.Trim() != string.Empty)
             {
-                appSettings.dbPassword = dbPasswordInput.Text.Trim();
+                appSettings settings = new appSettings();
+                settings.setPassword(dbPasswordInput.Text);
                 this.Close();
             }
             else
@@ -40,5 +41,7 @@ namespace Collaboratory
                 MessageBox.Show("The db password must not be empty!");
             }
         }
+
+
     }
 }

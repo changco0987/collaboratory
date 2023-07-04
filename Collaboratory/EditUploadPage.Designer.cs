@@ -29,148 +29,147 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUploadPage));
-            this.backBtn = new System.Windows.Forms.Button();
-            this.noteTb = new System.Windows.Forms.TextBox();
-            this.titleTb = new System.Windows.Forms.TextBox();
-            this.letterCountLb = new System.Windows.Forms.Label();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            backBtn = new Button();
+            noteTb = new TextBox();
+            titleTb = new TextBox();
+            letterCountLb = new Label();
+            saveBtn = new Button();
+            deleteBtn = new Button();
+            label3 = new Label();
+            label1 = new Label();
+            SuspendLayout();
             // 
             // backBtn
             // 
-            this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(590, 6);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(28, 26);
-            this.backBtn.TabIndex = 7;
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            backBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.FlatStyle = FlatStyle.Flat;
+            backBtn.ForeColor = Color.Transparent;
+            backBtn.Image = (Image)resources.GetObject("backBtn.Image");
+            backBtn.Location = new Point(590, 6);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(28, 26);
+            backBtn.TabIndex = 7;
+            backBtn.UseVisualStyleBackColor = true;
+            backBtn.Click += backBtn_Click;
             // 
             // noteTb
             // 
-            this.noteTb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.noteTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.noteTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteTb.Location = new System.Drawing.Point(63, 187);
-            this.noteTb.MaxLength = 280;
-            this.noteTb.Multiline = true;
-            this.noteTb.Name = "noteTb";
-            this.noteTb.PlaceholderText = "Write a note........";
-            this.noteTb.Size = new System.Drawing.Size(497, 204);
-            this.noteTb.TabIndex = 9;
-            this.noteTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.noteTb_KeyDown);
+            noteTb.Anchor = AnchorStyles.None;
+            noteTb.BackColor = Color.FromArgb(224, 235, 237);
+            noteTb.Font = new Font("Bahnschrift SemiLight", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            noteTb.Location = new Point(63, 187);
+            noteTb.MaxLength = 280;
+            noteTb.Multiline = true;
+            noteTb.Name = "noteTb";
+            noteTb.PlaceholderText = "Write a note........";
+            noteTb.Size = new Size(497, 204);
+            noteTb.TabIndex = 9;
+            noteTb.KeyDown += noteTb_KeyDown;
             // 
             // titleTb
             // 
-            this.titleTb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.titleTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.titleTb.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.titleTb.Location = new System.Drawing.Point(63, 122);
-            this.titleTb.MaxLength = 30;
-            this.titleTb.Multiline = true;
-            this.titleTb.Name = "titleTb";
-            this.titleTb.PlaceholderText = "Write your title........";
-            this.titleTb.Size = new System.Drawing.Size(497, 29);
-            this.titleTb.TabIndex = 8;
+            titleTb.Anchor = AnchorStyles.None;
+            titleTb.BackColor = Color.FromArgb(224, 235, 237);
+            titleTb.Font = new Font("Bahnschrift SemiLight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            titleTb.Location = new Point(63, 122);
+            titleTb.MaxLength = 30;
+            titleTb.Multiline = true;
+            titleTb.Name = "titleTb";
+            titleTb.PlaceholderText = "Write your title........";
+            titleTb.Size = new Size(497, 29);
+            titleTb.TabIndex = 8;
             // 
             // letterCountLb
             // 
-            this.letterCountLb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.letterCountLb.AutoSize = true;
-            this.letterCountLb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.letterCountLb.ForeColor = System.Drawing.Color.Black;
-            this.letterCountLb.Location = new System.Drawing.Point(506, 394);
-            this.letterCountLb.Name = "letterCountLb";
-            this.letterCountLb.Size = new System.Drawing.Size(43, 15);
-            this.letterCountLb.TabIndex = 46;
-            this.letterCountLb.Text = "0/280";
+            letterCountLb.Anchor = AnchorStyles.None;
+            letterCountLb.AutoSize = true;
+            letterCountLb.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            letterCountLb.ForeColor = Color.Black;
+            letterCountLb.Location = new Point(506, 394);
+            letterCountLb.Name = "letterCountLb";
+            letterCountLb.Size = new Size(43, 15);
+            letterCountLb.TabIndex = 46;
+            letterCountLb.Text = "0/280";
             // 
             // saveBtn
             // 
-            this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.saveBtn.FlatAppearance.BorderSize = 2;
-            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.saveBtn.Location = new System.Drawing.Point(377, 451);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(183, 42);
-            this.saveBtn.TabIndex = 47;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            saveBtn.Anchor = AnchorStyles.None;
+            saveBtn.BackColor = Color.FromArgb(36, 83, 130);
+            saveBtn.FlatAppearance.BorderColor = Color.FromArgb(37, 32, 79);
+            saveBtn.FlatAppearance.BorderSize = 2;
+            saveBtn.FlatStyle = FlatStyle.Flat;
+            saveBtn.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            saveBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            saveBtn.Location = new Point(388, 458);
+            saveBtn.Name = "saveBtn";
+            saveBtn.Size = new Size(172, 35);
+            saveBtn.TabIndex = 47;
+            saveBtn.Text = "Save";
+            saveBtn.UseVisualStyleBackColor = false;
+            saveBtn.Click += saveBtn_Click;
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.deleteBtn.FlatAppearance.BorderSize = 2;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.deleteBtn.Location = new System.Drawing.Point(63, 451);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(183, 42);
-            this.deleteBtn.TabIndex = 48;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            deleteBtn.Anchor = AnchorStyles.None;
+            deleteBtn.BackColor = Color.FromArgb(36, 83, 130);
+            deleteBtn.FlatAppearance.BorderColor = Color.FromArgb(37, 32, 79);
+            deleteBtn.FlatAppearance.BorderSize = 2;
+            deleteBtn.FlatStyle = FlatStyle.Flat;
+            deleteBtn.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            deleteBtn.Location = new Point(63, 458);
+            deleteBtn.Name = "deleteBtn";
+            deleteBtn.Size = new Size(172, 35);
+            deleteBtn.TabIndex = 48;
+            deleteBtn.Text = "Delete";
+            deleteBtn.UseVisualStyleBackColor = false;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.label3.Location = new System.Drawing.Point(9, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(608, 18);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "___________________________________________________________________________";
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(36, 83, 130);
+            label3.Location = new Point(9, 53);
+            label3.Name = "label3";
+            label3.Size = new Size(608, 18);
+            label3.TabIndex = 50;
+            label3.Text = "___________________________________________________________________________";
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(261, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 22);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Edit Post";
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(261, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(93, 22);
+            label1.TabIndex = 49;
+            label1.Text = "Edit Post";
             // 
             // EditUploadPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(171)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(624, 515);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.letterCountLb);
-            this.Controls.Add(this.noteTb);
-            this.Controls.Add(this.titleTb);
-            this.Controls.Add(this.backBtn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditUploadPage";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EditUploadPage";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(108, 171, 217);
+            ClientSize = new Size(624, 515);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(deleteBtn);
+            Controls.Add(saveBtn);
+            Controls.Add(letterCountLb);
+            Controls.Add(noteTb);
+            Controls.Add(titleTb);
+            Controls.Add(backBtn);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "EditUploadPage";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "EditUploadPage";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

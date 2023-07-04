@@ -14,11 +14,18 @@ using System.Collections.ObjectModel;
 
 namespace Collaboratory
 {
-    internal class tb_updates
+    public class tb_updates
     {
 
+        //Class constructor
+        public tb_updates()
+        {
+            appSettings settings = new appSettings();
+            conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=" + settings.getPassword() + ";");
+        }
+
         //This is the connection path for the app database (collaboratorydb)
-        NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=" + appSettings.dbPassword + ";");
+        NpgsqlConnection conn;
 
 
 

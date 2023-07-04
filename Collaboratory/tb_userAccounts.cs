@@ -16,8 +16,17 @@ namespace Collaboratory
 {
     public class tb_userAccounts
     {
+
+        //Class constructor
+        public tb_userAccounts()
+        {
+            appSettings settings = new appSettings();
+            conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password="+ settings.getPassword() +";");
+        }
+
+
         //This is the connection path for the app database (collaboratorydb)
-        NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password="+appSettings.dbPassword+";");
+        NpgsqlConnection conn;
 
 
 
@@ -38,7 +47,6 @@ namespace Collaboratory
 
         public List<DataRow> ReadUser(Userdata user)
         {
-
             conn.Open();
 
             NpgsqlCommand comm = new NpgsqlCommand();
@@ -117,8 +125,6 @@ namespace Collaboratory
         {
 
             var filteredList = userdata.Where(a => a.firstName.StartsWith(name) || a.lastName.StartsWith(name));
-            
-
             return filteredList.ToList();
         }
 

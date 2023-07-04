@@ -60,14 +60,14 @@ namespace Collaboratory
              * This is to check if who ever visit to the current repo is the owner/creator
              * else, it will disable the edit repo button
              */
-            if (SelectedRepoData.accountId != UserLoginData.id) 
+            if (SelectedRepoData.accountId != UserLoginData.id)
             {
                 editRepoBtn.Enabled = false;
                 editRepoBtn.BackColor = Color.LightGray;
             }
 
 
-            threadBtn_Click(threadBtn,null);//This will click the thread button as a default tab page
+            threadBtn_Click(threadBtn, null);//This will click the thread button as a default tab page
             retrieveUpdates();
         }
 
@@ -206,14 +206,14 @@ namespace Collaboratory
                             //data position in array data{update_id, title, spaceCol, uploader_name, spaceCol2, datetime, editBtn, noteBtn, downloadBtn}
                             updateList.Rows.Add(data[0], data[1], " ", uploaderName, "", data[4], editBtn.Image, noteBtn.Image, downloadBtn.Image);
                         }
-                        else 
+                        else
                         {
                             //data position in array data{update_id, title, spaceCol, uploader_name, spaceCol2, datetime, editBtn}
                             updateList.Rows.Add(data[0], data[1], " ", uploaderName, "", data[4], editBtn.Image);
                         }
 
                     }
-                    else 
+                    else
                     {
                         //This will check if there is a file uploaded in the current post
                         if (string.IsNullOrEmpty(data[2].ToString()))
@@ -226,7 +226,7 @@ namespace Collaboratory
                             //data position in array data{update_id, title, spaceCol, uploader_name, spaceCol2, datetime, editBtn, noteBtn, downloadBtn}
                             updateList.Rows.Add(data[0], data[1], " ", uploaderName, "", data[4], editBtn.Image, noteBtn.Image, downloadBtn.Image);
                         }
-                        else 
+                        else
                         {
 
                             //data position in array data{update_id, title, spaceCol, uploader_name, spaceCol2, datetime}
@@ -244,7 +244,7 @@ namespace Collaboratory
         }
 
         //This method will collect all contribution of the current viewer/user
-        void getMyContribution(Updatedata update) 
+        void getMyContribution(Updatedata update)
         {
             myContriList.Rows.Clear();
             myContriList.Refresh();
@@ -252,7 +252,7 @@ namespace Collaboratory
 
             List<DataRow> dbData = connPost.ReadPost(update);
 
-            foreach (var data in dbData) 
+            foreach (var data in dbData)
             {
                 //myContriList(id, update title)
                 myContriList.Rows.Add(data[0], data[1]);
@@ -263,7 +263,7 @@ namespace Collaboratory
         }
 
 
-        void getContribution() 
+        void getContribution()
         {
             memberContri = new List<MemberContribution>();
 
@@ -275,31 +275,31 @@ namespace Collaboratory
             update.repositoryId = SelectedRepoData.id;//This is the id of currently selected repo
 
             //This will get the name of the user/contributor
-            foreach (var getUserInfo in SelectedRepoData.members) 
+            foreach (var getUserInfo in SelectedRepoData.members)
             {
                 user.id = Convert.ToInt32(getUserInfo);//This is the id of the uploader
                 List<DataRow> userData = connUser.ReadUser(user);//This will retrieve the uploader info using their id
 
                 //This will get trigger if the fetch user.id data is equal to current user/viewer id
-                if (user.id == UserLoginData.id) 
+                if (user.id == UserLoginData.id)
                 {
                     update.accountId = user.id;
                     getMyContribution(update);
                 }
 
 
-                foreach (var user in userData) 
+                foreach (var user in userData)
                 {
                     string fullname = user[1] + " " + user[2];
                     update.accountId = Convert.ToInt32(user[0]);//This is the posser id
 
                     List<DataRow> dbData = conn.ReadPost(update);
 
-                    
-                    memberContri.Add(new MemberContribution() 
+
+                    memberContri.Add(new MemberContribution()
                     {
-                        id= Convert.ToInt32(user[0]),//To insert to user id
-                        name =fullname,//To insert the name of the user
+                        id = Convert.ToInt32(user[0]),//To insert to user id
+                        name = fullname,//To insert the name of the user
                         contriCount = dbData.Count//This will get the post count of the user
                     });
                 }
@@ -378,8 +378,8 @@ namespace Collaboratory
         //this event will trigger when the user hit the editBtn, noteBtn, and downloadBtn
         private async void updateList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var updateId  = updateList.Rows[e.RowIndex].Cells[0].Value;//This will get the row/update ID
-            var title  = updateList.Rows[e.RowIndex].Cells[1].Value;//This will get the row/update title
+            var updateId = updateList.Rows[e.RowIndex].Cells[0].Value;//This will get the row/update ID
+            var title = updateList.Rows[e.RowIndex].Cells[1].Value;//This will get the row/update title
             int clickedCell = e.ColumnIndex;//This will get the button index
 
 
@@ -405,7 +405,7 @@ namespace Collaboratory
                  * This will check if clicker of this post/update is the one who post it
                  * if not the clicker cannot edit this post
                  */
-                if (SelectedUpdateData.accountId == UserLoginData.id) 
+                if (SelectedUpdateData.accountId == UserLoginData.id)
                 {
                     var openEditPost = new EditUploadPage();
                     openEditPost.ShowDialog();
@@ -414,7 +414,7 @@ namespace Collaboratory
                 }
 
             }
-            else if (clickedCell == 7) 
+            else if (clickedCell == 7)
             {
                 //note
 
@@ -423,7 +423,7 @@ namespace Collaboratory
 
                 reloadPostPanel(sender);
             }
-            else if (clickedCell == 8) 
+            else if (clickedCell == 8)
             {
                 //download
 
@@ -431,7 +431,7 @@ namespace Collaboratory
                 var splashScreen = new LoadingScreen();
                 splashScreen.Show();
 
-                await Task.Factory.StartNew(() => 
+                await Task.Factory.StartNew(() =>
                 {
                     if (!string.IsNullOrEmpty(SelectedUpdateData.fileName))
                     {
@@ -471,7 +471,7 @@ namespace Collaboratory
             tb_updates conn = new tb_updates();
             List<DataRow> dbData = conn.ReadPost(updatedata);
 
-            foreach (var data in dbData) 
+            foreach (var data in dbData)
             {
                 SelectedUpdateData.fileName = data[2].ToString();
                 SelectedUpdateData.note = data[3].ToString();
@@ -516,9 +516,9 @@ namespace Collaboratory
         private void contributionBtn_Click(object sender, EventArgs e)
         {
             SeriesCollection series = new SeriesCollection();
-            foreach (var row in memberContri) 
+            foreach (var row in memberContri)
             {
-                series.Add(new PieSeries() { Title = row.name, Values = new ChartValues<int> { row.contriCount}, DataLabels = true, LabelPoint= labelPoint });
+                series.Add(new PieSeries() { Title = row.name, Values = new ChartValues<int> { row.contriCount }, DataLabels = true, LabelPoint = labelPoint });
             }
             pieChart1.Series = series;
 

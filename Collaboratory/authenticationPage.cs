@@ -97,7 +97,7 @@ namespace Collaboratory
 
         }
 
-        bool checkEmptyField() 
+        bool checkEmptyField()
         {
             //This will check if the textbox was empty or not
             if (emailTb.Text.Trim() == String.Empty)
@@ -123,7 +123,7 @@ namespace Collaboratory
                     var splashScreen = new LoadingScreen();
                     splashScreen.Show();
 
-                    await Task.Factory.StartNew(() => 
+                    await Task.Factory.StartNew(() =>
                     {
                         //To get all default user data and assign it to Userdata model
                         user.id = Convert.ToInt32(data[0]);
@@ -150,7 +150,7 @@ namespace Collaboratory
                         //This is the email function that the user will be recieve
                         mail.sendMail(user.email, mail.resetCodeMsg(randomCode)[0], mail.resetCodeMsg(randomCode)[1]);
 
-   
+
                     });
 
                     splashScreen.Close();
@@ -167,7 +167,7 @@ namespace Collaboratory
             return;
         }
 
-        void assignDataToStatModel() 
+        void assignDataToStatModel()
         {
             UserLoginData.id = user.id;
             UserLoginData.firstName = user.firstName;
@@ -190,6 +190,11 @@ namespace Collaboratory
 
                 reqcodeBtn_Click(sender, null);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

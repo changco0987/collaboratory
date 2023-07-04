@@ -94,20 +94,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(249, 158);
+            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(256, 165);
             label1.Name = "label1";
-            label1.Size = new Size(78, 22);
+            label1.Size = new Size(67, 18);
             label1.TabIndex = 3;
             label1.Text = "User ID";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(242, 232);
+            label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(246, 236);
             label2.Name = "label2";
-            label2.Size = new Size(100, 22);
+            label2.Size = new Size(87, 18);
             label2.TabIndex = 4;
             label2.Text = "Password";
             // 

@@ -11,12 +11,22 @@ namespace Collaboratory
 {
     internal class tb_groupChats
     {
+
+
+        //Class constructor
+        public tb_groupChats() 
+        {
+            appSettings settings = new appSettings();
+            conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=" + settings.getPassword() + ";");
+        }
+
+
         //This is the connection path for the app database (collaboratorydb)
-        NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=collaboratorydb;User Id=postgres;Password=" + appSettings.dbPassword + ";");
+        NpgsqlConnection conn;
 
         public void CreateGC(Groupchatdata groupchat)
         {
-
+            
             conn.Open();
 
             NpgsqlCommand comm = new NpgsqlCommand();

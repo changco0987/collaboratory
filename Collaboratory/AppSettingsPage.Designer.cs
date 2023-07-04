@@ -36,10 +36,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(17, 44);
+            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(34, 49);
             label1.Name = "label1";
-            label1.Size = new Size(216, 22);
+            label1.Size = new Size(188, 18);
             label1.TabIndex = 4;
             label1.Text = "PostgreSQL Password";
             // 
@@ -48,7 +48,7 @@
             dbPasswordInput.BackColor = Color.FromArgb(224, 235, 237);
             dbPasswordInput.BorderStyle = BorderStyle.None;
             dbPasswordInput.Font = new Font("Bahnschrift SemiLight", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dbPasswordInput.Location = new Point(12, 69);
+            dbPasswordInput.Location = new Point(12, 73);
             dbPasswordInput.MaxLength = 20;
             dbPasswordInput.Multiline = true;
             dbPasswordInput.Name = "dbPasswordInput";
@@ -63,9 +63,9 @@
             loginBtn.FlatAppearance.BorderSize = 0;
             loginBtn.FlatStyle = FlatStyle.Flat;
             loginBtn.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            loginBtn.Location = new Point(12, 111);
+            loginBtn.Location = new Point(28, 115);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(225, 33);
+            loginBtn.Size = new Size(197, 30);
             loginBtn.TabIndex = 6;
             loginBtn.Text = "Submit";
             loginBtn.UseVisualStyleBackColor = false;

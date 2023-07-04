@@ -29,782 +29,761 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepositoryPage));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.CloseBtn = new Collaboratory.CustomControls.RoundButton();
-            this.maximizeBtn = new Collaboratory.CustomControls.RoundButton();
-            this.MinimizedBtn = new Collaboratory.CustomControls.RoundButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.settingsBtn = new System.Windows.Forms.Button();
-            this.useridLb = new System.Windows.Forms.Label();
-            this.usernameLb = new System.Windows.Forms.Label();
-            this.backBtn = new System.Windows.Forms.Button();
-            this.userDP = new Collaboratory.CustomControls.OvalPictureBox();
-            this.chatBtn = new System.Windows.Forms.Button();
-            this.editRepoBtn = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.emptyLb = new System.Windows.Forms.Label();
-            this.emptyImg = new System.Windows.Forms.PictureBox();
-            this.updateList = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spaceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spaceCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editCol = new System.Windows.Forms.DataGridViewImageColumn();
-            this.noteCol = new System.Windows.Forms.DataGridViewImageColumn();
-            this.downloadCol = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.myContriList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.myPost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
-            this.threadBtn = new System.Windows.Forms.Button();
-            this.uploadBtn = new System.Windows.Forms.Button();
-            this.contributionBtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.reponameLb = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userDP)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updateList)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myContriList)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            panel1 = new Panel();
+            CloseBtn = new CustomControls.RoundButton();
+            maximizeBtn = new CustomControls.RoundButton();
+            MinimizedBtn = new CustomControls.RoundButton();
+            label4 = new Label();
+            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
+            settingsBtn = new Button();
+            useridLb = new Label();
+            usernameLb = new Label();
+            backBtn = new Button();
+            userDP = new CustomControls.OvalPictureBox();
+            chatBtn = new Button();
+            editRepoBtn = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            emptyLb = new Label();
+            emptyImg = new PictureBox();
+            updateList = new DataGridView();
+            idCol = new DataGridViewTextBoxColumn();
+            dataGridViewImageColumn3 = new DataGridViewTextBoxColumn();
+            spaceCol = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            spaceCol2 = new DataGridViewTextBoxColumn();
+            dataGridViewImageColumn4 = new DataGridViewTextBoxColumn();
+            editCol = new DataGridViewImageColumn();
+            noteCol = new DataGridViewImageColumn();
+            downloadCol = new DataGridViewImageColumn();
+            tabPage2 = new TabPage();
+            label2 = new Label();
+            myContriList = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            myPost = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            pieChart1 = new LiveCharts.WinForms.PieChart();
+            threadBtn = new Button();
+            uploadBtn = new Button();
+            contributionBtn = new Button();
+            panel3 = new Panel();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
+            reponameLb = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userDP).BeginInit();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)emptyImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)updateList).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)myContriList).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.CloseBtn);
-            this.panel1.Controls.Add(this.maximizeBtn);
-            this.panel1.Controls.Add(this.MinimizedBtn);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1429, 28);
-            this.panel1.TabIndex = 9;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(36, 83, 130);
+            panel1.Controls.Add(CloseBtn);
+            panel1.Controls.Add(maximizeBtn);
+            panel1.Controls.Add(MinimizedBtn);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Location = new Point(-1, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1429, 28);
+            panel1.TabIndex = 9;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
+            panel1.MouseUp += panel1_MouseUp;
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.ForeColor = System.Drawing.Color.LightCoral;
-            this.CloseBtn.Location = new System.Drawing.Point(1397, 4);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(21, 22);
-            this.CloseBtn.TabIndex = 39;
-            this.CloseBtn.Text = "roundButton2";
-            this.CloseBtn.UseVisualStyleBackColor = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            CloseBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CloseBtn.BackColor = Color.LightCoral;
+            CloseBtn.FlatAppearance.BorderSize = 0;
+            CloseBtn.FlatStyle = FlatStyle.Flat;
+            CloseBtn.ForeColor = Color.LightCoral;
+            CloseBtn.Location = new Point(1397, 4);
+            CloseBtn.Name = "CloseBtn";
+            CloseBtn.Size = new Size(21, 22);
+            CloseBtn.TabIndex = 39;
+            CloseBtn.Text = "roundButton2";
+            CloseBtn.UseVisualStyleBackColor = false;
+            CloseBtn.Click += CloseBtn_Click;
             // 
             // maximizeBtn
             // 
-            this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeBtn.BackColor = System.Drawing.Color.Gold;
-            this.maximizeBtn.FlatAppearance.BorderSize = 0;
-            this.maximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximizeBtn.ForeColor = System.Drawing.Color.Gold;
-            this.maximizeBtn.Location = new System.Drawing.Point(1370, 4);
-            this.maximizeBtn.Name = "maximizeBtn";
-            this.maximizeBtn.Size = new System.Drawing.Size(21, 22);
-            this.maximizeBtn.TabIndex = 43;
-            this.maximizeBtn.Text = "roundButton1";
-            this.maximizeBtn.UseVisualStyleBackColor = false;
-            this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
+            maximizeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            maximizeBtn.BackColor = Color.Gold;
+            maximizeBtn.FlatAppearance.BorderSize = 0;
+            maximizeBtn.FlatStyle = FlatStyle.Flat;
+            maximizeBtn.ForeColor = Color.Gold;
+            maximizeBtn.Location = new Point(1370, 4);
+            maximizeBtn.Name = "maximizeBtn";
+            maximizeBtn.Size = new Size(21, 22);
+            maximizeBtn.TabIndex = 43;
+            maximizeBtn.Text = "roundButton1";
+            maximizeBtn.UseVisualStyleBackColor = false;
+            maximizeBtn.Click += maximizeBtn_Click;
             // 
             // MinimizedBtn
             // 
-            this.MinimizedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizedBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.FlatAppearance.BorderSize = 0;
-            this.MinimizedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizedBtn.ForeColor = System.Drawing.Color.LightGreen;
-            this.MinimizedBtn.Location = new System.Drawing.Point(1343, 4);
-            this.MinimizedBtn.Name = "MinimizedBtn";
-            this.MinimizedBtn.Size = new System.Drawing.Size(21, 22);
-            this.MinimizedBtn.TabIndex = 38;
-            this.MinimizedBtn.Text = "roundButton1";
-            this.MinimizedBtn.UseVisualStyleBackColor = false;
-            this.MinimizedBtn.Click += new System.EventHandler(this.MinimizedBtn_Click);
+            MinimizedBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            MinimizedBtn.BackColor = Color.LightGreen;
+            MinimizedBtn.FlatAppearance.BorderSize = 0;
+            MinimizedBtn.FlatStyle = FlatStyle.Flat;
+            MinimizedBtn.ForeColor = Color.LightGreen;
+            MinimizedBtn.Location = new Point(1343, 4);
+            MinimizedBtn.Name = "MinimizedBtn";
+            MinimizedBtn.Size = new Size(21, 22);
+            MinimizedBtn.TabIndex = 38;
+            MinimizedBtn.Text = "roundButton1";
+            MinimizedBtn.UseVisualStyleBackColor = false;
+            MinimizedBtn.Click += MinimizedBtn_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.label4.Location = new System.Drawing.Point(23, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 18);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "ollaboratory";
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(224, 235, 237);
+            label4.Location = new Point(23, 5);
+            label4.Name = "label4";
+            label4.Size = new Size(105, 18);
+            label4.TabIndex = 18;
+            label4.Text = "ollaboratory";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(10, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(10, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(21, 22);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 17;
+            pictureBox2.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(77)))), ((int)(((byte)(133)))));
-            this.panel2.Controls.Add(this.settingsBtn);
-            this.panel2.Controls.Add(this.useridLb);
-            this.panel2.Controls.Add(this.usernameLb);
-            this.panel2.Controls.Add(this.backBtn);
-            this.panel2.Controls.Add(this.userDP);
-            this.panel2.Controls.Add(this.chatBtn);
-            this.panel2.Controls.Add(this.editRepoBtn);
-            this.panel2.Location = new System.Drawing.Point(12, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1403, 233);
-            this.panel2.TabIndex = 34;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.FromArgb(21, 77, 133);
+            panel2.Controls.Add(settingsBtn);
+            panel2.Controls.Add(useridLb);
+            panel2.Controls.Add(usernameLb);
+            panel2.Controls.Add(backBtn);
+            panel2.Controls.Add(userDP);
+            panel2.Controls.Add(chatBtn);
+            panel2.Controls.Add(editRepoBtn);
+            panel2.Location = new Point(12, 43);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1403, 233);
+            panel2.TabIndex = 34;
             // 
             // settingsBtn
             // 
-            this.settingsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.settingsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("settingsBtn.BackgroundImage")));
-            this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.settingsBtn.FlatAppearance.BorderSize = 0;
-            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsBtn.Location = new System.Drawing.Point(1320, 10);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Size = new System.Drawing.Size(31, 31);
-            this.settingsBtn.TabIndex = 39;
-            this.settingsBtn.UseVisualStyleBackColor = false;
-            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            settingsBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            settingsBtn.BackColor = Color.Transparent;
+            settingsBtn.BackgroundImage = (Image)resources.GetObject("settingsBtn.BackgroundImage");
+            settingsBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            settingsBtn.FlatAppearance.BorderSize = 0;
+            settingsBtn.FlatStyle = FlatStyle.Flat;
+            settingsBtn.Location = new Point(1320, 10);
+            settingsBtn.Name = "settingsBtn";
+            settingsBtn.Size = new Size(31, 31);
+            settingsBtn.TabIndex = 39;
+            settingsBtn.UseVisualStyleBackColor = false;
+            settingsBtn.Click += settingsBtn_Click;
             // 
             // useridLb
             // 
-            this.useridLb.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.useridLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.useridLb.Location = new System.Drawing.Point(222, 107);
-            this.useridLb.Name = "useridLb";
-            this.useridLb.Size = new System.Drawing.Size(343, 21);
-            this.useridLb.TabIndex = 38;
-            this.useridLb.Text = "onahmarie22";
-            this.useridLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            useridLb.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            useridLb.ForeColor = Color.FromArgb(224, 235, 237);
+            useridLb.Location = new Point(222, 107);
+            useridLb.Name = "useridLb";
+            useridLb.Size = new Size(343, 21);
+            useridLb.TabIndex = 38;
+            useridLb.Text = "onahmarie22";
+            useridLb.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // usernameLb
             // 
-            this.usernameLb.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.usernameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.usernameLb.Location = new System.Drawing.Point(222, 76);
-            this.usernameLb.Name = "usernameLb";
-            this.usernameLb.Size = new System.Drawing.Size(343, 31);
-            this.usernameLb.TabIndex = 37;
-            this.usernameLb.Text = "Onah Marie A. Naputo";
-            this.usernameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            usernameLb.Font = new Font("Ebrima", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            usernameLb.ForeColor = Color.FromArgb(224, 235, 237);
+            usernameLb.Location = new Point(222, 76);
+            usernameLb.Name = "usernameLb";
+            usernameLb.Size = new Size(343, 31);
+            usernameLb.TabIndex = 37;
+            usernameLb.Text = "Onah Marie A. Naputo";
+            usernameLb.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // backBtn
             // 
-            this.backBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.backBtn.BackColor = System.Drawing.Color.Transparent;
-            this.backBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backBtn.BackgroundImage")));
-            this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Location = new System.Drawing.Point(1362, 10);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(32, 32);
-            this.backBtn.TabIndex = 36;
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            backBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            backBtn.BackColor = Color.Transparent;
+            backBtn.BackgroundImage = (Image)resources.GetObject("backBtn.BackgroundImage");
+            backBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.FlatStyle = FlatStyle.Flat;
+            backBtn.Location = new Point(1362, 10);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(32, 32);
+            backBtn.TabIndex = 36;
+            backBtn.UseVisualStyleBackColor = false;
+            backBtn.Click += backBtn_Click;
             // 
             // userDP
             // 
-            this.userDP.BackColor = System.Drawing.Color.DarkGray;
-            this.userDP.Image = ((System.Drawing.Image)(resources.GetObject("userDP.Image")));
-            this.userDP.Location = new System.Drawing.Point(38, 29);
-            this.userDP.Name = "userDP";
-            this.userDP.Size = new System.Drawing.Size(175, 174);
-            this.userDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userDP.TabIndex = 35;
-            this.userDP.TabStop = false;
+            userDP.BackColor = Color.DarkGray;
+            userDP.Image = (Image)resources.GetObject("userDP.Image");
+            userDP.Location = new Point(38, 29);
+            userDP.Name = "userDP";
+            userDP.Size = new Size(175, 174);
+            userDP.SizeMode = PictureBoxSizeMode.StretchImage;
+            userDP.TabIndex = 35;
+            userDP.TabStop = false;
             // 
             // chatBtn
             // 
-            this.chatBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.chatBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.chatBtn.FlatAppearance.BorderSize = 2;
-            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatBtn.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chatBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.chatBtn.Location = new System.Drawing.Point(1065, 176);
-            this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(168, 55);
-            this.chatBtn.TabIndex = 34;
-            this.chatBtn.Text = "Chat";
-            this.chatBtn.UseVisualStyleBackColor = false;
-            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
+            chatBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            chatBtn.BackColor = Color.FromArgb(36, 83, 130);
+            chatBtn.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            chatBtn.FlatAppearance.BorderSize = 2;
+            chatBtn.FlatStyle = FlatStyle.Flat;
+            chatBtn.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            chatBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            chatBtn.Location = new Point(1125, 195);
+            chatBtn.Name = "chatBtn";
+            chatBtn.Size = new Size(138, 36);
+            chatBtn.TabIndex = 34;
+            chatBtn.Text = "Chat";
+            chatBtn.UseVisualStyleBackColor = false;
+            chatBtn.Click += chatBtn_Click;
             // 
             // editRepoBtn
             // 
-            this.editRepoBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editRepoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.editRepoBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.editRepoBtn.FlatAppearance.BorderSize = 2;
-            this.editRepoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editRepoBtn.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.editRepoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.editRepoBtn.Location = new System.Drawing.Point(1233, 176);
-            this.editRepoBtn.Name = "editRepoBtn";
-            this.editRepoBtn.Size = new System.Drawing.Size(168, 55);
-            this.editRepoBtn.TabIndex = 33;
-            this.editRepoBtn.Text = "Edit Repository";
-            this.editRepoBtn.UseVisualStyleBackColor = false;
-            this.editRepoBtn.Click += new System.EventHandler(this.editRepoBtn_Click);
+            editRepoBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            editRepoBtn.BackColor = Color.FromArgb(36, 83, 130);
+            editRepoBtn.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            editRepoBtn.FlatAppearance.BorderSize = 2;
+            editRepoBtn.FlatStyle = FlatStyle.Flat;
+            editRepoBtn.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            editRepoBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            editRepoBtn.Location = new Point(1263, 195);
+            editRepoBtn.Name = "editRepoBtn";
+            editRepoBtn.Size = new Size(138, 36);
+            editRepoBtn.TabIndex = 33;
+            editRepoBtn.Text = "Edit Repository";
+            editRepoBtn.UseVisualStyleBackColor = false;
+            editRepoBtn.Click += editRepoBtn_Click;
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 309);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1403, 504);
-            this.tabControl1.TabIndex = 36;
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(12, 309);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1403, 504);
+            tabControl1.TabIndex = 36;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.tabPage1.Controls.Add(this.emptyLb);
-            this.tabPage1.Controls.Add(this.emptyImg);
-            this.tabPage1.Controls.Add(this.updateList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1395, 476);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            tabPage1.BackColor = Color.FromArgb(37, 32, 79);
+            tabPage1.Controls.Add(emptyLb);
+            tabPage1.Controls.Add(emptyImg);
+            tabPage1.Controls.Add(updateList);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1395, 476);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
             // 
             // emptyLb
             // 
-            this.emptyLb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emptyLb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.emptyLb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emptyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.emptyLb.Location = new System.Drawing.Point(597, 196);
-            this.emptyLb.Name = "emptyLb";
-            this.emptyLb.Size = new System.Drawing.Size(343, 37);
-            this.emptyLb.TabIndex = 42;
-            this.emptyLb.Text = "There is nothing here";
-            this.emptyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.emptyLb.Visible = false;
+            emptyLb.Anchor = AnchorStyles.None;
+            emptyLb.BackColor = Color.FromArgb(37, 32, 79);
+            emptyLb.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            emptyLb.ForeColor = Color.FromArgb(224, 235, 237);
+            emptyLb.Location = new Point(597, 196);
+            emptyLb.Name = "emptyLb";
+            emptyLb.Size = new Size(343, 37);
+            emptyLb.TabIndex = 42;
+            emptyLb.Text = "There is nothing here";
+            emptyLb.TextAlign = ContentAlignment.MiddleLeft;
+            emptyLb.Visible = false;
             // 
             // emptyImg
             // 
-            this.emptyImg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emptyImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.emptyImg.Image = ((System.Drawing.Image)(resources.GetObject("emptyImg.Image")));
-            this.emptyImg.Location = new System.Drawing.Point(520, 185);
-            this.emptyImg.Name = "emptyImg";
-            this.emptyImg.Size = new System.Drawing.Size(63, 57);
-            this.emptyImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.emptyImg.TabIndex = 41;
-            this.emptyImg.TabStop = false;
-            this.emptyImg.Visible = false;
+            emptyImg.Anchor = AnchorStyles.None;
+            emptyImg.BackColor = Color.FromArgb(37, 32, 79);
+            emptyImg.Image = (Image)resources.GetObject("emptyImg.Image");
+            emptyImg.Location = new Point(520, 185);
+            emptyImg.Name = "emptyImg";
+            emptyImg.Size = new Size(63, 57);
+            emptyImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            emptyImg.TabIndex = 41;
+            emptyImg.TabStop = false;
+            emptyImg.Visible = false;
             // 
             // updateList
             // 
-            this.updateList.AllowUserToAddRows = false;
-            this.updateList.AllowUserToDeleteRows = false;
-            this.updateList.AllowUserToResizeColumns = false;
-            this.updateList.AllowUserToResizeRows = false;
-            this.updateList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.updateList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.updateList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.updateList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.updateList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.updateList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.updateList.ColumnHeadersHeight = 20;
-            this.updateList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.updateList.ColumnHeadersVisible = false;
-            this.updateList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCol,
-            this.dataGridViewImageColumn3,
-            this.spaceCol,
-            this.dataGridViewTextBoxColumn2,
-            this.spaceCol2,
-            this.dataGridViewImageColumn4,
-            this.editCol,
-            this.noteCol,
-            this.downloadCol});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.updateList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.updateList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.updateList.Location = new System.Drawing.Point(-4, 0);
-            this.updateList.MultiSelect = false;
-            this.updateList.Name = "updateList";
-            this.updateList.ReadOnly = true;
-            this.updateList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.updateList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.updateList.RowHeadersVisible = false;
-            this.updateList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(4, 7, 0, 7);
-            this.updateList.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.updateList.RowTemplate.DefaultCellStyle.NullValue = null;
-            this.updateList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.updateList.RowTemplate.DividerHeight = 1;
-            this.updateList.RowTemplate.Height = 80;
-            this.updateList.RowTemplate.ReadOnly = true;
-            this.updateList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.updateList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.updateList.Size = new System.Drawing.Size(1403, 480);
-            this.updateList.TabIndex = 40;
-            this.updateList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.updateList_CellClick);
+            updateList.AllowUserToAddRows = false;
+            updateList.AllowUserToDeleteRows = false;
+            updateList.AllowUserToResizeColumns = false;
+            updateList.AllowUserToResizeRows = false;
+            updateList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            updateList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            updateList.BackgroundColor = Color.FromArgb(37, 32, 79);
+            updateList.BorderStyle = BorderStyle.Fixed3D;
+            updateList.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            updateList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.Control;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            updateList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            updateList.ColumnHeadersHeight = 20;
+            updateList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            updateList.ColumnHeadersVisible = false;
+            updateList.Columns.AddRange(new DataGridViewColumn[] { idCol, dataGridViewImageColumn3, spaceCol, dataGridViewTextBoxColumn2, spaceCol2, dataGridViewImageColumn4, editCol, noteCol, downloadCol });
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = SystemColors.Control;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(224, 235, 237);
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+            updateList.DefaultCellStyle = dataGridViewCellStyle13;
+            updateList.GridColor = Color.FromArgb(36, 83, 130);
+            updateList.Location = new Point(-4, 0);
+            updateList.MultiSelect = false;
+            updateList.Name = "updateList";
+            updateList.ReadOnly = true;
+            updateList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = SystemColors.Control;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            updateList.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            updateList.RowHeadersVisible = false;
+            updateList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(36, 83, 130);
+            dataGridViewCellStyle15.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = Color.FromArgb(224, 235, 237);
+            dataGridViewCellStyle15.Padding = new Padding(4, 7, 0, 7);
+            updateList.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            updateList.RowTemplate.DefaultCellStyle.NullValue = null;
+            updateList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(36, 83, 130);
+            updateList.RowTemplate.DividerHeight = 1;
+            updateList.RowTemplate.Height = 80;
+            updateList.RowTemplate.ReadOnly = true;
+            updateList.RowTemplate.Resizable = DataGridViewTriState.False;
+            updateList.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            updateList.Size = new Size(1403, 480);
+            updateList.TabIndex = 40;
+            updateList.CellClick += updateList_CellClick;
             // 
             // idCol
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            this.idCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idCol.FillWeight = 5F;
-            this.idCol.HeaderText = "idCol";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
+            dataGridViewCellStyle12.BackColor = Color.Red;
+            idCol.DefaultCellStyle = dataGridViewCellStyle12;
+            idCol.FillWeight = 5F;
+            idCol.HeaderText = "idCol";
+            idCol.Name = "idCol";
+            idCol.ReadOnly = true;
+            idCol.Visible = false;
             // 
             // dataGridViewImageColumn3
             // 
-            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn3.FillWeight = 15F;
-            this.dataGridViewImageColumn3.HeaderText = "titleCol";
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewImageColumn3.Width = 5;
+            dataGridViewImageColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewImageColumn3.FillWeight = 15F;
+            dataGridViewImageColumn3.HeaderText = "titleCol";
+            dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            dataGridViewImageColumn3.ReadOnly = true;
+            dataGridViewImageColumn3.Resizable = DataGridViewTriState.False;
+            dataGridViewImageColumn3.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewImageColumn3.Width = 5;
             // 
             // spaceCol
             // 
-            this.spaceCol.FillWeight = 6.931818F;
-            this.spaceCol.HeaderText = "spaceCol";
-            this.spaceCol.Name = "spaceCol";
-            this.spaceCol.ReadOnly = true;
-            this.spaceCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            spaceCol.FillWeight = 6.931818F;
+            spaceCol.HeaderText = "spaceCol";
+            spaceCol.Name = "spaceCol";
+            spaceCol.ReadOnly = true;
+            spaceCol.Resizable = DataGridViewTriState.False;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.FillWeight = 7F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "nameCol";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Width = 5;
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTextBoxColumn2.FillWeight = 7F;
+            dataGridViewTextBoxColumn2.HeaderText = "nameCol";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn2.Width = 5;
             // 
             // spaceCol2
             // 
-            this.spaceCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.spaceCol2.FillWeight = 10F;
-            this.spaceCol2.HeaderText = "spaceCol2";
-            this.spaceCol2.Name = "spaceCol2";
-            this.spaceCol2.ReadOnly = true;
-            this.spaceCol2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.spaceCol2.Width = 5;
+            spaceCol2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            spaceCol2.FillWeight = 10F;
+            spaceCol2.HeaderText = "spaceCol2";
+            spaceCol2.Name = "spaceCol2";
+            spaceCol2.ReadOnly = true;
+            spaceCol2.Resizable = DataGridViewTriState.False;
+            spaceCol2.Width = 5;
             // 
             // dataGridViewImageColumn4
             // 
-            this.dataGridViewImageColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn4.FillWeight = 7F;
-            this.dataGridViewImageColumn4.HeaderText = "datetimeCol";
-            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-            this.dataGridViewImageColumn4.ReadOnly = true;
-            this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn4.Width = 5;
+            dataGridViewImageColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewImageColumn4.FillWeight = 7F;
+            dataGridViewImageColumn4.HeaderText = "datetimeCol";
+            dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            dataGridViewImageColumn4.ReadOnly = true;
+            dataGridViewImageColumn4.Resizable = DataGridViewTriState.False;
+            dataGridViewImageColumn4.Width = 5;
             // 
             // editCol
             // 
-            this.editCol.FillWeight = 1.386364F;
-            this.editCol.HeaderText = "editCol";
-            this.editCol.Image = ((System.Drawing.Image)(resources.GetObject("editCol.Image")));
-            this.editCol.Name = "editCol";
-            this.editCol.ReadOnly = true;
+            editCol.FillWeight = 1.386364F;
+            editCol.HeaderText = "editCol";
+            editCol.Image = (Image)resources.GetObject("editCol.Image");
+            editCol.Name = "editCol";
+            editCol.ReadOnly = true;
             // 
             // noteCol
             // 
-            this.noteCol.FillWeight = 1.386364F;
-            this.noteCol.HeaderText = "noteCol";
-            this.noteCol.Image = ((System.Drawing.Image)(resources.GetObject("noteCol.Image")));
-            this.noteCol.Name = "noteCol";
-            this.noteCol.ReadOnly = true;
+            noteCol.FillWeight = 1.386364F;
+            noteCol.HeaderText = "noteCol";
+            noteCol.Image = (Image)resources.GetObject("noteCol.Image");
+            noteCol.Name = "noteCol";
+            noteCol.ReadOnly = true;
             // 
             // downloadCol
             // 
-            this.downloadCol.FillWeight = 1.386364F;
-            this.downloadCol.HeaderText = "downloadCol";
-            this.downloadCol.Image = ((System.Drawing.Image)(resources.GetObject("downloadCol.Image")));
-            this.downloadCol.Name = "downloadCol";
-            this.downloadCol.ReadOnly = true;
+            downloadCol.FillWeight = 1.386364F;
+            downloadCol.HeaderText = "downloadCol";
+            downloadCol.Image = (Image)resources.GetObject("downloadCol.Image");
+            downloadCol.Name = "downloadCol";
+            downloadCol.ReadOnly = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(82)))), ((int)(((byte)(129)))));
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.myContriList);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.pieChart1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1395, 476);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            tabPage2.BackColor = Color.FromArgb(34, 82, 129);
+            tabPage2.Controls.Add(label2);
+            tabPage2.Controls.Add(myContriList);
+            tabPage2.Controls.Add(label1);
+            tabPage2.Controls.Add(pieChart1);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1395, 476);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Ebrima", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.label2.Location = new System.Drawing.Point(924, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(343, 31);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "My Contribution";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label2.Font = new Font("Ebrima", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(224, 235, 237);
+            label2.Location = new Point(924, 7);
+            label2.Name = "label2";
+            label2.Size = new Size(343, 31);
+            label2.TabIndex = 41;
+            label2.Text = "My Contribution";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // myContriList
             // 
-            this.myContriList.AllowUserToAddRows = false;
-            this.myContriList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(77)))), ((int)(((byte)(133)))));
-            this.myContriList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.myContriList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.myContriList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.myContriList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.myContriList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.myContriList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.myContriList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(93)))), ((int)(((byte)(107)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.myContriList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.myContriList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.myContriList.ColumnHeadersVisible = false;
-            this.myContriList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.myPost});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(93)))), ((int)(((byte)(107)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.myContriList.DefaultCellStyle = dataGridViewCellStyle8;
-            this.myContriList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.myContriList.Location = new System.Drawing.Point(801, 51);
-            this.myContriList.Name = "myContriList";
-            this.myContriList.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(93)))), ((int)(((byte)(107)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.myContriList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.myContriList.RowHeadersVisible = false;
-            this.myContriList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(4, 7, 0, 7);
-            this.myContriList.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.myContriList.RowTemplate.Height = 25;
-            this.myContriList.Size = new System.Drawing.Size(579, 408);
-            this.myContriList.TabIndex = 40;
+            myContriList.AllowUserToAddRows = false;
+            myContriList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(21, 77, 133);
+            myContriList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            myContriList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            myContriList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            myContriList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            myContriList.BackgroundColor = Color.FromArgb(37, 32, 79);
+            myContriList.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            myContriList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(43, 93, 107);
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            myContriList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            myContriList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            myContriList.ColumnHeadersVisible = false;
+            myContriList.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, myPost });
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(43, 93, 107);
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = Color.FromArgb(224, 235, 237);
+            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
+            myContriList.DefaultCellStyle = dataGridViewCellStyle18;
+            myContriList.GridColor = Color.FromArgb(36, 83, 130);
+            myContriList.Location = new Point(801, 51);
+            myContriList.Name = "myContriList";
+            myContriList.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = Color.FromArgb(43, 93, 107);
+            dataGridViewCellStyle19.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            myContriList.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            myContriList.RowHeadersVisible = false;
+            myContriList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle20.BackColor = Color.FromArgb(36, 83, 130);
+            dataGridViewCellStyle20.Font = new Font("Arial Rounded MT Bold", 17.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle20.ForeColor = Color.FromArgb(224, 235, 237);
+            dataGridViewCellStyle20.Padding = new Padding(4, 7, 0, 7);
+            myContriList.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            myContriList.RowTemplate.Height = 25;
+            myContriList.Size = new Size(579, 408);
+            myContriList.TabIndex = 40;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "idCol";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            dataGridViewTextBoxColumn1.HeaderText = "idCol";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Visible = false;
             // 
             // myPost
             // 
-            this.myPost.HeaderText = "myPost";
-            this.myPost.Name = "myPost";
-            this.myPost.ReadOnly = true;
+            myPost.HeaderText = "myPost";
+            myPost.Name = "myPost";
+            myPost.ReadOnly = true;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Ebrima", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.label1.Location = new System.Drawing.Point(215, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 31);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Project Contributor Chart";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Font = new Font("Ebrima", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(224, 235, 237);
+            label1.Location = new Point(215, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(343, 31);
+            label1.TabIndex = 38;
+            label1.Text = "Project Contributor Chart";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pieChart1
             // 
-            this.pieChart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pieChart1.Location = new System.Drawing.Point(34, 51);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(678, 408);
-            this.pieChart1.TabIndex = 0;
-            this.pieChart1.Text = "pieChart1";
+            pieChart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            pieChart1.Location = new Point(34, 51);
+            pieChart1.Name = "pieChart1";
+            pieChart1.Size = new Size(678, 408);
+            pieChart1.TabIndex = 0;
+            pieChart1.Text = "pieChart1";
             // 
             // threadBtn
             // 
-            this.threadBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.threadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.threadBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.threadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.threadBtn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.threadBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.threadBtn.Location = new System.Drawing.Point(726, 19);
-            this.threadBtn.Name = "threadBtn";
-            this.threadBtn.Size = new System.Drawing.Size(168, 37);
-            this.threadBtn.TabIndex = 44;
-            this.threadBtn.Text = "Thread";
-            this.threadBtn.UseVisualStyleBackColor = false;
-            this.threadBtn.Click += new System.EventHandler(this.threadBtn_Click);
+            threadBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            threadBtn.BackColor = Color.FromArgb(37, 32, 79);
+            threadBtn.FlatAppearance.BorderColor = Color.FromArgb(224, 235, 237);
+            threadBtn.FlatStyle = FlatStyle.Flat;
+            threadBtn.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            threadBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            threadBtn.Location = new Point(726, 19);
+            threadBtn.Name = "threadBtn";
+            threadBtn.Size = new Size(168, 37);
+            threadBtn.TabIndex = 44;
+            threadBtn.Text = "Thread";
+            threadBtn.UseVisualStyleBackColor = false;
+            threadBtn.Click += threadBtn_Click;
             // 
             // uploadBtn
             // 
-            this.uploadBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.uploadBtn.BackColor = System.Drawing.Color.Transparent;
-            this.uploadBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uploadBtn.BackgroundImage")));
-            this.uploadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uploadBtn.FlatAppearance.BorderSize = 0;
-            this.uploadBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.uploadBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uploadBtn.Location = new System.Drawing.Point(1350, 10);
-            this.uploadBtn.Name = "uploadBtn";
-            this.uploadBtn.Size = new System.Drawing.Size(34, 35);
-            this.uploadBtn.TabIndex = 43;
-            this.uploadBtn.UseVisualStyleBackColor = false;
-            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            uploadBtn.Anchor = AnchorStyles.Right;
+            uploadBtn.BackColor = Color.Transparent;
+            uploadBtn.BackgroundImage = (Image)resources.GetObject("uploadBtn.BackgroundImage");
+            uploadBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            uploadBtn.FlatAppearance.BorderSize = 0;
+            uploadBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            uploadBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            uploadBtn.FlatStyle = FlatStyle.Flat;
+            uploadBtn.Location = new Point(1350, 10);
+            uploadBtn.Name = "uploadBtn";
+            uploadBtn.Size = new Size(34, 35);
+            uploadBtn.TabIndex = 43;
+            uploadBtn.UseVisualStyleBackColor = false;
+            uploadBtn.Click += uploadBtn_Click;
             // 
             // contributionBtn
             // 
-            this.contributionBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.contributionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.contributionBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.contributionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.contributionBtn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.contributionBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.contributionBtn.Location = new System.Drawing.Point(895, 19);
-            this.contributionBtn.Name = "contributionBtn";
-            this.contributionBtn.Size = new System.Drawing.Size(168, 37);
-            this.contributionBtn.TabIndex = 42;
-            this.contributionBtn.Text = "Contribution";
-            this.contributionBtn.UseVisualStyleBackColor = false;
-            this.contributionBtn.Click += new System.EventHandler(this.contributionBtn_Click);
+            contributionBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            contributionBtn.BackColor = Color.FromArgb(36, 83, 130);
+            contributionBtn.FlatAppearance.BorderColor = Color.FromArgb(224, 235, 237);
+            contributionBtn.FlatStyle = FlatStyle.Flat;
+            contributionBtn.Font = new Font("Ebrima", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            contributionBtn.ForeColor = Color.FromArgb(224, 235, 237);
+            contributionBtn.Location = new Point(895, 19);
+            contributionBtn.Name = "contributionBtn";
+            contributionBtn.Size = new Size(168, 37);
+            contributionBtn.TabIndex = 42;
+            contributionBtn.Text = "Contribution";
+            contributionBtn.UseVisualStyleBackColor = false;
+            contributionBtn.Click += contributionBtn_Click;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(32)))), ((int)(((byte)(79)))));
-            this.panel3.Controls.Add(this.threadBtn);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.uploadBtn);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.contributionBtn);
-            this.panel3.Controls.Add(this.reponameLb);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(12, 276);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1403, 55);
-            this.panel3.TabIndex = 37;
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel3.BackColor = Color.FromArgb(37, 32, 79);
+            panel3.Controls.Add(threadBtn);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(uploadBtn);
+            panel3.Controls.Add(button1);
+            panel3.Controls.Add(contributionBtn);
+            panel3.Controls.Add(reponameLb);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(button4);
+            panel3.Location = new Point(12, 276);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1403, 55);
+            panel3.TabIndex = 37;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Anchor = AnchorStyles.Left;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(28, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(35, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 40;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3460, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 35);
-            this.button1.TabIndex = 39;
-            this.button1.UseVisualStyleBackColor = false;
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(3460, 7);
+            button1.Name = "button1";
+            button1.Size = new Size(34, 35);
+            button1.TabIndex = 39;
+            button1.UseVisualStyleBackColor = false;
             // 
             // reponameLb
             // 
-            this.reponameLb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.reponameLb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.reponameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.reponameLb.Location = new System.Drawing.Point(68, 15);
-            this.reponameLb.Name = "reponameLb";
-            this.reponameLb.Size = new System.Drawing.Size(343, 31);
-            this.reponameLb.TabIndex = 37;
-            this.reponameLb.Text = "Repository Collab";
-            this.reponameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            reponameLb.Anchor = AnchorStyles.Left;
+            reponameLb.Font = new Font("Ebrima", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            reponameLb.ForeColor = Color.FromArgb(224, 235, 237);
+            reponameLb.Location = new Point(68, 15);
+            reponameLb.Name = "reponameLb";
+            reponameLb.Size = new Size(343, 31);
+            reponameLb.TabIndex = 37;
+            reponameLb.Text = "Repository Collab";
+            reponameLb.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(3513, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 35);
-            this.button2.TabIndex = 36;
-            this.button2.UseVisualStyleBackColor = false;
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(3513, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(34, 35);
+            button2.TabIndex = 36;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.button3.Location = new System.Drawing.Point(3215, 86);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 55);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Chat";
-            this.button3.UseVisualStyleBackColor = false;
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button3.BackColor = Color.FromArgb(36, 83, 130);
+            button3.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            button3.FlatAppearance.BorderSize = 2;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Ebrima", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.FromArgb(224, 235, 237);
+            button3.Location = new Point(3215, 86);
+            button3.Name = "button3";
+            button3.Size = new Size(168, 55);
+            button3.TabIndex = 34;
+            button3.Text = "Chat";
+            button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(83)))), ((int)(((byte)(130)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.button4.Location = new System.Drawing.Point(3383, 86);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 55);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Edit Repository";
-            this.button4.UseVisualStyleBackColor = false;
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button4.BackColor = Color.FromArgb(36, 83, 130);
+            button4.FlatAppearance.BorderColor = Color.FromArgb(23, 20, 51);
+            button4.FlatAppearance.BorderSize = 2;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Ebrima", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.FromArgb(224, 235, 237);
+            button4.Location = new Point(3383, 86);
+            button4.Name = "button4";
+            button4.Size = new Size(168, 55);
+            button4.TabIndex = 33;
+            button4.Text = "Edit Repository";
+            button4.UseVisualStyleBackColor = false;
             // 
             // RepositoryPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1427, 825);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RepositoryPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.RepositoryPage_Load);
-            this.Resize += new System.EventHandler(this.RepositoryPage_Resize);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userDP)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.emptyImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updateList)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.myContriList)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(23, 20, 51);
+            ClientSize = new Size(1427, 825);
+            Controls.Add(panel3);
+            Controls.Add(tabControl1);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            ForeColor = Color.FromArgb(224, 235, 237);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "RepositoryPage";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            Load += RepositoryPage_Load;
+            Resize += RepositoryPage_Resize;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)userDP).EndInit();
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)emptyImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)updateList).EndInit();
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)myContriList).EndInit();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

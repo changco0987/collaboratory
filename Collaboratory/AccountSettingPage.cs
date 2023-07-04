@@ -52,7 +52,7 @@ namespace Collaboratory
                 }
 
             }
-            
+
         }
 
         /*
@@ -81,7 +81,7 @@ namespace Collaboratory
         string oldImg;
         private void backBtn_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
             var backToUserPage = new UserProfilePage();
 
@@ -166,14 +166,14 @@ namespace Collaboratory
                 }
 
                 //This is the parellel directory for img storage this also be used in the web app version
-                if (!Directory.Exists(webStoragePath)) 
+                if (!Directory.Exists(webStoragePath))
                 {
                     Directory.CreateDirectory(webStoragePath);
                 }
 
 
                 //The using will use to dispose the code afterwards
-                using (open = new OpenFileDialog()) 
+                using (open = new OpenFileDialog())
                 {
 
                     open.Filter = "Image Files(*.PNG;*.JPG;*.JPEG;)|*.PNG;*.JPG;*.JPEG;";//The file filter
@@ -192,7 +192,7 @@ namespace Collaboratory
                          * it will check first if there is a previous user image and if yes
                          * it will delete it
                          */
-                        if (!string.IsNullOrEmpty(oldImg)) 
+                        if (!string.IsNullOrEmpty(oldImg))
                         {
                             System.Threading.Thread.Sleep(100);//This will use to at least give time  to close other process before using again
                             System.IO.File.Delete(storagePath + oldImg);//This will delete previous user image in the local copy
@@ -225,7 +225,7 @@ namespace Collaboratory
                         //GC.Collect();
                         MessageBox.Show("Profile Picture Changed!");
                     }
-                    else 
+                    else
                     {
                         //This will prompt as backup incase an error has occur in changing user image
                         UserLoginData.profilePicName = oldImg;
@@ -239,15 +239,15 @@ namespace Collaboratory
 
 
             }
-            catch 
+            catch
             {
                 MessageBox.Show("An error has occured!");
             }
-            
+
         }
 
-       
 
-        
+
+
     }
 }
