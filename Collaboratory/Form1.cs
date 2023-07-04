@@ -149,15 +149,15 @@ namespace Collaboratory
             foreach (var data in dbData)
             {
                 UserLoginData.id = Convert.ToInt32(data[0]);
-                UserLoginData.firstName = data[1].ToString();
-                UserLoginData.lastName = data[2].ToString();
-                UserLoginData.userId = data[3].ToString();
-                UserLoginData.password = data[4].ToString();
+                UserLoginData.firstName = (string)data[1];
+                UserLoginData.lastName = (string)data[2];
+                UserLoginData.userId = (string)data[3];
+                UserLoginData.password = (string)data[4];
                 UserLoginData.birthday = data[5].ToString();
-                UserLoginData.gender = data[6].ToString();
-                UserLoginData.profilePicName = data[7].ToString();
-                UserLoginData.uak = data[8].ToString();
-                UserLoginData.email = data[9].ToString();
+                UserLoginData.gender = (string)data[6];
+                UserLoginData.profilePicName = (string)data[7];
+                UserLoginData.uak = (string)data[8];
+                UserLoginData.email = (string)data[9];
             }
         }
 
@@ -191,7 +191,7 @@ namespace Collaboratory
             catch(Exception e)
             {
                 // + e.ToString() in message box to show the actual error
-                MessageBox.Show("Error has encountered in checkAccount()");
+                MessageBox.Show("Error has encountered in checkAccount()" + e.ToString());
             }
 
 
