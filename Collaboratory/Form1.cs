@@ -69,8 +69,9 @@ namespace Collaboratory
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            this.ActiveControl.Dispose();
-            this.Close();
+            //this.ActiveControl.Dispose();
+            //this.Close();
+            Environment.Exit(0);
         }
 
         public void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -184,9 +185,9 @@ namespace Collaboratory
                     {
                         saveLoginData(Convert.ToInt32(data[0]));
 
-                        this.Hide();
-                        var userPage = new UserProfilePage();
+                        UserProfilePage userPage = new UserProfilePage();
                         userPage.ShowDialog();
+                        this.Dispose();
                         return;
                     }
                     
@@ -198,9 +199,9 @@ namespace Collaboratory
                     {
                         saveLoginData(Convert.ToInt32(data[0]));
 
-                        this.Hide();
-                        var userPage = new UserProfilePage();
+                        UserProfilePage userPage = new UserProfilePage();
                         userPage.ShowDialog();
+                        this.Dispose();
                         return;
                     }
                 }

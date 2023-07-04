@@ -112,7 +112,9 @@ namespace Collaboratory
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.ActiveControl.Dispose();
+            Environment.Exit(0);
+            //this.Close();
         }
 
 
@@ -147,9 +149,9 @@ namespace Collaboratory
             }
 
             this.Close();
-            var loginPage = new LoginForm();
+            LoginForm loginPage = new LoginForm();
             loginPage.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
 
