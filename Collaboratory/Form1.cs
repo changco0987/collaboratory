@@ -184,7 +184,7 @@ namespace Collaboratory
                     if (user.id != 0)
                     {
                         saveLoginData(Convert.ToInt32(data[0]));
-
+                        this.Hide();
                         UserProfilePage userPage = new UserProfilePage();
                         userPage.ShowDialog();
                         this.Dispose();
@@ -198,7 +198,7 @@ namespace Collaboratory
                     else if (data[3].ToString() == user.userId.ToLower() && data[4].ToString() == user.password)
                     {
                         saveLoginData(Convert.ToInt32(data[0]));
-
+                        this.Hide();
                         UserProfilePage userPage = new UserProfilePage();
                         userPage.ShowDialog();
                         this.Dispose();
