@@ -39,7 +39,7 @@ namespace Collaboratory
             if (!string.IsNullOrEmpty(UserLoginData.profilePicName))
             {
                 //This will check if the image is existing in the local storage
-                if (File.Exists(storagePath+UserLoginData.profilePicName)) 
+                if (File.Exists(storagePath + UserLoginData.profilePicName))
                 {
                     using (FileStream stream = new FileStream(storagePath + UserLoginData.profilePicName, FileMode.Open, FileAccess.Read))
                     {
@@ -143,7 +143,7 @@ namespace Collaboratory
             resetData.reset();
 
             //This will erase even the local data saved in the computer
-            if (File.Exists(Application.UserAppDataPath + dataFile)) 
+            if (File.Exists(Application.UserAppDataPath + dataFile))
             {
                 File.Delete(Application.UserAppDataPath + dataFile);
             }
@@ -188,7 +188,7 @@ namespace Collaboratory
 
             repoList.Rows.Clear();
 
-   
+
             tb_repositories conn = new tb_repositories();
 
             List<DataRow> retrieveData = conn.ReadRepo("user", UserLoginData.id);
@@ -199,7 +199,7 @@ namespace Collaboratory
                 string repoName = data[1].ToString();
                 repoList.Rows.Add(repoId, repoName);
             }
-     
+
 
             repoList.Refresh();
             repoList.Update();
@@ -210,7 +210,7 @@ namespace Collaboratory
         private void repoList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;//This is the selected row in the datagridview/list of repository
-            
+
 
             openRepoPage(selectedRow);//Then it will pass the id to this method
 
@@ -218,7 +218,7 @@ namespace Collaboratory
         }
 
         //This will trigger if the user click the repository
-        async void openRepoPage(int selectedRow) 
+        async void openRepoPage(int selectedRow)
         {
             DataGridViewRow row = repoList.Rows[selectedRow];
 
@@ -231,7 +231,7 @@ namespace Collaboratory
             var splashScreen = new LoadingScreen();
             splashScreen.Show();
 
-    
+
 
             await Task.Factory.StartNew(() =>
             {
